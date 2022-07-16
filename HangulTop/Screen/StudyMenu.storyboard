@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StudyMenu" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLQ-38-Wcu">
+                                <rect key="frame" x="32" y="154" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Cw6-sX-htE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="창제원리">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="A86-en-ZNx" kind="show" id="YfV-qw-lvO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3Y-WB-fQo">
+                                <rect key="frame" x="32" y="259" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="PZo-zG-9WC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="모음">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="gXb-I8-Sof" kind="show" id="ZYI-dr-Jq0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-R5-0ue">
+                                <rect key="frame" x="32" y="364" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YBR-aG-doS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="자음">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="aJS-kO-TUW" kind="show" id="sx7-f5-OPR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHQ-dK-aUX">
+                                <rect key="frame" x="32" y="469" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="v7k-Tx-ibn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="받침">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="sha-UZ-G8y" kind="show" id="cLl-CH-hS2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fHQ-dK-aUX" firstAttribute="top" secondItem="oUU-R5-0ue" secondAttribute="bottom" constant="25" id="2W3-12-sJA"/>
+                            <constraint firstItem="oUU-R5-0ue" firstAttribute="top" secondItem="V3Y-WB-fQo" secondAttribute="bottom" constant="25" id="72b-OI-bmx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WLQ-38-Wcu" secondAttribute="trailing" constant="32" id="7BE-dm-YKh"/>
+                            <constraint firstItem="V3Y-WB-fQo" firstAttribute="top" secondItem="WLQ-38-Wcu" secondAttribute="bottom" constant="25" id="9Kc-Ix-eNf"/>
+                            <constraint firstItem="WLQ-38-Wcu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="DuZ-ob-7nZ"/>
+                            <constraint firstItem="WLQ-38-Wcu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="110" id="Gmo-sz-bbG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oUU-R5-0ue" secondAttribute="trailing" constant="32" id="ZNF-cG-ziD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="V3Y-WB-fQo" secondAttribute="trailing" constant="32" id="c0G-q3-mx3"/>
+                            <constraint firstItem="fHQ-dK-aUX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="i7R-SC-mFk"/>
+                            <constraint firstItem="oUU-R5-0ue" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="vkU-ek-XxV"/>
+                            <constraint firstItem="V3Y-WB-fQo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="x8n-4m-dWR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHQ-dK-aUX" secondAttribute="trailing" constant="32" id="zyl-Dz-XCb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OCb-lt-xnW">
+                        <barButtonItem key="backBarButtonItem" title="Menu" id="tIG-nm-Ebk"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="78"/>
+        </scene>
+        <!--Principle-->
+        <scene sceneID="ldz-XJ-neT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Principle" id="A86-en-ZNx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jpq-KA-xO6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeZ-Fm-fx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="-27"/>
+        </scene>
+        <!--Vowel-->
+        <scene sceneID="i6l-RY-fTE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Vowel" id="gXb-I8-Sof" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KNw-EO-mZV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orP-xj-FMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="13"/>
+        </scene>
+        <!--Consonant-->
+        <scene sceneID="oac-Hz-jHp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Consonant" id="aJS-kO-TUW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ifz-Ab-Gqg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hN-cf-EDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="48"/>
+        </scene>
+        <!--Batchim-->
+        <scene sceneID="gfD-0x-ME4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Batchim" id="sha-UZ-G8y" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gJ0-lQ-UTu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oj-TY-4wN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
