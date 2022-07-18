@@ -10,6 +10,8 @@
 		11977D6B2884E3920033CBB6 /* PrincipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11977D6A2884E3920033CBB6 /* PrincipleViewController.swift */; };
 		11977D6D288532890033CBB6 /* PrincipleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11977D6C288532890033CBB6 /* PrincipleTexts.swift */; };
 		11977D6F28853B120033CBB6 /* PrincipleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11977D6E28853B120033CBB6 /* PrincipleModel.swift */; };
+		11977D762885ADD80033CBB6 /* End.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11977D752885ADD80033CBB6 /* End.storyboard */; };
+		11977D782885ADE70033CBB6 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11977D772885ADE70033CBB6 /* EndViewController.swift */; };
 		4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7232882AB1E00589672 /* StudyMenu.storyboard */; };
 		4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7252882AB2700589672 /* TopMenu.storyboard */; };
 		4D31A7282882AB3500589672 /* Vowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7272882AB3500589672 /* Vowel.storyboard */; };
@@ -29,6 +31,8 @@
 		11977D6A2884E3920033CBB6 /* PrincipleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipleViewController.swift; sourceTree = "<group>"; };
 		11977D6C288532890033CBB6 /* PrincipleTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipleTexts.swift; sourceTree = "<group>"; };
 		11977D6E28853B120033CBB6 /* PrincipleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipleModel.swift; sourceTree = "<group>"; };
+		11977D752885ADD80033CBB6 /* End.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = End.storyboard; sourceTree = "<group>"; };
+		11977D772885ADE70033CBB6 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		4D31A7232882AB1E00589672 /* StudyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudyMenu.storyboard; sourceTree = "<group>"; };
 		4D31A7252882AB2700589672 /* TopMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopMenu.storyboard; sourceTree = "<group>"; };
 		4D31A7272882AB3500589672 /* Vowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vowel.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			children = (
 				D5CC950C287E9591005E8BF5 /* ViewController.swift */,
 				11977D6A2884E3920033CBB6 /* PrincipleViewController.swift */,
+				11977D772885ADE70033CBB6 /* EndViewController.swift */,
 				11977D6E28853B120033CBB6 /* PrincipleModel.swift */,
 				11977D6C288532890033CBB6 /* PrincipleTexts.swift */,
 			);
@@ -75,6 +80,7 @@
 				4D31A7232882AB1E00589672 /* StudyMenu.storyboard */,
 				4D31A7252882AB2700589672 /* TopMenu.storyboard */,
 				4D31A72D2882AE3200589672 /* Principle.storyboard */,
+				11977D752885ADD80033CBB6 /* End.storyboard */,
 				4D31A7272882AB3500589672 /* Vowel.storyboard */,
 				4D31A7292882AB3E00589672 /* Consonant.storyboard */,
 				4D31A72B2882AB4700589672 /* Batchim.storyboard */,
@@ -177,6 +183,7 @@
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,
 				4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */,
+				11977D762885ADD80033CBB6 /* End.storyboard in Resources */,
 				4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */,
 				D5CC9515287E9593005E8BF5 /* Assets.xcassets in Resources */,
 				D5CC9510287E9591005E8BF5 /* Main.storyboard in Resources */,
@@ -190,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11977D782885ADE70033CBB6 /* EndViewController.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
 				D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */,
 				11977D6B2884E3920033CBB6 /* PrincipleViewController.swift in Sources */,
