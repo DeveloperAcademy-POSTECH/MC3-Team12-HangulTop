@@ -43,7 +43,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="prevButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="E6S-Cb-pid"/>
+                                    <action selector="buttonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hti-GD-lbk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPl-wU-NF3">
@@ -59,7 +59,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Jic-YA-tMY"/>
+                                    <action selector="buttonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jWE-IH-hbj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-lZ-RM7">
@@ -89,7 +89,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="firstButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1Id-Tm-4dW"/>
+                                    <action selector="buttonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7S3-3L-6Qu"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAg-xh-hXv">

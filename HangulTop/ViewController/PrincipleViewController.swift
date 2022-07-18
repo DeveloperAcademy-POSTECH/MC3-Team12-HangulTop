@@ -26,21 +26,12 @@ class PrincipleViewController: UIViewController {
         updateUI()
     }
     
-    // 첫 번째 next 버튼 눌렀을 때 뷰 업데이트 해주는 함수. 근데 동적으로 사이즈 조절 가능하다면 nextButton이랑 통합해서 중복 줄여줄 수 있을 것 같음
-    @IBAction func firstButtonPressed(_ sender: UIButton) {
-        principleModel.nextView() // 두 번째 뷰로 넘어가기 위해 카운트 + 1
-        updateUI()
-    }
-    
-    // 이전 버튼 눌렀을 때 뷰 업데이트 해주는 함수
-    @IBAction func prevButtonPressed(_ sender: UIButton) {
-        principleModel.prevView() // 이전 뷰로 돌아가기 위해 카운트 - 1
-        updateUI()
-    }
-    
-    // 다음 버튼 눌렀을 때 뷰 업데이트 해주는 함수
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
-        principleModel.nextView() // 다음 뷰로 넘어가기 위해 카운트 + 1
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if sender == prevButton {
+            principleModel.prevView() // 이전 뷰로 돌아가기 위해 카운트 - 1
+        } else {
+            principleModel.nextView() // 다음 뷰로 넘어가기 위해 카운트 + 1
+        }
         updateUI()
     }
     
