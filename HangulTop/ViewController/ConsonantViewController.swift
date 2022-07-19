@@ -10,6 +10,22 @@ import UIKit
 class ConsonantViewController: UIViewController {
     
     @IBOutlet weak var customView: UIView!
+    @IBOutlet weak var prevBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBAction func prevPage(_ sender: Any) {
+        if pageNum > 0 {
+            pageNum -= 1
+            setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
+            setPageControl()
+        }
+    }
+    @IBAction func nextPage(_ sender: Any) {
+        if pageNum < consonantArray.count - 1 {
+            pageNum += 1
+            setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
+            setPageControl()
+        }
+    }
     var pageNum = 0
     
     let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
@@ -17,6 +33,19 @@ class ConsonantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
+    }
+    
+    func setPageControl() {
+        if pageNum == 0 {
+            prevBtn.isHidden = true
+        } else {
+            prevBtn.isHidden = false
+        }
+        if pageNum == consonantArray.count-1 {
+            nextBtn.isHidden = true
+        } else {
+            nextBtn.isHidden = false
+        }
     }
 }
 

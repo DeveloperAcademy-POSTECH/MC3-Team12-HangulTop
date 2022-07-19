@@ -118,6 +118,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="prevPage:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="ete-Qf-KpT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6t8-Ai-TNn">
                                         <rect key="frame" x="296" y="31" width="110" height="31"/>
@@ -127,6 +130,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextPage:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="06a-nd-dzC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -175,6 +181,8 @@
                     <navigationItem key="navigationItem" title="Consonants" id="Adl-8e-vvw"/>
                     <connections>
                         <outlet property="customView" destination="Gus-EJ-W0k" id="sc0-96-2iZ"/>
+                        <outlet property="nextBtn" destination="6t8-Ai-TNn" id="5MM-9n-SSa"/>
+                        <outlet property="prevBtn" destination="jvd-Sm-T7F" id="tRR-zO-0qr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwC-dp-35Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
