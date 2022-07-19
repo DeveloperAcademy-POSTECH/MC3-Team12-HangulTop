@@ -13,6 +13,9 @@
 		4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7292882AB3E00589672 /* Consonant.storyboard */; };
 		4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72B2882AB4700589672 /* Batchim.storyboard */; };
 		4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72D2882AE3200589672 /* Principle.storyboard */; };
+		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
+		6761C8AC288674AA001A0D2C /* delete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6761C8AB288674AA001A0D2C /* delete.storyboard */; };
+		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
 		D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9508287E9591005E8BF5 /* AppDelegate.swift */; };
 		D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */; };
 		D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950C287E9591005E8BF5 /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 		4D31A7292882AB3E00589672 /* Consonant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Consonant.storyboard; sourceTree = "<group>"; };
 		4D31A72B2882AB4700589672 /* Batchim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Batchim.storyboard; sourceTree = "<group>"; };
 		4D31A72D2882AE3200589672 /* Principle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Principle.storyboard; sourceTree = "<group>"; };
+		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
+		6761C8AB288674AA001A0D2C /* delete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = delete.storyboard; sourceTree = "<group>"; };
+		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
 		D5CC9505287E9591005E8BF5 /* HangulTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CC9508287E9591005E8BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				D5CC950C287E9591005E8BF5 /* ViewController.swift */,
+				67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */,
+				6761C8A9288550F4001A0D2C /* BatchimModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -76,6 +84,7 @@
 		D5CC94FC287E9591005E8BF5 = {
 			isa = PBXGroup;
 			children = (
+				6761C8AB288674AA001A0D2C /* delete.storyboard */,
 				D5CC9507287E9591005E8BF5 /* HangulTop */,
 				D5CC9506287E9591005E8BF5 /* Products */,
 			);
@@ -165,6 +174,7 @@
 				4D31A7282882AB3500589672 /* Vowel.storyboard in Resources */,
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
+				6761C8AC288674AA001A0D2C /* delete.storyboard in Resources */,
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,
 				4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */,
@@ -183,7 +193,9 @@
 			files = (
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
 				D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */,
+				67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */,
 				D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */,
+				6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */,
 				D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
