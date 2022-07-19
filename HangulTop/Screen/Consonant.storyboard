@@ -173,6 +173,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Consonants" id="Adl-8e-vvw"/>
+                    <connections>
+                        <outlet property="customView" destination="Gus-EJ-W0k" id="sc0-96-2iZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwC-dp-35Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
