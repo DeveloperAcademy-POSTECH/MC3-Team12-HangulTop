@@ -29,6 +29,9 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
             setPageControl()
         }
+        if pageNum == consonantArray.count - 1 {
+            performSegue(withIdentifier: "finish_seg", sender: sender)
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -60,11 +63,6 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             prevBtn.isHidden = true
         } else {
             prevBtn.isHidden = false
-        }
-        if pageNum == consonantArray.count-1 {
-            nextBtn.isHidden = true
-        } else {
-            nextBtn.isHidden = false
         }
     }
 }
