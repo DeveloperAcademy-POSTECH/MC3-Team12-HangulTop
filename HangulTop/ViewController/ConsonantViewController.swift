@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ConsonantViewController: UIViewController {
+class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    var pageNum = 0
+    let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
+    let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
     
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var prevBtn: UIButton!
@@ -26,9 +30,25 @@ class ConsonantViewController: UIViewController {
             setPageControl()
         }
     }
-    var pageNum = 0
     
-    let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return vowelArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CollectionViewCell
+        cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
+        cell.cellButton.addTarget(self, action: #selector(getVowel(sender:)), for: .touchUpInside)
+        return cell
+    }
+    
+    @objc func getVowel(sender: UIButton){
+        print(sender.titleLabel?.text ?? "error")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
