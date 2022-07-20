@@ -27,6 +27,8 @@
 		4D31A7502886817900589672 /* ButtonSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A74F2886817900589672 /* ButtonSetView.swift */; };
 		4D31A7522886819200589672 /* ButtonSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7512886819200589672 /* ButtonSetView.xib */; };
 		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
+		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
+		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
 		D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9508287E9591005E8BF5 /* AppDelegate.swift */; };
 		D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */; };
 		D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950C287E9591005E8BF5 /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 		4D31A74F2886817900589672 /* ButtonSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetView.swift; sourceTree = "<group>"; };
 		4D31A7512886819200589672 /* ButtonSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonSetView.xib; sourceTree = "<group>"; };
 		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
+		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
 		D5CC9505287E9591005E8BF5 /* HangulTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CC9508287E9591005E8BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +118,6 @@
 		D5CC94FC287E9591005E8BF5 = {
 			isa = PBXGroup;
 			children = (
-				6761C8AB288674AA001A0D2C /* delete.storyboard */,
 				D5CC9507287E9591005E8BF5 /* HangulTop */,
 				D5CC9506287E9591005E8BF5 /* Products */,
 			);
