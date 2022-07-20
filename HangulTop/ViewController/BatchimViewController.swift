@@ -34,8 +34,12 @@ class BatchimViewController: UIViewController {
     //다음 +1
     @IBAction func didTapNextButton(_ sender: UIButton) {
         batchimModel.nextView()
-        updateUI()
-        setPageControl()
+        if batchimModel.pageCount == batchimModel.contents.count - 1 {
+            performSegue(withIdentifier: "finish_seg", sender: sender)
+        } else {
+            updateUI()
+            setPageControl()
+        }
     }
 
     //이전 -1

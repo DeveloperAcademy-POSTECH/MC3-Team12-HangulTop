@@ -479,11 +479,77 @@
                         <outlet property="explanation" destination="AIC-sR-kP3" id="wbe-O7-YUi"/>
                         <outlet property="mainLetter" destination="zOJ-E1-NfG" id="F0d-Gn-vDS"/>
                         <outlet property="prevButton" destination="q82-et-pGg" id="6Bf-vb-ASG"/>
+                        <segue destination="IUR-a5-Had" kind="show" identifier="finish_seg" id="Ed4-Mm-tkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rsr-q1-2qJ">
+            <objects>
+                <viewController id="IUR-a5-Had" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mpU-mb-e7V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="받침 학습을 마쳤습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5c-uY-UWM">
+                                <rect key="frame" x="69" y="294" width="276" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="fzd-Js-lcI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzW-HB-8OX">
+                                <rect key="frame" x="32" y="534" width="350" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Ats-WT-atm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="메인 화면으로">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7S-Q1-aQX">
+                                <rect key="frame" x="32" y="613" width="350" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="T0T-HF-UWK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="퀴즈 풀러 가기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zdz-oV-gm2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A5c-uY-UWM" firstAttribute="centerX" secondItem="mpU-mb-e7V" secondAttribute="centerX" id="7Rw-am-cce"/>
+                            <constraint firstItem="MzW-HB-8OX" firstAttribute="leading" secondItem="Zdz-oV-gm2" secondAttribute="leading" constant="32" id="DQv-lY-p1F"/>
+                            <constraint firstItem="A5c-uY-UWM" firstAttribute="top" secondItem="Zdz-oV-gm2" secondAttribute="top" constant="250" id="H6A-PC-IHp"/>
+                            <constraint firstItem="i7S-Q1-aQX" firstAttribute="leading" secondItem="Zdz-oV-gm2" secondAttribute="leading" constant="32" id="Ifz-zb-UNv"/>
+                            <constraint firstItem="i7S-Q1-aQX" firstAttribute="centerX" secondItem="mpU-mb-e7V" secondAttribute="centerX" id="LXo-fW-I0f"/>
+                            <constraint firstItem="MzW-HB-8OX" firstAttribute="centerX" secondItem="mpU-mb-e7V" secondAttribute="centerX" id="SgK-ee-d4l"/>
+                            <constraint firstItem="Zdz-oV-gm2" firstAttribute="bottom" secondItem="i7S-Q1-aQX" secondAttribute="bottom" constant="180" id="Shp-z9-eCw"/>
+                            <constraint firstItem="Zdz-oV-gm2" firstAttribute="trailing" secondItem="MzW-HB-8OX" secondAttribute="trailing" constant="32" id="b24-AR-3JP"/>
+                            <constraint firstItem="Zdz-oV-gm2" firstAttribute="trailing" secondItem="i7S-Q1-aQX" secondAttribute="trailing" constant="32" id="lok-zx-u00"/>
+                            <constraint firstItem="A5c-uY-UWM" firstAttribute="leading" secondItem="Zdz-oV-gm2" secondAttribute="leading" constant="69" id="ltd-dF-9dQ"/>
+                            <constraint firstItem="i7S-Q1-aQX" firstAttribute="top" secondItem="MzW-HB-8OX" secondAttribute="bottom" constant="30" id="vnh-6p-O9O"/>
+                            <constraint firstItem="Zdz-oV-gm2" firstAttribute="trailing" secondItem="A5c-uY-UWM" secondAttribute="trailing" constant="69" id="zpx-SG-cuu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="i89-pl-h9R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUV-nQ-eIo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="78"/>
         </scene>
     </scenes>
     <resources>
