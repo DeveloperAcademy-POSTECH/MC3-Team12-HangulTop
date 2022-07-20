@@ -31,8 +31,8 @@ class PrincipleViewController: UIViewController {
             // prev버튼들
             principleModel.prevView() // 이전 뷰로 돌아가기 위해 카운트 - 1
             updateUI()
-        } else if principleModel.pageCount == 13 {
-            // 마지막 페이지 즉 progressNum이 14인 경우에만 해당
+        } else if principleModel.pageCount == principleModel.contents.count - 1 {
+            // 마지막 페이지 즉 pageCount가 13, progressNum이 14인 경우에만 해당
             self.performSegue(withIdentifier: "goToEnd", sender: self)
             // 마지막 next버튼 누르면 완료 페이지로 넘어가게 하기 위한 코드
         } else {
