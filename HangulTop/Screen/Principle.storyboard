@@ -109,12 +109,12 @@
                         <outlet property="principleSubtitle" destination="lRC-DU-hmP" id="6XO-EO-Usd"/>
                         <outlet property="principleTitle" destination="Abv-lZ-RM7" id="1rj-gb-Jqi"/>
                         <outlet property="progressNum" destination="yOd-ag-aGJ" id="XQg-kL-yvd"/>
-                        <segue destination="UWT-Ea-pyy" kind="show" identifier="goToEnd" id="zMT-jR-NQ9"/>
+                        <segue destination="UWT-Ea-pyy" kind="show" identifier="goToEnd" id="V9G-zn-ymQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
+            <point key="canvasLocation" x="258" y="78"/>
         </scene>
         <!--Principle End View Controller-->
         <scene sceneID="RLE-gD-St7">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXT-Ly-2Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.72463768115949" y="77.678571428571431"/>
+            <point key="canvasLocation" x="1048" y="78"/>
         </scene>
     </scenes>
     <resources>
