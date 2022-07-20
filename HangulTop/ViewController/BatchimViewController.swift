@@ -10,10 +10,7 @@ import UIKit
 class BatchimViewController: UIViewController {
     
     @IBOutlet weak var explanation: UILabel!
-    @IBOutlet weak var didTapPrevButton: UIButton!
-    @IBOutlet weak var didTapNextButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var mainLetter: UILabel!
     
     
     var batchimModel = BatchimModel() //초기화, 인스턴스?
