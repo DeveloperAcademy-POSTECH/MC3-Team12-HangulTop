@@ -47,7 +47,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="gXb-I8-Sof" kind="show" id="ZYI-dr-Jq0"/>
+                                    <segue destination="gXb-I8-Sof" kind="show" id="CQE-Xc-KQs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-R5-0ue">
@@ -123,7 +123,7 @@
         <!--Vowel-->
         <scene sceneID="i6l-RY-fTE">
             <objects>
-                <viewControllerPlaceholder storyboardName="Vowel" id="gXb-I8-Sof" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="FirstVowel" storyboardName="Vowel" referencedIdentifier="Vowel" id="gXb-I8-Sof" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KNw-EO-mZV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orP-xj-FMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
