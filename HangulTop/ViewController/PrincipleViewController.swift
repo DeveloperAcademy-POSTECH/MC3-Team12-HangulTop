@@ -17,6 +17,13 @@ class PrincipleViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     // 현재 버튼들 cornerRadius 전부 key path로 직접 숫자 집어넣었는데 이거 비율로 바꾸고 싶음
+    @IBOutlet weak var mConsonants: UIView!
+    @IBOutlet weak var gConsonants: UIView!
+    @IBOutlet weak var sConsonants: UIView!
+    @IBOutlet weak var nConsonants: UIView!
+    @IBOutlet weak var hConsonants: UIView!
+    @IBOutlet weak var basicVowels: UIView!
+    @IBOutlet weak var compoundVowels: UIView!
     
     var principleModel = PrincipleModel() //초기화, 인스턴스
     
@@ -49,6 +56,7 @@ class PrincipleViewController: UIViewController {
         principleSubtitle.text = principleModel.getSubtitle()
         principleImage = principleModel.getImage()
         explanation.text = principleModel.getInfo()
+        showButtonView()
         if principleModel.pageCount == 0 { // 첫 번째 뷰에서는 큰 next 버튼만 보이게 하고 작은 prev, next버튼은 숨김
             firstButton.isHidden = false
             prevButton.isHidden = true
@@ -57,6 +65,31 @@ class PrincipleViewController: UIViewController {
             firstButton.isHidden = true
             nextButton.isHidden = false
             prevButton.isHidden = false
+        }
+    }
+    
+    func showButtonView() {
+        gConsonants.isHidden = true
+        nConsonants.isHidden = true
+        mConsonants.isHidden = true
+        sConsonants.isHidden = true
+        hConsonants.isHidden = true
+        basicVowels.isHidden = true
+        compoundVowels.isHidden = true
+        if principleModel.pageCount == 5 {
+            gConsonants.isHidden = false
+        } else if principleModel.pageCount == 6 {
+            nConsonants.isHidden = false
+        } else if principleModel.pageCount == 7 {
+            mConsonants.isHidden = false
+        } else if principleModel.pageCount == 8 {
+            sConsonants.isHidden = false
+        } else if principleModel.pageCount == 9 {
+            hConsonants.isHidden = false
+        } else if principleModel.pageCount == 11 {
+            basicVowels.isHidden = false
+        } else if principleModel.pageCount == 12 {
+            compoundVowels.isHidden = false
         }
     }
 }
