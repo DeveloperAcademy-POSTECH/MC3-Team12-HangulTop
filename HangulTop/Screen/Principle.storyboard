@@ -109,11 +109,50 @@
                         <outlet property="principleSubtitle" destination="lRC-DU-hmP" id="6XO-EO-Usd"/>
                         <outlet property="principleTitle" destination="Abv-lZ-RM7" id="1rj-gb-Jqi"/>
                         <outlet property="progressNum" destination="yOd-ag-aGJ" id="XQg-kL-yvd"/>
+                        <segue destination="UWT-Ea-pyy" kind="show" identifier="goToEnd" id="zMT-jR-NQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
+        </scene>
+        <!--Principle End View Controller-->
+        <scene sceneID="RLE-gD-St7">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="UWT-Ea-pyy" customClass="PrincipleEndViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1cZ-vh-P94">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-1a-Xbq">
+                                <rect key="frame" x="44" y="675" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to Menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="UWT-Ea-pyy" eventType="touchUpInside" id="00a-vK-uNR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-AA-cC1">
+                                <rect key="frame" x="45" y="238" width="325" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pAN-nz-Mlr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D9q-aJ-ojL"/>
+                    <connections>
+                        <outlet property="menuButton" destination="yRd-1a-Xbq" id="sN3-Se-fHE"/>
+                        <outlet property="message" destination="7WT-AA-cC1" id="jYt-RD-7Yj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXT-Ly-2Ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>

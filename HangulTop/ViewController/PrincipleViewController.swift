@@ -28,11 +28,18 @@ class PrincipleViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender == prevButton {
+            // prev버튼들
             principleModel.prevView() // 이전 뷰로 돌아가기 위해 카운트 - 1
+            updateUI()
+        } else if principleModel.pageCount == 13 {
+            // 마지막 페이지 즉 progressNum이 14인 경우에만 해당
+            self.performSegue(withIdentifier: "goToEnd", sender: self)
+            // 마지막 next버튼 누르면 완료 페이지로 넘어가게 하기 위한 코드
         } else {
+            // 마지막 페이지 이전의 모든 next버튼들(첫 번째 페이지 포함)
             principleModel.nextView() // 다음 뷰로 넘어가기 위해 카운트 + 1
+            updateUI()
         }
-        updateUI()
     }
     
     // UI 업데이트 해주는 함수
