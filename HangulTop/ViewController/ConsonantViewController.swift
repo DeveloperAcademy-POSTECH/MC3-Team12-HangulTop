@@ -6,13 +6,20 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
+    
+    var audioPlayer : AVAudioPlayer!
+    var audioFile : URL!
+    var audioRecorder : AVAudioRecorder!
+    var isRecorderMode = false
+    var time: Timer!
     
     var pageNum = 0
-    let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
+    let consonantArray = [["\u{1100}","\u{110f}","\u{1101}"], ["\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}"], ["\u{1106}", "\u{1107}","\u{1111}","\u{1108}"], ["\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}"], ["\u{110b}","\u{1112}"]]
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
-    
+    var hangul: String = "가"
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -21,8 +28,25 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
     @IBOutlet weak var button7: UIButton!
+    
     @IBAction func buttonSelected(_ sender: UIButton) {
-        mainLetter.text = sender.titleLabel?.text ?? "ㄱ"
+        let mainUni = UnicodeScalar(hangul)?.value
+        var buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x1100
+        print("\(uni)")
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+        let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
+        
+        hangul = String(UnicodeScalar(letter)!)
+        mainLetter.text = hangul
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: hangul)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
     }
     
     @IBOutlet weak var page1: UILabel!
@@ -70,7 +94,23 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
     
     @objc func getVowel(sender: UIButton){
-        mainLetter.text = sender.titleLabel?.text ?? "ㅏ"
+        let mainUni = UnicodeScalar(hangul)?.value
+        let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㅏ")?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x314f
+        print("\(uni)")
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+        let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
+        
+        hangul = String(UnicodeScalar(letter)!)
+        mainLetter.text = hangul
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: hangul)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
     }
     
     override func viewDidLoad() {
@@ -78,6 +118,15 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         pageArray = [page1, page2, page3, page4, page5]
         setPageControl()
+        selectAudioFile()
+        if (!isRecorderMode) {
+            initPlay()
+            //            btnRecord.isEnabled = false
+            //            lbRecordTime.isEnabled = false
+            
+        }else{
+            initRecord()
+        }
     }
     
     func setPageControl() {
@@ -145,5 +194,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         
     }
+    
+    
 }
 
