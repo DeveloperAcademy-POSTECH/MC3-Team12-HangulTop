@@ -24,6 +24,7 @@ class PrincipleViewController: UIViewController {
     @IBOutlet weak var hConsonants: UIView!
     @IBOutlet weak var basicVowels: UIView!
     @IBOutlet weak var compoundVowels: UIView!
+    @IBOutlet weak var hangulLabel: UIView!
     
     var principleModel = PrincipleModel() //초기화, 인스턴스
     
@@ -61,14 +62,13 @@ class PrincipleViewController: UIViewController {
             firstButton.isHidden = false
             prevButton.isHidden = true
             nextButton.isHidden = true
-        } else { // 이외의 뷰에서는 큰 next 버튼 숨기고 작은 prev, next버튼은 보이게
-            firstButton.isHidden = true
-            nextButton.isHidden = false
-            prevButton.isHidden = false
         }
     }
     
     func showButtonView() {
+        firstButton.isHidden = true
+        nextButton.isHidden = false
+        prevButton.isHidden = false
         gConsonants.isHidden = true
         nConsonants.isHidden = true
         mConsonants.isHidden = true
@@ -76,6 +76,7 @@ class PrincipleViewController: UIViewController {
         hConsonants.isHidden = true
         basicVowels.isHidden = true
         compoundVowels.isHidden = true
+        hangulLabel.isHidden = true
         if principleModel.pageCount == 5 {
             gConsonants.isHidden = false
         } else if principleModel.pageCount == 6 {
@@ -90,6 +91,8 @@ class PrincipleViewController: UIViewController {
             basicVowels.isHidden = false
         } else if principleModel.pageCount == 12 {
             compoundVowels.isHidden = false
+        } else if principleModel.pageCount == 13 {
+            hangulLabel.isHidden = false
         }
     }
 }
