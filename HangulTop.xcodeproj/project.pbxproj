@@ -22,6 +22,7 @@
 		4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A731288460D600589672 /* ConsonantViewController.swift */; };
 		4D31A7502886817900589672 /* ButtonSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A74F2886817900589672 /* ButtonSetView.swift */; };
 		4D31A7522886819200589672 /* ButtonSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7512886819200589672 /* ButtonSetView.xib */; };
+		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
 		D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9508287E9591005E8BF5 /* AppDelegate.swift */; };
 		D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */; };
 		D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950C287E9591005E8BF5 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		4D31A731288460D600589672 /* ConsonantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsonantViewController.swift; sourceTree = "<group>"; };
 		4D31A74F2886817900589672 /* ButtonSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetView.swift; sourceTree = "<group>"; };
 		4D31A7512886819200589672 /* ButtonSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonSetView.xib; sourceTree = "<group>"; };
+		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D5CC9505287E9591005E8BF5 /* HangulTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CC9508287E9591005E8BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 				4D31A7272882AB3500589672 /* Vowel.storyboard */,
 				4D31A7292882AB3E00589672 /* Consonant.storyboard */,
 				4D31A72B2882AB4700589672 /* Batchim.storyboard */,
-				4D31A7512886819200589672 /* ButtonSetView.xib */,
-				4D31A74F2886817900589672 /* ButtonSetView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -123,6 +123,9 @@
 				D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */,
 				4D31A7202882AAC300589672 /* ViewController */,
 				4D31A7222882AAD900589672 /* Screen */,
+				4D31A7512886819200589672 /* ButtonSetView.xib */,
+				4D31A74F2886817900589672 /* ButtonSetView.swift */,
+				4D31A7532886C9C900589672 /* CollectionViewCell.swift */,
 				D5CC9514287E9593005E8BF5 /* Assets.xcassets */,
 				D5CC9516287E9593005E8BF5 /* LaunchScreen.storyboard */,
 				D5CC9519287E9593005E8BF5 /* Info.plist */,
@@ -213,6 +216,7 @@
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
 				4D31A7502886817900589672 /* ButtonSetView.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
+				4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */,
 				D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */,
 				67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */,
 				11977D6B2884E3920033CBB6 /* PrincipleViewController.swift in Sources */,

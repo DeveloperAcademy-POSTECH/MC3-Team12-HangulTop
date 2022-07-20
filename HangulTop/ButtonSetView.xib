@@ -29,6 +29,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hzM-UV-Lho"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOS-fa-53D">
                     <rect key="frame" x="191" y="38" width="60" height="60"/>
@@ -45,6 +48,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="BZK-pM-q6w"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i18-3j-s44">
                     <rect key="frame" x="260" y="38" width="60" height="60"/>
@@ -61,6 +67,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="5ez-NP-tTJ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jI-Zi-Oih">
                     <rect key="frame" x="157" y="106" width="60" height="60"/>
@@ -77,6 +86,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="QLB-KN-fm4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xun-xd-hMz">
                     <rect key="frame" x="89" y="106" width="60" height="60"/>
@@ -93,6 +105,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="3OP-e1-hfy"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arY-Vd-2bH">
                     <rect key="frame" x="55" y="38" width="60" height="60"/>
@@ -109,6 +124,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="fDX-RR-KaD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6B-fF-cXW">
                     <rect key="frame" x="226" y="106" width="60" height="60"/>
@@ -125,6 +143,9 @@
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectedBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="s9S-v7-wha"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

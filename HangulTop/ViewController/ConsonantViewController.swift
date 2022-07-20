@@ -7,7 +7,18 @@
 
 import UIKit
 
-class ConsonantViewController: UIViewController {
+class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    var pageNum = 0
+    let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
+    let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
+    
+    @IBOutlet weak var page1: UILabel!
+    @IBOutlet weak var page2: UILabel!
+    @IBOutlet weak var page3: UILabel!
+    @IBOutlet weak var page4: UILabel!
+    @IBOutlet weak var page5: UILabel!
+    var pageArray: [UILabel] = []
     
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var prevBtn: UIButton!
@@ -20,19 +31,41 @@ class ConsonantViewController: UIViewController {
         }
     }
     @IBAction func nextPage(_ sender: Any) {
-        if pageNum < consonantArray.count - 1 {
+        if pageNum < consonantArray.count {
             pageNum += 1
-            setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
-            setPageControl()
+            if pageNum == consonantArray.count {
+                performSegue(withIdentifier: "finish_seg", sender: sender)
+            } else {
+                setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
+                setPageControl()
+            }
         }
     }
-    var pageNum = 0
     
-    let consonantArray = [["ㄱ","ㅋ","ㄲ"], ["ㄴ","ㄷ","ㅌ","ㄹ","ㄸ"], ["ㅁ", "ㅂ","ㅍ","ㅃ"], ["ㅅ","ㅈ","ㅊ","ㅉ","ㅆ"], ["ㅇ","ㅎ"]]
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return vowelArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CollectionViewCell
+        cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
+        cell.cellButton.addTarget(self, action: #selector(getVowel(sender:)), for: .touchUpInside)
+        return cell
+    }
+    
+    @objc func getVowel(sender: UIButton){
+        print(sender.titleLabel?.text ?? "error")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout(ConsonantViewController(), customView, btnList: consonantArray[pageNum])
+        pageArray = [page1, page2, page3, page4, page5]
+        setPageControl()
     }
     
     func setPageControl() {
@@ -41,17 +74,13 @@ class ConsonantViewController: UIViewController {
         } else {
             prevBtn.isHidden = false
         }
-        if pageNum == consonantArray.count-1 {
-            nextBtn.isHidden = true
-        } else {
-            nextBtn.isHidden = false
+        for i in 0..<pageArray.count {
+            pageArray[i].textColor = .gray
         }
+        pageArray[pageNum].textColor = .black
     }
 }
 
-// MARK: 전역함수
-// FIXME: button action 필요 -> value 받아와서 mainletterview에 전달
-// FIXME: button 개수가 7개 일때의 custom view 새로 생성
 func setLayout(_ VC: UIViewController, _ customView: UIView, btnList: [String]) {
     let btnCnt = btnList.count
     let nibs = Bundle.main.loadNibNamed("ButtonSetView", owner: VC)

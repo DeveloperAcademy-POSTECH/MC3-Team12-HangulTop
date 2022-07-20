@@ -15,6 +15,9 @@ class ButtonSetView: UIView {
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
     @IBOutlet weak var button7: UIButton!
+    @IBAction func selectedBtn(_ sender: UIButton) {
+        print(sender.titleLabel?.text ?? "error")
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
