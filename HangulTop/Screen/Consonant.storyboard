@@ -508,7 +508,7 @@
                                     <constraint firstAttribute="height" constant="49" id="Y2L-Pq-F9C"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="모음 공부하러 가기">
+                                <buttonConfiguration key="configuration" style="filled" title="받침 공부하러 가기">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

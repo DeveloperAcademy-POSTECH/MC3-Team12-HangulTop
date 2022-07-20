@@ -23,7 +23,6 @@
 		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
 		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
 		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
-		A015C8C92887227D0098D8D8 /* FirstVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */; };
 		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
 		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
 		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
@@ -53,7 +52,6 @@
 		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
 		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
-		A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstVowel.storyboard; sourceTree = "<group>"; };
 		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				4D31A7252882AB2700589672 /* TopMenu.storyboard */,
 				4D31A72D2882AE3200589672 /* Principle.storyboard */,
 				4D31A7272882AB3500589672 /* Vowel.storyboard */,
-				A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */,
 				A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */,
 				4D31A7292882AB3E00589672 /* Consonant.storyboard */,
 				4D31A72B2882AB4700589672 /* Batchim.storyboard */,
@@ -205,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D31A7282882AB3500589672 /* Vowel.storyboard in Resources */,
-				A015C8C92887227D0098D8D8 /* FirstVowel.storyboard in Resources */,
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
 				A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */,

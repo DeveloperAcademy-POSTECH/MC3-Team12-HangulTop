@@ -16,50 +16,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-Lp-1gJ">
-                                <rect key="frame" x="42" y="124" width="330" height="144"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-mK-0WP">
+                                <rect key="frame" x="32" y="491" width="350" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="AkH-eS-crA"/>
-                                    <constraint firstAttribute="width" constant="330" id="EcU-m9-USQ"/>
+                                    <constraint firstAttribute="height" constant="49" id="AtS-Xy-qAF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="메인 화면으로">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-2l-0BP">
+                                <rect key="frame" x="32" y="570" width="350" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Fps-K7-Bac"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="자음 공부하러 가기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-Lp-1gJ">
+                                <rect key="frame" x="42" y="234" width="330" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="tdZ-et-1b8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-8K-3HP">
-                                <rect key="frame" x="57" y="344" width="300" height="160"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMt-pT-zCB">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2Q4-dL-IJW"/>
-                                            <constraint firstAttribute="width" constant="300" id="uz4-Vw-3Zs"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="메인화면으로"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Iv-Oma">
-                                        <rect key="frame" x="0.0" y="110" width="300" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="9mZ-gU-HnV"/>
-                                            <constraint firstAttribute="height" constant="50" id="GqJ-kH-F4g"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="자음공부하러가기"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yIq-8K-3HP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="D8o-fY-vbd"/>
-                            <constraint firstItem="yIq-8K-3HP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="300" id="dSH-xs-EXF"/>
-                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kkn-ZB-NSu"/>
-                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nFc-Za-0oA"/>
-                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="wkk-Gm-PJH"/>
+                            <constraint firstItem="ITa-mK-0WP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="624-ZU-8de"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="EEJ-Ps-YMi"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="42" id="JSA-cT-B05"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AKD-Lp-1gJ" secondAttribute="trailing" constant="42" id="PxC-Ll-gRZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="n1e-2l-0BP" secondAttribute="trailing" constant="32" id="VQ0-Y8-Cgf"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Y2S-gf-8J9"/>
+                            <constraint firstItem="ITa-mK-0WP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aBl-ES-z4D"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="bO2-ib-c14"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ITa-mK-0WP" secondAttribute="trailing" constant="32" id="ehA-sN-TXp"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="top" secondItem="ITa-mK-0WP" secondAttribute="bottom" constant="30" id="m7s-Dr-cj3"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="190" id="rS5-N8-XcL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="n1e-2l-0BP" secondAttribute="bottom" constant="243" id="xpV-WF-Wi8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -88,11 +93,11 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

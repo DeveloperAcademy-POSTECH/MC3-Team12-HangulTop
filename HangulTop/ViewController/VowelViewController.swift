@@ -25,7 +25,7 @@ class VowelViewController: UIViewController {
     @IBOutlet weak var vowelImage: UIImageView!
     @IBOutlet weak var firstNextButton: UIButton!
     @IBOutlet weak var paging: UILabel!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var bottomControlButtons: UIView!
     
     var hangul: String = "아"
     //첫번째 페이지 설명
@@ -63,7 +63,6 @@ class VowelViewController: UIViewController {
             resultLabel.isHidden = true
             vowelImage.isHidden = false
             paging.isHidden = true
-            doneButton.isHidden = true
         } else {
             //페이지 카운트 1씩 감소
             pageCount -= 1
@@ -76,18 +75,17 @@ class VowelViewController: UIViewController {
     
     //다음버튼 누를 시 액션
     @IBAction func pressedNextButton(_ sender: UIButton) {
-        if pageCount == 3 {
-            doneButton.isHidden = false
-            
-            nextButton.isHidden = true
-        }
         //페이지 카운트 1씩 증가
-        pageCount += 1
-        explanationView()
-        buttonView()
-        resultLabelInitalValue()
-        //doneButton.isHidden = true
-        print(pageCount)
+        if pageCount < vowelsArray.count {
+            pageCount += 1
+        }
+        if pageCount == vowelsArray.count {
+            performSegue(withIdentifier: "finish_seg", sender: sender)
+        } else {
+            explanationView()
+            buttonView()
+            resultLabelInitalValue()
+        }
     }
     
     //모음 버튼 탭할 시 액션
@@ -114,6 +112,7 @@ class VowelViewController: UIViewController {
     
     //1. 모음에 관한 첫 설명 뷰
     func firstPageView() {
+        bottomControlButtons.isHidden = true
         paging.isHidden = true
         resultLabel.isHidden = true
         button1.isHidden = true
@@ -125,7 +124,6 @@ class VowelViewController: UIViewController {
         button7.isHidden = true
         nextButton.isHidden = true
         prevButton.isHidden = true
-        doneButton.isHidden = true
         informationButton.isHidden = true
         self.explanation.text = firstPageCaption
         self.vowelImage.image = UIImage(named: "vowel")
@@ -133,6 +131,7 @@ class VowelViewController: UIViewController {
     
     //2. 모음 공부 시작 뷰
     func vowelStartView() {
+        bottomControlButtons.isHidden = false
         paging.isHidden = false
         resultLabel.isHidden = false
         nextButton.isHidden = false
