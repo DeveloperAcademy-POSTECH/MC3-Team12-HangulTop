@@ -23,10 +23,20 @@ class BatchimViewController: UIViewController {
     }
     @IBOutlet weak var prevButton: UIButton!
     
+    @IBOutlet weak var page1: UILabel!
+    @IBOutlet weak var page2: UILabel!
+    @IBOutlet weak var page3: UILabel!
+    @IBOutlet weak var page4: UILabel!
+    @IBOutlet weak var page5: UILabel!
+    @IBOutlet weak var page6: UILabel!
+    @IBOutlet weak var page7: UILabel!
+    var pageArray: [UILabel] = []
+    
     var batchimModel = BatchimModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pageArray = [page1, page2, page3, page4, page5, page6, page7]
         setPageControl()
         updateUI()
     }
@@ -34,7 +44,7 @@ class BatchimViewController: UIViewController {
     //다음 +1
     @IBAction func didTapNextButton(_ sender: UIButton) {
         batchimModel.nextView()
-        if batchimModel.pageCount == batchimModel.contents.count - 1 {
+        if batchimModel.pageCount == batchimModel.contents.count {
             performSegue(withIdentifier: "finish_seg", sender: sender)
         } else {
             updateUI()
@@ -55,6 +65,10 @@ class BatchimViewController: UIViewController {
         } else {
             prevButton.isHidden = false
         }
+        for i in 0..<pageArray.count {
+            pageArray[i].textColor = .gray
+        }
+        pageArray[batchimModel.pageCount].textColor = .black
     }
     
     func updateUI() {

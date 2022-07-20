@@ -42,7 +42,7 @@ struct BatchimModel {
     
     // 다음 뷰로 넘어갈 때 페이지 카운트 + 1 해주는 함수
     mutating func nextView() {
-        if pageCount < contents.count - 1 {
+        if pageCount <= contents.count - 1 {
             self.pageCount += 1
         }
     }
