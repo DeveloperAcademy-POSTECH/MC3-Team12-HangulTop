@@ -63,11 +63,17 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             pageNum -= 1
             setButtonLayout()
             setPageControl()
+            resultLabelInitalValue()
         }
     }
     @IBAction func nextPage(_ sender: Any) {
         if pageNum < consonantArray.count {
+            
             pageNum += 1
+            if pageNum < consonantArray.count {
+                resultLabelInitalValue()
+            }
+            
             if pageNum == consonantArray.count {
                 performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
@@ -75,6 +81,21 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 setPageControl()
             }
         }
+    }
+    
+    func resultLabelInitalValue() {
+        //배열의 0번째 아이템을 보여줌
+        let mainUni = UnicodeScalar(hangul)?.value
+        let buttonUni = UnicodeScalar(consonantArray[pageNum][0])?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x1100
+        print("\(uni)")
+        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+        let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
+        hangul = String(UnicodeScalar(letter)!)
+
+        mainLetter.text = hangul
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

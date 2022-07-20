@@ -67,6 +67,7 @@ class BatchimViewController: UIViewController {
         } else {
             updateUI()
             setPageControl()
+            resultLabelInitalValue()
         }
     }
 
@@ -75,6 +76,18 @@ class BatchimViewController: UIViewController {
         batchimModel.prevView()
         updateUI()
         setPageControl()
+        resultLabelInitalValue()
+    }
+    
+    func resultLabelInitalValue() {
+        //배열의 0번째 아이템을 보여줌
+        let mainUni = UnicodeScalar(hangul)?.value
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+        let letter = ((vowelUni * 21) + conUni) * 28 + 0xAC00
+        hangul = String(UnicodeScalar(letter)!)
+
+        mainLetter.text = hangul
     }
     
     func setPageControl() {
