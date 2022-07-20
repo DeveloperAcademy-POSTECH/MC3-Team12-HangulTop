@@ -12,7 +12,7 @@ class LastVowelViewController: UIViewController {
     
     @IBOutlet weak var finishExplanation: UILabel!
     
-    var caption: String = "모든 학습을 마쳤습니다."
+    var caption: String = "모음 학습을 마쳤습니다."
     
     override func viewDidLoad() {
         super.viewDidLoad()
