@@ -21,11 +21,13 @@ class BatchimViewController: UIViewController {
     @IBAction func buttonSelected(_ sender: UIButton) {
         mainLetter.text = sender.titleLabel?.text ?? "error"
     }
+    @IBOutlet weak var prevButton: UIButton!
     
     var batchimModel = BatchimModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPageControl()
         updateUI()
     }
 
@@ -33,12 +35,22 @@ class BatchimViewController: UIViewController {
     @IBAction func didTapNextButton(_ sender: UIButton) {
         batchimModel.nextView()
         updateUI()
+        setPageControl()
     }
 
     //이전 -1
     @IBAction func didTapPrevButton(_ sender: UIButton) {
         batchimModel.prevView()
         updateUI()
+        setPageControl()
+    }
+    
+    func setPageControl() {
+        if batchimModel.pageCount == 0 {
+            prevButton.isHidden = true
+        } else {
+            prevButton.isHidden = false
+        }
     }
     
     func updateUI() {
@@ -119,9 +131,5 @@ class BatchimViewController: UIViewController {
             button7.setTitle(batchimModel.getLetters()[6], for: .normal)
         }
         explanation.text = batchimModel.getInfo()
-    }
-    
-    func setButtonLayout() {
-        
     }
 }
