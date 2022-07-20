@@ -27,6 +27,14 @@ class VowelViewController: UIViewController {
     @IBOutlet weak var paging: UILabel!
     @IBOutlet weak var bottomControlButtons: UIView!
     
+    @IBOutlet weak var pageIndex: UIStackView!
+    @IBOutlet weak var page1: UILabel!
+    @IBOutlet weak var page2: UILabel!
+    @IBOutlet weak var page3: UILabel!
+    @IBOutlet weak var page4: UILabel!
+    @IBOutlet weak var page5: UILabel!
+    var pageArray: [UILabel] = []
+    
     var hangul: String = "아"
     //첫번째 페이지 설명
     var firstPageCaption: String = "모음은 총 21개로, 기본 모음 10개와 \n 복합 모음 11개로 구성 되어있다.\n 자음 'ㅇ'은 첫번째(초성)로 올 때 음가가 없기 때문에 모음 앞의 공백을 표시하는 기호로 쓰인다."
@@ -46,6 +54,8 @@ class VowelViewController: UIViewController {
         self.title = "Vowel"
         firstPageView()
         resultLabel.text = hangul
+        pageArray = [page1, page2, page3, page4, page5]
+        setPageControl()
     }
     //MARK: - 버튼 액션
     //첫번째 넥스트 버튼 누를 시 액션
@@ -69,6 +79,7 @@ class VowelViewController: UIViewController {
             explanationView()
             buttonView()
             resultLabelInitalValue()
+            setPageControl()
         }
         
     }
@@ -85,6 +96,7 @@ class VowelViewController: UIViewController {
             explanationView()
             buttonView()
             resultLabelInitalValue()
+            setPageControl()
         }
     }
     
@@ -112,6 +124,7 @@ class VowelViewController: UIViewController {
     
     //1. 모음에 관한 첫 설명 뷰
     func firstPageView() {
+        pageIndex.isHidden = true
         bottomControlButtons.isHidden = true
         paging.isHidden = true
         resultLabel.isHidden = true
@@ -131,6 +144,7 @@ class VowelViewController: UIViewController {
     
     //2. 모음 공부 시작 뷰
     func vowelStartView() {
+        pageIndex.isHidden = false
         bottomControlButtons.isHidden = false
         paging.isHidden = false
         resultLabel.isHidden = false
@@ -143,6 +157,13 @@ class VowelViewController: UIViewController {
         explanationView()
         buttonView()
         resultLabelInitalValue()
+    }
+    
+    func setPageControl() {
+        for i in 0..<pageArray.count {
+            pageArray[i].textColor = .gray
+        }
+        pageArray[pageCount].textColor = .black
     }
     
     //3. 페이징 뷰

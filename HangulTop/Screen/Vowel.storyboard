@@ -275,9 +275,52 @@
                                 <rect key="frame" x="67" y="232" width="280" height="268"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-f6-czk">
+                                <rect key="frame" x="162.5" y="111" width="89.5" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅣ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYV-mC-ncQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="11.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅏ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij6-DO-If5">
+                                        <rect key="frame" x="19.5" y="0.0" width="11.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅑ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX1-kz-ewe">
+                                        <rect key="frame" x="39" y="0.0" width="11.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅐ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-xF-PBQ">
+                                        <rect key="frame" x="58.5" y="0.0" width="11.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅘ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM2-am-ndC">
+                                        <rect key="frame" x="78" y="0.0" width="11.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="89.5" id="8VK-cr-DAN"/>
+                                    <constraint firstAttribute="height" constant="16" id="D0b-nF-8pG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ARH-f6-czk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4gz-SK-2zi"/>
+                            <constraint firstItem="ARH-f6-czk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="67" id="N02-c6-Age"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomControlButtons" destination="H0h-kx-r6t" id="tqi-RV-Ug5"/>
@@ -292,6 +335,12 @@
                         <outlet property="firstNextButton" destination="DEu-1l-MkZ" id="Ks0-E4-KEz"/>
                         <outlet property="informationButton" destination="wn2-Jz-KIC" id="uGf-st-7yZ"/>
                         <outlet property="nextButton" destination="Ols-zs-C5b" id="0ai-LZ-IOi"/>
+                        <outlet property="page1" destination="BYV-mC-ncQ" id="uwR-KJ-Km8"/>
+                        <outlet property="page2" destination="Ij6-DO-If5" id="5kb-YI-YPa"/>
+                        <outlet property="page3" destination="iX1-kz-ewe" id="rLZ-sR-GLf"/>
+                        <outlet property="page4" destination="QiR-xF-PBQ" id="MNB-OA-Erd"/>
+                        <outlet property="page5" destination="SM2-am-ndC" id="wh1-mA-jlH"/>
+                        <outlet property="pageIndex" destination="ARH-f6-czk" id="eH6-if-hQp"/>
                         <outlet property="paging" destination="qin-dx-EL4" id="fXR-zg-d8R"/>
                         <outlet property="prevButton" destination="PcM-Em-mwA" id="KwI-iH-hGD"/>
                         <outlet property="resultLabel" destination="srv-uf-ZBV" id="Hcw-Wm-nUP"/>
@@ -342,6 +391,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
