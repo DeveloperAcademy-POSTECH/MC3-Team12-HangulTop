@@ -16,13 +16,13 @@ struct BatchimTexts {
 struct BatchimModel {
     
     let contents = [
-        BatchimTexts(letters: ["ㄱ", "ㅋ", "ㄲ"], info: ""),
-        BatchimTexts(letters: ["ㄴ", "ㄵ", "ㄶ"], info: ""),
-        BatchimTexts(letters: ["ㄷ", "ㅅ", "ㅆ", "ㅈ", "ㅊ", "ㅌ", "ㅎ"], info: "ㄸ, ㅉ은 받침으로 쓰지 않는다."),
-        BatchimTexts(letters: ["ㄹ", "ㄼ", "ㄽ", "ㄾ", "ㅀ"], info: ""),
-        BatchimTexts(letters: ["ㅁ", "ㄻ", "ㄲ"], info: ""),
-        BatchimTexts(letters: ["ㅂ", "ㅍ", "ㅄ", "ㄿ"], info: "ㅃ은 받침으로 쓰지 않는다."),
-        BatchimTexts(letters: ["ㅇ"], info: "ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."),
+        BatchimTexts(letters: ["\u{11a8}", "\u{11bf}", "\u{11a9}", "\u{11aa}", "\u{11b0}"], info: ""),
+        BatchimTexts(letters: ["\u{11ab}", "\u{11ac}", "\u{11ad}"], info: ""),
+        BatchimTexts(letters: ["\u{11ae}", "\u{11ba}", "\u{11bb}", "\u{11bd}", "\u{11be}", "\u{11c0}", "\u{11c2}"], info: "ㄸ, ㅉ은 받침으로 쓰지 않는다."),
+        BatchimTexts(letters: ["\u{11af}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b6}"], info: ""),
+        BatchimTexts(letters: ["\u{11b7}", "\u{11b1}"], info: ""),
+        BatchimTexts(letters: ["\u{11b8}", "\u{11c1}", "\u{11b9}", "\u{11b5}"], info: "ㅃ은 받침으로 쓰지 않는다."),
+        BatchimTexts(letters: ["\u{11bc}"], info: "ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."),
     ]
     
     var pageCount = 0

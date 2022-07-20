@@ -31,11 +31,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     
     @IBAction func buttonSelected(_ sender: UIButton) {
         let mainUni = UnicodeScalar(hangul)?.value
-        var buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
+        let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
         print("\(buttonUni)")
         let uni = buttonUni - 0x1100
         print("\(uni)")
-        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
         let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
         let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
         let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
@@ -100,7 +99,6 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         let uni = buttonUni - 0x314f
         print("\(uni)")
         let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
-        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
         let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
         let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
         
@@ -118,15 +116,15 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         pageArray = [page1, page2, page3, page4, page5]
         setPageControl()
-        selectAudioFile()
-        if (!isRecorderMode) {
-            initPlay()
-            //            btnRecord.isEnabled = false
-            //            lbRecordTime.isEnabled = false
-            
-        }else{
-            initRecord()
-        }
+//        selectAudioFile()
+//        if (!isRecorderMode) {
+//            initPlay()
+//            //            btnRecord.isEnabled = false
+//            //            lbRecordTime.isEnabled = false
+//            
+//        }else{
+//            initRecord()
+//        }
     }
     
     func setPageControl() {
@@ -195,6 +193,99 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         
     }
     
+    func selectAudioFile() -> Void {
+        if !isRecorderMode {
+            audioFile = Bundle.main.url(forResource: "music", withExtension: "mp3")
+            
+        }else{
+            let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            audioFile = documentDirectory.appendingPathComponent("recordFile.m4a")
+            
+        }
+        
+    }
+    
+    func initRecord() {
+        let recordSettings = [
+            AVFormatIDKey : NSNumber(value: kAudioFormatAppleLossless as UInt32),
+            AVEncoderAudioQualityKey : AVAudioQuality.max.rawValue,
+            AVEncoderBitRateKey : 320000,
+            AVNumberOfChannelsKey : 2,
+            AVSampleRateKey : 44100.0] as [String : Any]
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
+        } catch let error as NSError {
+            print("Error-initRecord : \(error)")
+        }
+        audioRecorder.delegate = self
+        audioRecorder.isMeteringEnabled = true
+        audioRecorder.prepareToRecord()
+
+        audioPlayer.volume = 10
+        
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSession.Category.playAndRecord)
+        } catch let error as NSError {
+            print(" Error-setCategory : \(error)")
+        }
+        do {
+            try session.setActive(true)
+        } catch let error as NSError {
+            print(" Error-setActive : \(error)")
+        }
+    }
+    
+    func initPlay() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioFile)
+        } catch let error as NSError {
+            print("Error-initPlay : \(error)")
+        }
+        
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 10
+    }
+  
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func btnPlayAudio(_ sender: UIButton) {
+        audioPlayer.play()
+    }
+//    
+//    @IBAction func swRecordMode(_ sender: UISwitch) {
+//        if sender.isOn {
+//            audioPlayer.stop()
+//            audioPlayer.currentTime=0
+//            isRecorderMode = true
+//            btnRecord.isEnabled = true
+//        } else {
+//            isRecorderMode = false
+//            btnRecord.isEnabled = false
+//        }
+//        selectAudioFile()
+//        if !isRecorderMode {
+//            initPlay()
+//        } else {
+//            initRecord()
+//        }
+//    }
+//    
+//    @IBAction func btnRecord(_ sender: UIButton) {
+//        if sender.titleLabel?.text == "Record" {
+//            audioRecorder.record()
+//            
+//        } else {
+//            audioRecorder.stop()
+//            btnPlay.isEnabled = true
+//            initPlay()
+//        }
+//    }
     
 }
 

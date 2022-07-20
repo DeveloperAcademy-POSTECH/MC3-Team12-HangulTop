@@ -16,19 +16,16 @@
 		4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7292882AB3E00589672 /* Consonant.storyboard */; };
 		4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72B2882AB4700589672 /* Batchim.storyboard */; };
 		4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72D2882AE3200589672 /* Principle.storyboard */; };
-		A015C8C92887227D0098D8D8 /* FirstVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */; };
-		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
-		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
-		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
-		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
-		6761C8AC288674AA001A0D2C /* delete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6761C8AB288674AA001A0D2C /* delete.storyboard */; };
-		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
 		4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A731288460D600589672 /* ConsonantViewController.swift */; };
 		4D31A7502886817900589672 /* ButtonSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A74F2886817900589672 /* ButtonSetView.swift */; };
 		4D31A7522886819200589672 /* ButtonSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7512886819200589672 /* ButtonSetView.xib */; };
 		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
 		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
 		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
+		A015C8C92887227D0098D8D8 /* FirstVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */; };
+		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
+		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
+		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
 		D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9508287E9591005E8BF5 /* AppDelegate.swift */; };
 		D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */; };
 		D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950C287E9591005E8BF5 /* ViewController.swift */; };
@@ -48,19 +45,16 @@
 		4D31A7292882AB3E00589672 /* Consonant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Consonant.storyboard; sourceTree = "<group>"; };
 		4D31A72B2882AB4700589672 /* Batchim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Batchim.storyboard; sourceTree = "<group>"; };
 		4D31A72D2882AE3200589672 /* Principle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Principle.storyboard; sourceTree = "<group>"; };
-		A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstVowel.storyboard; sourceTree = "<group>"; };
-		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
-		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
-		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
-		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
-		6761C8AB288674AA001A0D2C /* delete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = delete.storyboard; sourceTree = "<group>"; };
-		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
 		4D31A731288460D600589672 /* ConsonantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsonantViewController.swift; sourceTree = "<group>"; };
 		4D31A74F2886817900589672 /* ButtonSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetView.swift; sourceTree = "<group>"; };
 		4D31A7512886819200589672 /* ButtonSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonSetView.xib; sourceTree = "<group>"; };
 		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
 		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
+		A015C8C82887227D0098D8D8 /* FirstVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstVowel.storyboard; sourceTree = "<group>"; };
+		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
+		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
+		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
 		D5CC9505287E9591005E8BF5 /* HangulTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CC9508287E9591005E8BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,7 +206,6 @@
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
 				A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */,
-				6761C8AC288674AA001A0D2C /* delete.storyboard in Resources */,
 				4D31A7522886819200589672 /* ButtonSetView.xib in Resources */,
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,

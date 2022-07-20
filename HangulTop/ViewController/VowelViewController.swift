@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 class VowelViewController: UIViewController {
     
@@ -27,7 +27,7 @@ class VowelViewController: UIViewController {
     @IBOutlet weak var paging: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     
-    
+    var hangul: String = "아"
     //첫번째 페이지 설명
     var firstPageCaption: String = "모음은 총 21개로, 기본 모음 10개와 \n 복합 모음 11개로 구성 되어있다.\n 자음 'ㅇ'은 첫번째(초성)로 올 때 음가가 없기 때문에 모음 앞의 공백을 표시하는 기호로 쓰인다."
     //모음 배열
@@ -45,6 +45,7 @@ class VowelViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Vowel"
         firstPageView()
+        resultLabel.text = hangul
     }
     //MARK: - 버튼 액션
     //첫번째 넥스트 버튼 누를 시 액션
@@ -91,8 +92,23 @@ class VowelViewController: UIViewController {
     
     //모음 버튼 탭할 시 액션
     @IBAction func didTapButton(_ sender: UIButton) {
+        let mainUni = UnicodeScalar(hangul)?.value
+        let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㅏ")?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x314f
+        print("\(uni)")
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+       
+        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+        let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
+        hangul = String(UnicodeScalar(letter)!)
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: hangul)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
         //모음버튼 눌렀을 때 누른 버튼의 타이틀을 결과값에 그대로 가져옴
-        resultLabel.text = sender.titleLabel?.text
+        resultLabel.text = hangul
     }
     //MARK: - 뷰 관련 함수
     
@@ -137,7 +153,18 @@ class VowelViewController: UIViewController {
     //1. 화면 전환 시 초기 결과값 세팅 함수
     func resultLabelInitalValue() {
         //배열의 0번째 아이템을 보여줌
-        resultLabel.text = vowelsArray[pageCount][0]
+        let mainUni = UnicodeScalar(hangul)?.value
+        let buttonUni = UnicodeScalar(vowelsArray[pageCount][0])?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x314f
+        print("\(uni)")
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+       
+        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+        let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
+        hangul = String(UnicodeScalar(letter)!)
+
+        resultLabel.text = hangul
     }
     
     //2. 모음 설명 전환 함수

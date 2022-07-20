@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BatchimViewController: UIViewController {
     
@@ -19,7 +20,23 @@ class BatchimViewController: UIViewController {
     @IBOutlet weak var button6: UIButton!
     @IBOutlet weak var button7: UIButton!
     @IBAction func buttonSelected(_ sender: UIButton) {
-        mainLetter.text = sender.titleLabel?.text ?? "error"
+        let mainUni = UnicodeScalar(hangul)?.value
+        let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
+        print("\(buttonUni)")
+        let uni = buttonUni - 0x11a7
+        print("\(uni)")
+        let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+        let letter = ((vowelUni * 21) + conUni) * 28 + uni + 0xAC00
+        
+        hangul = String(UnicodeScalar(letter)!)
+        mainLetter.text = hangul
+        
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: hangul)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
     }
     @IBOutlet weak var prevButton: UIButton!
     
@@ -31,7 +48,7 @@ class BatchimViewController: UIViewController {
     @IBOutlet weak var page6: UILabel!
     @IBOutlet weak var page7: UILabel!
     var pageArray: [UILabel] = []
-    
+    var hangul: String = "아"
     var batchimModel = BatchimModel()
     
     override func viewDidLoad() {
@@ -39,6 +56,7 @@ class BatchimViewController: UIViewController {
         pageArray = [page1, page2, page3, page4, page5, page6, page7]
         setPageControl()
         updateUI()
+        mainLetter.text = hangul
     }
 
     //다음 +1
