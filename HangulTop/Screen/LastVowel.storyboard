@@ -27,6 +27,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToMain:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="g3o-Zk-tNw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-2l-0BP">
                                 <rect key="frame" x="32" y="570" width="350" height="49"/>
@@ -39,6 +42,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToConsonant:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q3O-K2-D8t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-Lp-1gJ">
                                 <rect key="frame" x="42" y="234" width="330" height="144"/>
@@ -74,22 +80,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="75"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="wCN-1p-hvk">
-            <objects>
-                <viewControllerPlaceholder id="i9v-YF-mGI" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y84-7Y-oPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="684" y="11"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Ex5-Dh-SH7">
-            <objects>
-                <viewControllerPlaceholder id="mpk-tf-MBV" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eZO-Im-4QT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="673" y="156"/>
         </scene>
     </scenes>
     <resources>

@@ -21,6 +21,8 @@
 		4D31A7502886817900589672 /* ButtonSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A74F2886817900589672 /* ButtonSetView.swift */; };
 		4D31A7522886819200589672 /* ButtonSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7512886819200589672 /* ButtonSetView.xib */; };
 		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
+		4D89B9CF28891CEA00BD37F7 /* ConsonantEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B9CE28891CEA00BD37F7 /* ConsonantEndViewController.swift */; };
+		4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */; };
 		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
 		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
 		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
@@ -50,6 +52,8 @@
 		4D31A74F2886817900589672 /* ButtonSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetView.swift; sourceTree = "<group>"; };
 		4D31A7512886819200589672 /* ButtonSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonSetView.xib; sourceTree = "<group>"; };
 		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		4D89B9CE28891CEA00BD37F7 /* ConsonantEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsonantEndViewController.swift; sourceTree = "<group>"; };
+		4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimEndViewController.swift; sourceTree = "<group>"; };
 		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
 		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
 		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +88,10 @@
 				A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */,
 				A082B9C32882B9FA006F29CC /* VowelViewController.swift */,
 				67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */,
+				4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */,
 				6761C8A9288550F4001A0D2C /* BatchimModel.swift */,
 				4D31A731288460D600589672 /* ConsonantViewController.swift */,
+				4D89B9CE28891CEA00BD37F7 /* ConsonantEndViewController.swift */,
 				11977D6A2884E3920033CBB6 /* PrincipleViewController.swift */,
 				11B165632886A5CE008D2456 /* PrincipleEndViewController.swift */,
 				11977D6E28853B120033CBB6 /* PrincipleModel.swift */,
@@ -224,12 +230,14 @@
 			files = (
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
 				4D31A7502886817900589672 /* ButtonSetView.swift in Sources */,
+				4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
 				A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */,
 				4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */,
 				D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */,
 				67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */,
 				11977D6B2884E3920033CBB6 /* PrincipleViewController.swift in Sources */,
+				4D89B9CF28891CEA00BD37F7 /* ConsonantEndViewController.swift in Sources */,
 				11977D6D288532890033CBB6 /* PrincipleTexts.swift in Sources */,
 				11977D6F28853B120033CBB6 /* PrincipleModel.swift in Sources */,
 				D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */,

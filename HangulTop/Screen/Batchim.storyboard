@@ -546,10 +546,10 @@
             </objects>
             <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Batchim End View Controller-->
         <scene sceneID="Rsr-q1-2qJ">
             <objects>
-                <viewController id="IUR-a5-Had" sceneMemberID="viewController">
+                <viewController id="IUR-a5-Had" customClass="BatchimEndViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpU-mb-e7V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,6 +574,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToMain:" destination="IUR-a5-Had" eventType="touchUpInside" id="VT2-77-9i0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7S-Q1-aQX">
                                 <rect key="frame" x="32" y="613" width="350" height="49"/>
@@ -586,6 +589,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToQuiz:" destination="IUR-a5-Had" eventType="touchUpInside" id="duB-xl-9CB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zdz-oV-gm2"/>

@@ -11,6 +11,12 @@ class LastVowelViewController: UIViewController {
 
     
     @IBOutlet weak var finishExplanation: UILabel!
+    @IBAction func goToMain(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    @IBAction func goToConsonant(_ sender: Any) {
+        
+    }
     
     var caption: String = "모음 학습을 마쳤습니다."
     
