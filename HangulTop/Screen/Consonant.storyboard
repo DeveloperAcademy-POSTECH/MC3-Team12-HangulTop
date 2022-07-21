@@ -475,10 +475,10 @@
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="77.678571428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Consonant End View Controller-->
         <scene sceneID="8ji-U0-Jb3">
             <objects>
-                <viewController storyboardIdentifier="FinishConsonants" id="O5O-Nr-ODP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinishConsonants" id="O5O-Nr-ODP" customClass="ConsonantEndViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uui-Nb-Prl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -501,6 +501,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToMain:" destination="O5O-Nr-ODP" eventType="touchUpInside" id="dIH-HW-5P3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDV-e4-OmA">
                                 <rect key="frame" x="32" y="611" width="350" height="49"/>
@@ -513,6 +516,9 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToBatchim:" destination="O5O-Nr-ODP" eventType="touchUpInside" id="zGj-4Y-JRT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jAb-9o-ZQx"/>
