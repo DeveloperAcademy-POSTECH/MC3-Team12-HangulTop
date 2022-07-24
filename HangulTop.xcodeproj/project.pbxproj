@@ -28,6 +28,7 @@
 		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
 		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
 		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
+		D58FDEC0288D43EA00DBBE01 /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D58FDEBF288D43EA00DBBE01 /* Sound.mp3 */; };
 		D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9508287E9591005E8BF5 /* AppDelegate.swift */; };
 		D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */; };
 		D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CC950C287E9591005E8BF5 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
+		D58FDEBF288D43EA00DBBE01 /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
 		D5CC9505287E9591005E8BF5 /* HangulTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangulTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CC9508287E9591005E8BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				4D31A7512886819200589672 /* ButtonSetView.xib */,
 				4D31A74F2886817900589672 /* ButtonSetView.swift */,
 				4D31A7532886C9C900589672 /* CollectionViewCell.swift */,
+				D58FDEBF288D43EA00DBBE01 /* Sound.mp3 */,
 				D5CC9514287E9593005E8BF5 /* Assets.xcassets */,
 				D5CC9516287E9593005E8BF5 /* LaunchScreen.storyboard */,
 				D5CC9519287E9593005E8BF5 /* Info.plist */,
@@ -215,6 +218,7 @@
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,
 				4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */,
+				D58FDEC0288D43EA00DBBE01 /* Sound.mp3 in Resources */,
 				4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */,
 				D5CC9515287E9593005E8BF5 /* Assets.xcassets in Resources */,
 				D5CC9510287E9591005E8BF5 /* Main.storyboard in Resources */,
@@ -395,6 +399,7 @@
 				DEVELOPMENT_TEAM = 5N5TS7Y4MA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HangulTop/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Use Record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -425,6 +430,7 @@
 				DEVELOPMENT_TEAM = 5N5TS7Y4MA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HangulTop/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Use Record";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
