@@ -25,6 +25,8 @@
 		4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */; };
 		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
 		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
+		A00EF9F1288D375200C31B62 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00EF9F0288D375200C31B62 /* OnboardingViewController.storyboard */; };
+		A00EF9F3288D377800C31B62 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EF9F2288D377800C31B62 /* OnboardingViewController.swift */; };
 		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
 		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
 		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
@@ -56,6 +58,8 @@
 		4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimEndViewController.swift; sourceTree = "<group>"; };
 		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
 		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
+		A00EF9F0288D375200C31B62 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		A00EF9F2288D377800C31B62 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				4D31A731288460D600589672 /* ConsonantViewController.swift */,
 				4D89B9CE28891CEA00BD37F7 /* ConsonantEndViewController.swift */,
 				11977D6A2884E3920033CBB6 /* PrincipleViewController.swift */,
+				A00EF9F2288D377800C31B62 /* OnboardingViewController.swift */,
 				11B165632886A5CE008D2456 /* PrincipleEndViewController.swift */,
 				11977D6E28853B120033CBB6 /* PrincipleModel.swift */,
 				11977D6C288532890033CBB6 /* PrincipleTexts.swift */,
@@ -110,6 +115,7 @@
 				4D31A7272882AB3500589672 /* Vowel.storyboard */,
 				A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */,
 				4D31A7292882AB3E00589672 /* Consonant.storyboard */,
+				A00EF9F0288D375200C31B62 /* OnboardingViewController.storyboard */,
 				4D31A72B2882AB4700589672 /* Batchim.storyboard */,
 			);
 			path = Screen;
@@ -207,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00EF9F1288D375200C31B62 /* OnboardingViewController.storyboard in Resources */,
 				4D31A7282882AB3500589672 /* Vowel.storyboard in Resources */,
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
@@ -235,6 +242,7 @@
 				A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */,
 				4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */,
 				D5CC950D287E9591005E8BF5 /* ViewController.swift in Sources */,
+				A00EF9F3288D377800C31B62 /* OnboardingViewController.swift in Sources */,
 				67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */,
 				11977D6B2884E3920033CBB6 /* PrincipleViewController.swift in Sources */,
 				4D89B9CF28891CEA00BD37F7 /* ConsonantEndViewController.swift in Sources */,
