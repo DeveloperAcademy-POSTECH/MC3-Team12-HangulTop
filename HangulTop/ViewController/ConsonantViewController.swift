@@ -10,12 +10,11 @@ import AVFoundation
 
 class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    @IBOutlet weak var btnPlay: UIButton!
     var audioPlayer : AVAudioPlayer!
     var audioFile : URL!
-    var audioRecorder : AVAudioRecorder!
-    var isRecorderMode = false
-    var time: Timer!
-    
+    var audioRecoder : AVAudioRecorder!
+    var isRecording = false
     var pageNum = 0
     let consonantArray = [["\u{1100}","\u{110f}","\u{1101}"], ["\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}"], ["\u{1106}", "\u{1107}","\u{1111}","\u{1108}"], ["\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}"], ["\u{110b}","\u{1112}"]]
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
@@ -137,15 +136,14 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         pageArray = [page1, page2, page3, page4, page5]
         setPageControl()
-//        selectAudioFile()
-//        if (!isRecorderMode) {
-//            initPlay()
-//            //            btnRecord.isEnabled = false
-//            //            lbRecordTime.isEnabled = false
-//            
-//        }else{
-//            initRecord()
-//        }
+        selectAudioFile()
+        if !isRecording { // 재생 모드일 때(녹음 모드가 아니라면)
+            initplay()
+        } else { // 녹음 모드일 때
+            initRecord()
+        }
+
+        btnPlay.isHidden = true
     }
     
     func setPageControl() {
@@ -213,38 +211,34 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         
     }
-    
-    func selectAudioFile() -> Void {
-        if !isRecorderMode {
-            audioFile = Bundle.main.url(forResource: "music", withExtension: "mp3")
-            
-        }else{
+    // 재생 모드와 녹음 모드에 따라 다른 파일을 선택함
+    func selectAudioFile(){
+        if !isRecording { // 재생 모드일 때
+            audioFile = Bundle.main.url(forResource: "Sound", withExtension: "mp3")
+        } else { // 녹음 모드일 때
             let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             audioFile = documentDirectory.appendingPathComponent("recordFile.m4a")
-            
         }
-        
     }
     
-    func initRecord() {
-        let recordSettings = [
-            AVFormatIDKey : NSNumber(value: kAudioFormatAppleLossless as UInt32),
-            AVEncoderAudioQualityKey : AVAudioQuality.max.rawValue,
-            AVEncoderBitRateKey : 320000,
-            AVNumberOfChannelsKey : 2,
-            AVSampleRateKey : 44100.0] as [String : Any]
+    // 녹음 모드의 초기화
+    func initRecord(){
+        let recordSettings = [AVFormatIDKey : NSNumber(value: kAudioFormatAppleLossless as UInt32),
+                   AVEncoderAudioQualityKey : AVAudioQuality.max.rawValue,
+                        AVEncoderBitRateKey : 320000,
+                      AVNumberOfChannelsKey : 2,
+                            AVSampleRateKey : 44100.0 ] as [String : Any]
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
+            audioRecoder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
         } catch let error as NSError {
             print("Error-initRecord : \(error)")
         }
-        audioRecorder.delegate = self
-        audioRecorder.isMeteringEnabled = true
-        audioRecorder.prepareToRecord()
+        audioRecoder.delegate = self
+        audioRecoder.isMeteringEnabled =  true
+        audioRecoder.prepareToRecord()
+        
+        audioPlayer.volume = 5
 
-        audioPlayer.volume = 10
-        
-        
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSession.Category.playAndRecord)
@@ -258,55 +252,68 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
     }
     
-    func initPlay() {
+    // 재생 모드의 초기화
+    func initplay(){
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFile)
         } catch let error as NSError {
             print("Error-initPlay : \(error)")
         }
         
-        audioPlayer.delegate = self
-        audioPlayer.prepareToPlay()
-        audioPlayer.volume = 10
-    }
-  
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        audioPlayer.delegate = self // audioPlayer의 델리게이트는 self
+        audioPlayer.prepareToPlay() // prepareToPlay() 실행
+        audioPlayer.volume = 5
     }
     
+    
+    // '재생' 버튼을 클릭하였을 때
     @IBAction func btnPlayAudio(_ sender: UIButton) {
         audioPlayer.play()
     }
-//    
+    
+    
+    
+//    // 스위치를 ON/Off하여 녹음모드 인지 재생 모드인지를 결정함
 //    @IBAction func swRecordMode(_ sender: UISwitch) {
-//        if sender.isOn {
+//        if sender.isOn { // 녹음 모드일 때
 //            audioPlayer.stop()
-//            audioPlayer.currentTime=0
-//            isRecorderMode = true
+//            audioPlayer.currentTime = 0
+//            isRecordMode = true
 //            btnRecord.isEnabled = true
-//        } else {
-//            isRecorderMode = false
+//        } else { // 재생 모드일 때
+//            isRecordMode = false
 //            btnRecord.isEnabled = false
 //        }
-//        selectAudioFile()
-//        if !isRecorderMode {
-//            initPlay()
-//        } else {
+//        selectAudioFile() // 모드에 따라 오디오 파일을 선택함
+//
+//        // 모드에 따라 재생 초기화 또는 녹음 초기화를 수행함
+//        if !isRecordMode { // 녹음 모드가 아닐 때, 즉 재생 모드일 때
+//            initplay()
+//        } else { // 녹음 모드일 때
 //            initRecord()
 //        }
 //    }
-//    
-//    @IBAction func btnRecord(_ sender: UIButton) {
-//        if sender.titleLabel?.text == "Record" {
-//            audioRecorder.record()
-//            
-//        } else {
-//            audioRecorder.stop()
-//            btnPlay.isEnabled = true
-//            initPlay()
-//        }
-//    }
+    
+    @IBAction func btnRecord(_ sender: UIButton) {
+        if !isRecording { // 녹음 모드가 아닐 때, 즉 재생 모드일 때
+            isRecording = true
+            selectAudioFile()
+            initRecord()
+            
+        } else { // 녹음 모드일 때
+            isRecording = false
+        }
+        btnPlay.isHidden = false
+        if isRecording { // 'Recording'이 참일 때 녹음을 시작함
+            audioRecoder.record()
+           
+        } else { // 'Recording'이 거짓일 때 녹음을 중지함
+            audioRecoder.stop()
+            initplay()
+            audioPlayer.play()
+        }
+
+    }
     
 }
 
