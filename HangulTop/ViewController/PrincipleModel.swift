@@ -29,43 +29,28 @@ struct PrincipleModel {
         PrincipleTexts(title: "", subtitle: "", principleImage: nil, letters: ["ㅎ", "ㅏ", "ㄴ", "ㄱ", "ㅡ", "ㄹ"], info: "자음과 모음은 따로 떨어져 있어선 안된다\n함께 붙어있어야만 뜻이 있는 소리가 된다")
     ]
     
-    // 몇 번째 뷰인지 카운트
-    var pageCount = 0
-
     // 큰 제목 리턴하는 함수
-    func getTitle() -> String {
+    func getTitle(pageCount: Int) -> String {
         contents[pageCount].title
     }
     
     // 작은 제목 리턴하는 함수
-    func getSubtitle() -> String {
+    func getSubtitle(pageCount: Int) -> String {
         contents[pageCount].subtitle
     }
     
     // 이미지(옵셔널) 리턴하는 함수
-    func getImage() -> UIImageView? {
+    func getImage(pageCount: Int) -> UIImageView? {
         contents[pageCount].principleImage
     }
     
     // 컬렉션뷰에 들어갈 문자들의 배열 리턴하는 함수
-    func getLetters() -> [String] {
+    func getLetters(pageCount: Int) -> [String] {
         contents[pageCount].letters
     }
     
     // 설명 부분 리턴하는 함수
-    func getInfo() -> String {
+    func getInfo(pageCount: Int) -> String {
         contents[pageCount].info
-    }
-    
-    // 다음 뷰로 넘어갈 때 페이지 카운트 + 1 해주는 함수
-    mutating func nextView() {
-        if pageCount < contents.count - 1 {
-            self.pageCount += 1
-        }
-    }
-    
-    // 이전 뷰로 돌아갈 때 페이지 카운트 - 1 해주는 함수
-    mutating func prevView() {
-        self.pageCount -= 1
     }
 }
