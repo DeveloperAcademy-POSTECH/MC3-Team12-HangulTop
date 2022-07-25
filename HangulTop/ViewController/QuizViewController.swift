@@ -9,6 +9,7 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    @IBOutlet weak var progressBar: PlainHorizontalProgressBar!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var checkbutton: UIButton!
     var quizs = [String]()
@@ -34,6 +35,7 @@ class QuizViewController: UIViewController {
             checkbutton.setTitle("Correct", for: .normal)
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
                 // 다음문제
+                self.progressBar.progress += 0.1
             }
         } else {
             let generator = UINotificationFeedbackGenerator()
@@ -55,5 +57,22 @@ class QuizViewController: UIViewController {
         for i in 0..<4 {
             buttons[i].setTitle(quizs[i], for: .normal)
         }
+    }
+}
+
+@IBDesignable
+class PlainHorizontalProgressBar: UIView {
+    @IBInspectable var color: UIColor? = .white
+    var progress: CGFloat = 0.1 {
+        didSet { setNeedsDisplay() }
+    }
+
+    override func draw(_ rect: CGRect) {
+        let progressRect = CGRect(origin: .zero, size: CGSize(width: rect.width*progress, height: rect.height))
+        let progressLayer = CALayer()
+        progressLayer.frame = progressRect
+
+        layer.addSublayer(progressLayer)
+        progressLayer.backgroundColor = color?.cgColor
     }
 }
