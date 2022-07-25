@@ -13,6 +13,9 @@ class QuizViewController: UIViewController {
     var selectedButton: UIButton?
     var pageNum = 0
     
+    @IBOutlet weak var quizPage: UIView!
+    @IBOutlet weak var lastPage: UIView!
+    @IBOutlet var answerButtons: [UIButton]!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var progressBar: PlainHorizontalProgressBar!
@@ -57,18 +60,27 @@ class QuizViewController: UIViewController {
         }
     }
     
+    @IBAction func finishButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func quizUpdate() {
-        for i in 0..<4 {
-            buttons[i].setTitle(quizs[pageNum][i], for: .normal)
-        }
-        if pageNum == 0 || pageNum == 1 || pageNum == 2 {
-            level.text = "lv 1. Vowel"
-        } else if pageNum == 7 || pageNum == 8 || pageNum == 9 {
-            level.text = "lv 3. Batchim"
+        if pageNum == 10 {
+            quizPage.isHidden = true
+            lastPage.isHidden = false
         } else {
-            level.text = "lv 2. Consonant"
+            for i in 0..<4 {
+                buttons[i].setTitle(quizs[pageNum][i], for: .normal)
+            }
+            if pageNum == 0 || pageNum == 1 || pageNum == 2 {
+                level.text = "lv 1. Vowel"
+            } else if pageNum == 7 || pageNum == 8 || pageNum == 9 {
+                level.text = "lv 3. Batchim"
+            } else {
+                level.text = "lv 2. Consonant"
+            }
+            quizIndex.text = "\(pageNum+1) / 10"
         }
-        quizIndex.text = "\(pageNum+1) / 10"
     }
     
     func buttonReset() {
@@ -84,6 +96,8 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        quizPage.isHidden = false
+        lastPage.isHidden = true
         pageNum = 0
         quizs.append(quizGenerator(1))
         quizs.append(quizGenerator(1))
@@ -97,6 +111,9 @@ class QuizViewController: UIViewController {
         quizs.append(quizGenerator(3))
         for i in 0..<quizs.count {
             answers.append(contentsOf: quizs[i].pick(1))
+        }
+        for i in 0..<quizs.count {
+            answerButtons[i].setTitle(answers[i], for: .normal)
         }
         for i in 0..<4 {
             buttons[i].setTitle(quizs[0][i], for: .normal)
@@ -118,10 +135,7 @@ class QuizViewController: UIViewController {
         }
         if level == 2 {
             let consonant = consonants.pick(4)
-            var vowel = vowels.pick(4)
-            while (vowel.contains("ㅔ") && vowel.contains("ㅐ")) || (vowel.contains("ㅒ") && vowel.contains("ㅖ")) || (vowel.contains("ㅚ") && vowel.contains("ㅙ")) || (vowel.contains("ㅚ") && vowel.contains("ㅞ")) || (vowel.contains("ㅙ") && vowel.contains("ㅞ")) {
-                vowel = vowels.pick(4)
-            }
+            let vowel = vowels.pick(4)
             for i in 0..<4 {
                 quizArray.append(combination(consonant: consonant[i], vowel: vowel[i]))
             }
