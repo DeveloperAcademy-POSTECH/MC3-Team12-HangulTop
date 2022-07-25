@@ -4,21 +4,26 @@
 //
 //  Created by kimjimin on 2022/07/18.
 //
-
 import UIKit
 import AVFoundation
 
 class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
-    
+    //녹음 재생 관련 변수들
     @IBOutlet weak var btnPlay: UIButton!
     var audioPlayer : AVAudioPlayer!
     var audioFile : URL!
-    var audioRecoder : AVAudioRecorder!
+    var audioRecorder : AVAudioRecorder!
     var isRecording = false
+    //페이지 카운트 변수
     var pageNum = 0
-    let consonantArray = [["\u{1100}","\u{110f}","\u{1101}"], ["\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}"], ["\u{1106}", "\u{1107}","\u{1111}","\u{1108}"], ["\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}"], ["\u{110b}","\u{1112}"]]
+    var indexCount: Int = 1
+    //메인 버튼 글자 배열
+    let syllableArray = [[["ㅡ", "ㅣ"], ["ㅏ", "ㅓ", "ㅗ", "ㅜ"], ["ㅑ", "ㅕ", "ㅛ", "ㅠ"], ["ㅐ", "ㅔ", "ㅒ", "ㅖ"], ["ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]],[["\u{1100}","\u{110f}","\u{1101}"], ["\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}"], ["\u{1106}", "\u{1107}","\u{1111}","\u{1108}"], ["\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}"], ["\u{110b}","\u{1112}"]],[["\u{11a8}", "\u{11bf}", "\u{11a9}", "\u{11aa}", "\u{11b0}"],["\u{11ab}", "\u{11ac}", "\u{11ad}"], ["\u{11ae}", "\u{11ba}", "\u{11bb}", "\u{11bd}", "\u{11be}", "\u{11c0}", "\u{11c2}"], ["\u{11af}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b6}"], ["\u{11b7}", "\u{11b1}"], ["\u{11b8}", "\u{11c1}", "\u{11b9}", "\u{11b5}"], ["\u{11bc}"]]]
+    //자음 공부시 보이는 모음 배열
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
-    var hangul: String = "가"
+    //설명 배열
+    var captionArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["-","-","-","-","-"],["-","-","ㄸ, ㅉ은 받침으로 쓰지 않는다.","-","-","ㅃ은 받침으로 쓰지 않는다.","ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."]]
+    var hangul: [String] = ["아", "가", "아"]
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -27,21 +32,40 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
     @IBOutlet weak var button7: UIButton!
+    @IBOutlet weak var consonantCollection: UICollectionView!
+    @IBOutlet weak var explanationView: UILabel!
     
     @IBAction func buttonSelected(_ sender: UIButton) {
-        let mainUni = UnicodeScalar(hangul)?.value
+        let mainUni = UnicodeScalar(hangul[indexCount])?.value
         let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
         print("\(buttonUni)")
-        let uni = buttonUni - 0x1100
-        print("\(uni)")
-        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
-        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
-        let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
-        
-        hangul = String(UnicodeScalar(letter)!)
-        mainLetter.text = hangul
+        if(buttonUni < 0x1113){ //자음일때
+            let uni = buttonUni - 0x1100
+            print("\(uni)")
+            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+            let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        else if(buttonUni < 0x11c3){ //받침일때
+            let uni = buttonUni - 0x11a7
+            print("\(uni)")
+            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+            let letter = ((vowelUni * 21) + conUni) * 28 + uni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        else{ //모음일때
+            let uni = buttonUni - 0x314f
+            print("\(uni)")
+            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+            let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        mainLetter.text = hangul[indexCount]
         let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: hangul)
+        let utterance = AVSpeechUtterance(string: hangul[indexCount])
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         
         let audioSession = AVAudioSession.sharedInstance() //녹음 및 재생이 점유하고 있는 오디오 다시 가져오기
@@ -63,44 +87,71 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
+    
+    //이전 버튼
     @IBAction func prevPage(_ sender: Any) {
         if pageNum > 0 {
             pageNum -= 1
             setButtonLayout()
             setPageControl()
             resultLabelInitalValue()
+            setExplantion()
         }
     }
+    
+    //다음 버튼
     @IBAction func nextPage(_ sender: Any) {
-        if pageNum < consonantArray.count {
+        if pageNum < syllableArray[indexCount].count {
             
             pageNum += 1
-            if pageNum < consonantArray.count {
+            if pageNum < syllableArray[indexCount].count {
                 resultLabelInitalValue()
             }
-            
-            if pageNum == consonantArray.count {
+            if pageNum == syllableArray[indexCount].count {
                 performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
                 setButtonLayout()
                 setPageControl()
+                setExplantion()
             }
         }
     }
-    
+    func setExplantion() {
+        explanationView.text = captionArray[indexCount][pageNum]
+    }
     func resultLabelInitalValue() {
         //배열의 0번째 아이템을 보여줌
-        let mainUni = UnicodeScalar(hangul)?.value
-        let buttonUni = UnicodeScalar(consonantArray[pageNum][0])?.value ?? 0x1100
+        let mainUni = UnicodeScalar(hangul[indexCount])?.value
+        let buttonUni = UnicodeScalar(syllableArray[indexCount][pageNum][0])?.value ?? 0x1100
         print("\(buttonUni)")
-        let uni = buttonUni - 0x1100
-        print("\(uni)")
-        let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
-        let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
-        let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
-        hangul = String(UnicodeScalar(letter)!)
+        if(buttonUni < 0x1113){ //자음일때
+            let uni = buttonUni - 0x1100
+            print("\(uni)")
+            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+            let letter = ((uni * 21) + conUni) * 28 + batUni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        else if(buttonUni < 0x11c3){ //받침일때
+            let uni = buttonUni - 0x11a7
+            print("\(uni)")
+            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+            let letter = ((vowelUni * 21) + conUni) * 28 + uni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        else{ //모음일때
+            let uni = buttonUni - 0x314f
+            print("\(uni)")
+            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+            let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
+            hangul[indexCount] = String(UnicodeScalar(letter)!)
+        }
+        
+        
 
-        mainLetter.text = hangul
+        mainLetter.text = hangul[indexCount]
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -119,7 +170,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
     
     @objc func getVowel(sender: UIButton){
-        let mainUni = UnicodeScalar(hangul)?.value
+        let mainUni = UnicodeScalar(hangul[indexCount])?.value
         let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㅏ")?.value ?? 0x1100
         print("\(buttonUni)")
         let uni = buttonUni - 0x314f
@@ -128,10 +179,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
         let letter = ((vowelUni * 21) + uni) * 28 + batUni + 0xAC00
         
-        hangul = String(UnicodeScalar(letter)!)
-        mainLetter.text = hangul
+        hangul[indexCount] = String(UnicodeScalar(letter)!)
+        mainLetter.text = hangul[indexCount]
         let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: hangul)
+        let utterance = AVSpeechUtterance(string: hangul[indexCount])
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         
         let audioSession = AVAudioSession.sharedInstance() //녹음 및 재생이 점유하고 있는 오디오 다시 가져오기
@@ -145,10 +196,18 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainLetter.text = hangul[indexCount]
         setButtonLayout()
         pageArray = [page1, page2, page3, page4, page5]
         setPageControl()
         selectAudioFile()
+        if(indexCount == 1){
+            consonantCollection.isHidden = false
+            explanationView.isHidden = true
+        }else{
+            consonantCollection.isHidden = true
+            explanationView.isHidden = false
+        }
         if !isRecording { // 재생 모드일 때(녹음 모드가 아니라면)
             initplay()
         } else { // 녹음 모드일 때
@@ -171,18 +230,18 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
     
     func setButtonLayout() {
-        if consonantArray[pageNum].count == 2 {
+        if syllableArray[indexCount][pageNum].count == 2 {
             button1.isHidden = true
             button2.isHidden = false
             button3.isHidden = false
-            self.button2.setTitle(consonantArray[pageNum][0], for: .normal)
-            self.button3.setTitle(consonantArray[pageNum][1], for: .normal)
+            self.button2.setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            self.button3.setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
             button4.isHidden = true
             button5.isHidden = true
             button6.isHidden = true
             button7.isHidden = true
         }
-        if consonantArray[pageNum].count == 3 {
+        if syllableArray[indexCount][pageNum].count == 3 {
             button1.isHidden = true
             button2.isHidden = true
             button3.isHidden = true
@@ -190,36 +249,36 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             button5.isHidden = false
             button6.isHidden = false
             button7.isHidden = false
-            self.button5.setTitle(consonantArray[pageNum][0], for: .normal)
-            self.button6.setTitle(consonantArray[pageNum][1], for: .normal)
-            self.button7.setTitle(consonantArray[pageNum][2], for: .normal)
+            self.button5.setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            self.button6.setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            self.button7.setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
         }
-        if consonantArray[pageNum].count == 4 {
+        if syllableArray[indexCount][pageNum].count == 4 {
             button1.isHidden = false
             button2.isHidden = false
             button3.isHidden = false
             button4.isHidden = false
-            self.button1.setTitle(consonantArray[pageNum][0], for: .normal)
-            self.button2.setTitle(consonantArray[pageNum][1], for: .normal)
-            self.button3.setTitle(consonantArray[pageNum][2], for: .normal)
-            self.button4.setTitle(consonantArray[pageNum][3], for: .normal)
+            self.button1.setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            self.button2.setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            self.button3.setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            self.button4.setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
             button5.isHidden = true
             button6.isHidden = true
             button7.isHidden = true
         }
-        if consonantArray[pageNum].count == 5 {
+        if syllableArray[indexCount][pageNum].count == 5 {
             button1.isHidden = true
             button2.isHidden = false
             button3.isHidden = false
-            self.button2.setTitle(consonantArray[pageNum][0], for: .normal)
-            self.button3.setTitle(consonantArray[pageNum][1], for: .normal)
+            self.button2.setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            self.button3.setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
             button4.isHidden = true
             button5.isHidden = false
             button6.isHidden = false
             button7.isHidden = false
-            self.button5.setTitle(consonantArray[pageNum][2], for: .normal)
-            self.button6.setTitle(consonantArray[pageNum][3], for: .normal)
-            self.button7.setTitle(consonantArray[pageNum][4], for: .normal)
+            self.button5.setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            self.button6.setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            self.button7.setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
         }
         
     }
@@ -241,15 +300,15 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                       AVNumberOfChannelsKey : 2,
                             AVSampleRateKey : 44100.0 ] as [String : Any]
         do {
-            audioRecoder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
+            audioRecorder = try AVAudioRecorder(url: audioFile, settings: recordSettings)
         } catch let error as NSError {
             print("Error-initRecord : \(error)")
         }
-        audioRecoder.delegate = self
-        audioRecoder.isMeteringEnabled =  true
-        audioRecoder.prepareToRecord()
+        audioRecorder.delegate = self
+        audioRecorder.isMeteringEnabled =  true
+        audioRecorder.prepareToRecord()
         
-        audioPlayer.volume = 5
+        audioPlayer.volume = 10
 
         let session = AVAudioSession.sharedInstance()
         do {
@@ -274,7 +333,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         
         audioPlayer.delegate = self // audioPlayer의 델리게이트는 self
         audioPlayer.prepareToPlay() // prepareToPlay() 실행
-        audioPlayer.volume = 5
+        audioPlayer.volume = 10
     }
     
     
@@ -283,29 +342,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         audioPlayer.play()
     }
     
-    
-    
-//    // 스위치를 ON/Off하여 녹음모드 인지 재생 모드인지를 결정함
-//    @IBAction func swRecordMode(_ sender: UISwitch) {
-//        if sender.isOn { // 녹음 모드일 때
-//            audioPlayer.stop()
-//            audioPlayer.currentTime = 0
-//            isRecordMode = true
-//            btnRecord.isEnabled = true
-//        } else { // 재생 모드일 때
-//            isRecordMode = false
-//            btnRecord.isEnabled = false
-//        }
-//        selectAudioFile() // 모드에 따라 오디오 파일을 선택함
-//
-//        // 모드에 따라 재생 초기화 또는 녹음 초기화를 수행함
-//        if !isRecordMode { // 녹음 모드가 아닐 때, 즉 재생 모드일 때
-//            initplay()
-//        } else { // 녹음 모드일 때
-//            initRecord()
-//        }
-//    }
-    
+    // 녹음 버튼을 클릭하면
     @IBAction func btnRecord(_ sender: UIButton) {
         if !isRecording { // 녹음 모드가 아닐 때, 즉 재생 모드일 때
             isRecording = true
@@ -317,10 +354,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         btnPlay.isHidden = false
         if isRecording { // 'Recording'이 참일 때 녹음을 시작함
-            audioRecoder.record()
+            audioRecorder.record()
            
-        } else { // 'Recording'이 거짓일 때 녹음을 중지함
-            audioRecoder.stop()
+        } else { // 'Recording'이 거짓일 때 녹음을 중지하고 녹음된 소리를 출력
+            audioRecorder.stop()
             initplay()
             audioPlayer.play()
         }
