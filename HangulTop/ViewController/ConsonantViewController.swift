@@ -43,6 +43,12 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: hangul)
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        
+        let audioSession = AVAudioSession.sharedInstance() //녹음 및 재생이 점유하고 있는 오디오 다시 가져오기
+        try! audioSession.setCategory(
+            AVAudioSession.Category.playback,
+            options: AVAudioSession.CategoryOptions.mixWithOthers
+        )
         utterance.rate = 0.4
         synthesizer.speak(utterance)
     }
@@ -127,6 +133,12 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: hangul)
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        
+        let audioSession = AVAudioSession.sharedInstance() //녹음 및 재생이 점유하고 있는 오디오 다시 가져오기
+        try! audioSession.setCategory(
+            AVAudioSession.Category.playback,
+            options: AVAudioSession.CategoryOptions.mixWithOthers
+        )
         utterance.rate = 0.4
         synthesizer.speak(utterance)
     }
