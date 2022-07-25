@@ -23,6 +23,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
     //설명 배열
     var captionArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["-","-","-","-","-"],["-","-","ㄸ, ㅉ은 받침으로 쓰지 않는다.","-","-","ㅃ은 받침으로 쓰지 않는다.","ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."]]
+    
     var hangul: [String] = ["아", "가", "아"]
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var button1: UIButton!
