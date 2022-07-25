@@ -58,7 +58,6 @@ class QuizViewController: UIViewController {
     }
     
     func quizUpdate() {
-        selectedButton = nil
         for i in 0..<4 {
             buttons[i].setTitle(quizs[pageNum][i], for: .normal)
         }
