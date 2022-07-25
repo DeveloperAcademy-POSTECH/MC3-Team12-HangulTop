@@ -8,22 +8,23 @@
 import UIKit
 
 class QuizViewController: UIViewController {
+    var quizs = [[String]]()
+    var answers = [String]()
+    var selectedButton: UIButton?
+    var pageNum = 0
     
+    @IBOutlet weak var level: UILabel!
+    @IBOutlet weak var quizIndex: UILabel!
     @IBOutlet weak var progressBar: PlainHorizontalProgressBar!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var checkbutton: UIButton!
-    var quizs = [[String]]()
-    var answers = [String]()
-    var selectedButton = UIButton()
-    var pageNum = 0
-    
     @IBAction func buttonAction(_ sender: UIButton) {
         checkbutton.setTitleColor(.black, for: .normal)
         for button in buttons {
             if button == sender {
                 selectedButton = button
-                button.layer.borderWidth = 2
-                button.layer.borderColor = UIColor.green.cgColor
+                button.layer.borderWidth = 5
+                button.layer.borderColor = UIColor(r: 107, g: 203, b: 159).cgColor
             } else {
                 button.layer.borderWidth = 0
             }
@@ -31,29 +32,54 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func checkbuttonAction(_ sender: Any) {
-        if selectedButton.titleLabel?.text == answers[pageNum] {
-            checkbutton.backgroundColor = .green
-            checkbutton.setTitle("Correct", for: .normal)
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                self.pageNum += 1
-                self.progressBar.progress += 0.1
-                self.quizUpdate()
-                self.buttonReset()
-            }
-        } else {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.error)
-            checkbutton.backgroundColor = .red
-            checkbutton.setTitle("Try again", for: .normal)
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-                self.buttonReset()
+        if selectedButton != nil {
+            if selectedButton?.titleLabel?.text == answers[pageNum] {
+                checkbutton.backgroundColor = UIColor(r: 107, g: 203, b: 159)
+                checkbutton.setTitle("Correct!", for: .normal)
+                selectedButton?.backgroundColor = UIColor(r: 107, g: 203, b: 159)
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                    self.pageNum += 1
+                    self.progressBar.progress += 0.1
+                    self.quizUpdate()
+                    self.buttonReset()
+                }
+            } else {
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
+                checkbutton.backgroundColor = UIColor(r: 237, g: 123, b: 115)
+                checkbutton.setTitle("Try again...", for: .normal)
+                selectedButton?.layer.borderColor = UIColor(r: 237, g: 123, b: 115).cgColor
+                selectedButton?.backgroundColor =  UIColor(r: 237, g: 123, b: 115)
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                    self.buttonReset()
+                }
             }
         }
     }
     
     func quizUpdate() {
+        selectedButton = nil
         for i in 0..<4 {
             buttons[i].setTitle(quizs[pageNum][i], for: .normal)
+        }
+        if pageNum == 0 || pageNum == 1 || pageNum == 2 {
+            level.text = "lv 1. Vowel"
+        } else if pageNum == 7 || pageNum == 8 || pageNum == 9 {
+            level.text = "lv 3. Batchim"
+        } else {
+            level.text = "lv 2. Consonant"
+        }
+        quizIndex.text = "\(pageNum+1) / 10"
+    }
+    
+    func buttonReset() {
+        selectedButton = nil
+        checkbutton.setTitle("Check", for: .normal)
+        checkbutton.backgroundColor = UIColor(r: 209, g: 209, b: 209)
+        checkbutton.setTitleColor(UIColor(r: 235, g: 235, b: 235), for: .normal)
+        for button in buttons {
+            button.layer.borderWidth = 0
+            button.backgroundColor = .white
         }
     }
     
@@ -75,15 +101,6 @@ class QuizViewController: UIViewController {
         }
         for i in 0..<4 {
             buttons[i].setTitle(quizs[0][i], for: .normal)
-        }
-    }
-    
-    func buttonReset() {
-        checkbutton.setTitle("Check", for: .normal)
-        checkbutton.backgroundColor = .systemGray5
-        checkbutton.setTitleColor(.systemGray2, for: .normal)
-        for button in buttons {
-            button.layer.borderWidth = 0
         }
     }
     
@@ -146,6 +163,12 @@ class QuizViewController: UIViewController {
         let resultStr = String(UnicodeScalar(resultUni)!)
 
         return resultStr
+    }
+}
+
+extension UIColor {
+    convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
+        self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
 }
 
