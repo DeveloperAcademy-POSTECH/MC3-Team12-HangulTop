@@ -24,4 +24,12 @@ class SyllableStartViewController: UIViewController{
         extraCaption.text = extraCaptionArray[indexCount ?? 0]
         image.image = UIImage(named: imageArray[indexCount ?? 0])
     }
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        indexCount = appDelegate?.infos.indexCount
+        caption.text = captionArray[indexCount ?? 0]
+        extraCaption.text = extraCaptionArray[indexCount ?? 0]
+        image.image = UIImage(named: imageArray[indexCount ?? 0])
+    }
 }
