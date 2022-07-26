@@ -296,6 +296,22 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             self.button6.setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
             self.button7.setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
         }
+        if syllableArray[indexCount][pageNum].count == 7 {
+            button1.isHidden = false
+            button2.isHidden = false
+            button3.isHidden = false
+            button4.isHidden = false
+            button5.isHidden = false
+            button6.isHidden = false
+            button7.isHidden = false
+            button1.setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2.setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3.setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4.setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            button5.setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            button6.setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
+            button7.setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
+        }
         
     }
     // 재생 모드와 녹음 모드에 따라 다른 파일을 선택함
