@@ -25,8 +25,8 @@ struct PrincipleModel {
         PrincipleTexts(title: "목구멍소리", subtitle: "목구멍의 모양", principleImage: nil, letters: ["ㅇ", "ㅎ"], info: ""),
         PrincipleTexts(title: "모음은 어떻게 만들어졌을까?", subtitle: "", principleImage: nil, letters: [], info: "세종대왕은 (동양 철학에서) 만물의 근본 요소로 생각하는 세 가지를 보고 모음 글자를 만들었다.\n하늘의 모습을 본떠 .\n땅의 모습을 본떠 ㅡ\n사람의 모습을 본떠 ㅣ\n이것을 ‘천지인’이라고 부른다."),
         PrincipleTexts(title: "모음은 어떻게 만들어졌을까?", subtitle: "", principleImage: nil, letters: ["ㅡ", "∙", "ㅣ"], info: "이 모음들 중 ∙(아래 아)는 현재 단독으로 쓰이지 않는데, 그것은 이 글자가 나타내는 소리가 지금은 없어졌기 때문이다."),
-        PrincipleTexts(title: "모음은 어떻게 만들어졌을까?", subtitle: "", principleImage: nil, letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "+"], info: "나머지 모음글자는 어떻게 만들어졌을까?\nㅣ와 ㅡ에 .을 붙이는 방법으로 만들었다"),
-        PrincipleTexts(title: "", subtitle: "", principleImage: nil, letters: ["ㅎ", "ㅏ", "ㄴ", "ㄱ", "ㅡ", "ㄹ"], info: "자음과 모음은 따로 떨어져 있어선 안된다\n함께 붙어있어야만 뜻이 있는 소리가 된다")
+        PrincipleTexts(title: "모음은 어떻게 만들어졌을까?", subtitle: "", principleImage: nil, letters: [], info: "나머지 모음글자는 어떻게 만들어졌을까?\nㅣ와 ㅡ에 .을 붙이는 방법으로 만들었다"),
+        PrincipleTexts(title: "", subtitle: "", principleImage: nil, letters: [], info: "자음과 모음은 따로 떨어져 있어선 안된다\n함께 붙어있어야만 뜻이 있는 소리가 된다")
     ]
     
     // 큰 제목 리턴하는 함수

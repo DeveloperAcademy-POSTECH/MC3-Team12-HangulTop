@@ -94,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="374" width="414" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X4j-Q3-Nf4">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X4j-Q3-Nf4">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -108,13 +108,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3o-be-2FS">
-                                                    <rect key="frame" x="8" y="19" width="112" height="101"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3o-be-2FS">
+                                                    <rect key="frame" x="30.5" y="48.5" width="67" height="31"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button" titleAlignment="center"/>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="y3o-be-2FS" firstAttribute="centerX" secondItem="YMW-pX-oMM" secondAttribute="centerX" id="GWP-6E-9j7"/>
+                                                <constraint firstItem="y3o-be-2FS" firstAttribute="centerY" secondItem="YMW-pX-oMM" secondAttribute="centerY" id="gdp-js-Dy2"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="cellButton" destination="y3o-be-2FS" id="B1W-aI-V7E"/>

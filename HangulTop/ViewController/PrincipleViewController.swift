@@ -52,41 +52,73 @@ extension PrincipleViewController {
     
     // UI 업데이트 해주는 함수
     func updateUI() {
-        progressNum.text = "\(pageCount + 1)/14"
+        progressNum.text = "\(pageCount + 1)/\(principleModel.contents.count)"
         principleTitle.text = principleModel.getTitle(pageCount: pageCount)
         principleSubtitle.text = principleModel.getSubtitle(pageCount: pageCount)
         principleImage = principleModel.getImage(pageCount: pageCount)
         explanation.text = principleModel.getInfo(pageCount: pageCount)
-        collectionView.reloadData()
+        collectionView.reloadData() // 컬렉션뷰를 새로고침해줌
+        showButton()
+    }
+    
+    func showButton() {
+        firstButton.isHidden = true
+        prevButton.isHidden = false
+        nextButton.isHidden = false
         if pageCount == 0 { // 첫 번째 뷰에서는 큰 next 버튼만 보이게 하고 작은 prev, next버튼은 숨김
             firstButton.isHidden = false
             prevButton.isHidden = true
-        } else {
-            firstButton.isHidden = true
-            prevButton.isHidden = false
-            nextButton.isHidden = false
+            nextButton.isHidden = true
         }
     }
 }
 
 extension PrincipleViewController:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // 셀 개수 돌려주는 함수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return principleModel.contents[pageCount].letters.count
     }
     
+    // 셀 버튼 제목, 보더, 코너라디우스 정해주는 함수
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "principleCell", for: indexPath) as! PrincipleCollectionViewCell
-        
-        cell.cellButton.setTitle("sibal", for: .normal)
+//        for i in 0..<principleModel.contents[pageCount].letters.count {
+//            cell.cellButton.setTitle(principleModel.contents[pageCount].letters[i], for: .normal)
+//        }
+//        cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
+        cell.cellButton.setTitle(principleModel.contents[pageCount].letters[indexPath.row], for: .normal)
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 7
         return cell
     }
     
+    // 셀 너비 정해주는 함수
     func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let cellWidth = collectionView.frame.width / 6
+        return CGSize(width: cellWidth, height: cellWidth)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, minimumLineSpacingForSectionAt: Int) -> CGFloat {
+        return 1.0
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt: Int) -> CGFloat {
-        return 10
+        return 1.0
+    }
+    
+    // 컬렉션뷰 셀 가운데 정렬해주는 함수
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        let cellWidth = collectionView.frame.width * CGFloat(principleModel.contents[pageCount].letters.count)
+        let totalCellWidth = cellWidth / 6
+        let totalSpacingWidth = 7 * (principleModel.contents[pageCount].letters.count - 1) // 숫자 7말고 비율로 하고싶은데 일단은 걍 해보자...........................
+
+        let leftInset = (collectionView.frame.width - (CGFloat(totalCellWidth) + CGFloat(totalSpacingWidth))) / 2
+        let rightInset = leftInset
+
+        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
     }
 }
