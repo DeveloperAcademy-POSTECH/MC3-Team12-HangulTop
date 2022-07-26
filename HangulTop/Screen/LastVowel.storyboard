@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Last Vowel View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LastVowel" id="Y6W-OH-hqX" customClass="LastVowelViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-mK-0WP">
+                                <rect key="frame" x="32" y="491" width="350" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="AtS-Xy-qAF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="메인 화면으로">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToMain:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="g3o-Zk-tNw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-2l-0BP">
+                                <rect key="frame" x="32" y="570" width="350" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Fps-K7-Bac"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="자음 공부하러 가기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToConsonant:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q3O-K2-D8t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-Lp-1gJ">
+                                <rect key="frame" x="42" y="234" width="330" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="tdZ-et-1b8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ITa-mK-0WP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="624-ZU-8de"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="EEJ-Ps-YMi"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="42" id="JSA-cT-B05"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AKD-Lp-1gJ" secondAttribute="trailing" constant="42" id="PxC-Ll-gRZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="n1e-2l-0BP" secondAttribute="trailing" constant="32" id="VQ0-Y8-Cgf"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Y2S-gf-8J9"/>
+                            <constraint firstItem="ITa-mK-0WP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aBl-ES-z4D"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="bO2-ib-c14"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ITa-mK-0WP" secondAttribute="trailing" constant="32" id="ehA-sN-TXp"/>
+                            <constraint firstItem="n1e-2l-0BP" firstAttribute="top" secondItem="ITa-mK-0WP" secondAttribute="bottom" constant="30" id="m7s-Dr-cj3"/>
+                            <constraint firstItem="AKD-Lp-1gJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="190" id="rS5-N8-XcL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="n1e-2l-0BP" secondAttribute="bottom" constant="243" id="xpV-WF-Wi8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finishExplanation" destination="AKD-Lp-1gJ" id="tff-CT-94k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
