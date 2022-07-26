@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Top Menu View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="TopMenu" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopMenu" id="Y6W-OH-hqX" customClass="TopMenuViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,13 @@
                                     <segue destination="jZz-aY-Who" kind="show" id="h5M-70-MBf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoG-Br-ZFY">
+                                <rect key="frame" x="72" y="284" width="289" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +62,9 @@
                     <navigationItem key="navigationItem" id="ORm-NR-suA">
                         <barButtonItem key="backBarButtonItem" title="Menu" id="U6q-kg-62X"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="quizCount" destination="xoG-Br-ZFY" id="6n7-Pl-jZI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +73,7 @@
         <!--Quiz-->
         <scene sceneID="rcy-25-Gzs">
             <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="jZz-aY-Who" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="QuizViewController" storyboardName="Quiz" id="jZz-aY-Who" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="nRb-NC-UEF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEG-cJ-xD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
