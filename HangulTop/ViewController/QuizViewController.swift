@@ -4,8 +4,8 @@
 //
 //  Created by kimjimin on 2022/07/25.
 //
-
 import UIKit
+import AVFoundation
 
 class QuizViewController: UIViewController {
     var quizs = [[String]]()
@@ -61,6 +61,14 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func finishButtonAction(_ sender: Any) {
+        var count: Int
+        if(UserDefaults.standard.value(forKey: "solCount") == nil){
+            count = 0
+        }else{
+            count = UserDefaults.standard.value(forKey: "solCount") as! Int
+        }
+        count = count + 1
+        UserDefaults.standard.set(count, forKey: "solCount")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -183,6 +191,14 @@ class QuizViewController: UIViewController {
         let resultStr = String(UnicodeScalar(resultUni)!)
 
         return resultStr
+    }
+    @IBAction func speakAnswer(_ sender: Any) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: answers[pageNum])
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        
+        utterance.rate = 0.4
+        synthesizer.speak(utterance)
     }
 }
 
