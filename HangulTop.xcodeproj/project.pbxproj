@@ -40,6 +40,7 @@
 		D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CC9516287E9593005E8BF5 /* LaunchScreen.storyboard */; };
 		D5E9EE41288F196E0068C47A /* StudyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */; };
 		D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */; };
+		D5E9EE45288FC76C0068C47A /* TopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		D5CC9519287E9593005E8BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMenuViewController.swift; sourceTree = "<group>"; };
 		D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableStartViewController.swift; sourceTree = "<group>"; };
+		D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,7 @@
 				D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */,
 				D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */,
 				4D31D55C288D9DBC005E2F53 /* QuizViewController.swift */,
-
+				D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -248,6 +250,7 @@
 			files = (
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
 				4D31A7502886817900589672 /* ButtonSetView.swift in Sources */,
+				D5E9EE45288FC76C0068C47A /* TopMenuViewController.swift in Sources */,
 				D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */,
 				4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
