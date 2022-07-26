@@ -7,7 +7,7 @@
 import UIKit
 import AVFoundation
 
-class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
+class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate{
     //녹음 재생 관련 변수들
     @IBOutlet weak var btnPlay: UIButton!
     var audioPlayer : AVAudioPlayer!
@@ -16,7 +16,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     var isRecording = false
     //페이지 카운트 변수
     var pageNum = 0
-    var indexCount: Int = 1
+    var indexCount: Int = 0
     //메인 버튼 글자 배열
     let syllableArray = [[["ㅡ", "ㅣ"], ["ㅏ", "ㅓ", "ㅗ", "ㅜ"], ["ㅑ", "ㅕ", "ㅛ", "ㅠ"], ["ㅐ", "ㅔ", "ㅒ", "ㅖ"], ["ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]],[["\u{1100}","\u{110f}","\u{1101}"], ["\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}"], ["\u{1106}", "\u{1107}","\u{1111}","\u{1108}"], ["\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}"], ["\u{110b}","\u{1112}"]],[["\u{11a8}", "\u{11bf}", "\u{11a9}", "\u{11aa}", "\u{11b0}"],["\u{11ab}", "\u{11ac}", "\u{11ad}"], ["\u{11ae}", "\u{11ba}", "\u{11bb}", "\u{11bd}", "\u{11be}", "\u{11c0}", "\u{11c2}"], ["\u{11af}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b6}"], ["\u{11b7}", "\u{11b1}"], ["\u{11b8}", "\u{11c1}", "\u{11b9}", "\u{11b5}"], ["\u{11bc}"]]]
     //자음 공부시 보이는 모음 배열
@@ -24,7 +24,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     //설명 배열
     var captionArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["-","-","-","-","-"],["-","-","ㄸ, ㅉ은 받침으로 쓰지 않는다.","-","-","ㅃ은 받침으로 쓰지 않는다.","ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."]]
     
-    var hangul: [String] = ["아", "가", "아"]
+    var hangul: [String] = ["으", "가", "아"]
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -108,8 +108,16 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             if pageNum < syllableArray[indexCount].count {
                 resultLabelInitalValue()
             }
-            if pageNum == syllableArray[indexCount].count {
-                performSegue(withIdentifier: "finish_seg", sender: sender)
+            if pageNum == syllableArray[indexCount].count { //성공 뷰
+                guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
+                { return }
+                
+                vc.data = indexCount
+//                vc.delegate = self
+                
+                
+                self.navigationController!.pushViewController(vc, animated: true)
+                //                performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
                 setButtonLayout()
                 setPageControl()
@@ -117,6 +125,9 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             }
         }
     }
+    
+    
+    //페이지가 바뀔 때 마다 설명 바뀌게
     func setExplantion() {
         explanationView.text = captionArray[indexCount][pageNum]
     }
@@ -151,7 +162,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         
         
-
+        
         mainLetter.text = hangul[indexCount]
     }
     
@@ -195,8 +206,12 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         synthesizer.speak(utterance)
     }
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        indexCount = appDelegate?.infos.indexCount ?? 0
         mainLetter.text = hangul[indexCount]
         setButtonLayout()
         pageArray = [page1, page2, page3, page4, page5]
@@ -214,7 +229,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         } else { // 녹음 모드일 때
             initRecord()
         }
-
+        
         btnPlay.isHidden = true
     }
     
@@ -310,7 +325,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         audioRecorder.prepareToRecord()
         
         audioPlayer.volume = 10
-
+        
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSession.Category.playAndRecord)
@@ -356,13 +371,13 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         btnPlay.isHidden = false
         if isRecording { // 'Recording'이 참일 때 녹음을 시작함
             audioRecorder.record()
-           
+            
         } else { // 'Recording'이 거짓일 때 녹음을 중지하고 녹음된 소리를 출력
             audioRecorder.stop()
             initplay()
             audioPlayer.play()
         }
-
+        
     }
     
 }
