@@ -549,13 +549,13 @@
                                     <constraint firstAttribute="height" constant="49" id="GTS-a8-KZ7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="메인 화면으로">
+                                <buttonConfiguration key="configuration" style="filled" title="메뉴로 돌아가기">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="goToMain:" destination="O5O-Nr-ODP" eventType="touchUpInside" id="dIH-HW-5P3"/>
+                                    <action selector="goToMenu:" destination="O5O-Nr-ODP" eventType="touchUpInside" id="0Cx-Jk-tpv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDV-e4-OmA">
@@ -589,6 +589,7 @@
                     </view>
                     <connections>
                         <outlet property="goToStudy" destination="EDV-e4-OmA" id="GqN-ZQ-GJu"/>
+                        <outlet property="message" destination="VEV-vw-fiw" id="Wd0-DW-2KN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw9-cI-7hH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
