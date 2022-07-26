@@ -114,9 +114,16 @@ class QuizViewController: UIViewController {
         }
         for i in 0..<quizs.count {
             answerButtons[i].setTitle(answers[i], for: .normal)
+            answerButtons[i].layer.shadowColor = UIColor.black.cgColor
+            answerButtons[i].layer.shadowOffset = CGSize(width: 0, height: 4)
+            answerButtons[i].layer.shadowOpacity = 0.5
+            
         }
         for i in 0..<4 {
             buttons[i].setTitle(quizs[0][i], for: .normal)
+            buttons[i].layer.shadowColor = UIColor.black.cgColor
+            buttons[i].layer.shadowOffset = CGSize(width: 0, height: 4)
+            buttons[i].layer.shadowOpacity = 0.5
         }
     }
     
