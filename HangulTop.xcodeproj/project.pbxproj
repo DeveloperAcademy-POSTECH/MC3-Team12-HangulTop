@@ -38,6 +38,8 @@
 		D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5CC9511287E9591005E8BF5 /* HangulTop.xcdatamodeld */; };
 		D5CC9515287E9593005E8BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5CC9514287E9593005E8BF5 /* Assets.xcassets */; };
 		D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CC9516287E9593005E8BF5 /* LaunchScreen.storyboard */; };
+		D5E9EE41288F196E0068C47A /* StudyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */; };
+		D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		D5CC9514287E9593005E8BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5CC9517287E9593005E8BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5CC9519287E9593005E8BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMenuViewController.swift; sourceTree = "<group>"; };
+		D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableStartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,10 @@
 				11B165632886A5CE008D2456 /* PrincipleEndViewController.swift */,
 				11977D6E28853B120033CBB6 /* PrincipleModel.swift */,
 				11977D6C288532890033CBB6 /* PrincipleTexts.swift */,
+				D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */,
+				D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */,
 				4D31D55C288D9DBC005E2F53 /* QuizViewController.swift */,
+
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 			files = (
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
 				4D31A7502886817900589672 /* ButtonSetView.swift in Sources */,
+				D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */,
 				4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
 				A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */,
@@ -254,6 +262,7 @@
 				D5CC9509287E9591005E8BF5 /* AppDelegate.swift in Sources */,
 				11B165642886A5CE008D2456 /* PrincipleEndViewController.swift in Sources */,
 				A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */,
+				D5E9EE41288F196E0068C47A /* StudyMenuViewController.swift in Sources */,
 				4D31D55D288D9DBC005E2F53 /* QuizViewController.swift in Sources */,
 				6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */,
 				D5CC950B287E9591005E8BF5 /* SceneDelegate.swift in Sources */,

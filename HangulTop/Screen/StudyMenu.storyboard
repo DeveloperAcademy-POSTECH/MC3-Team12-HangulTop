@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Study Menu View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="StudyMenu" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudyMenu" id="Y6W-OH-hqX" customClass="StudyMenuViewController" customModule="HangulTop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,8 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="gXb-I8-Sof" kind="show" id="CQE-Xc-KQs"/>
+                                    <action selector="toVowel:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IAQ-I5-Niv"/>
+                                    <segue destination="aJS-kO-TUW" kind="show" id="qiB-Ta-mAN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-R5-0ue">
@@ -64,6 +65,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="toConsonant:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4Bk-cZ-ZXb"/>
                                     <segue destination="aJS-kO-TUW" kind="show" id="sx7-f5-OPR"/>
                                 </connections>
                             </button>
@@ -81,7 +83,8 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="sha-UZ-G8y" kind="show" id="cLl-CH-hS2"/>
+                                    <action selector="toBatchim:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6ld-a5-vSM"/>
+                                    <segue destination="aJS-kO-TUW" kind="show" id="vEV-oe-jAU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +121,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeZ-Fm-fx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-27"/>
+            <point key="canvasLocation" x="703" y="-113"/>
         </scene>
         <!--Vowel-->
         <scene sceneID="i6l-RY-fTE">
@@ -128,17 +131,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orP-xj-FMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="13"/>
+            <point key="canvasLocation" x="851" y="8"/>
         </scene>
         <!--Consonant-->
         <scene sceneID="oac-Hz-jHp">
             <objects>
-                <viewControllerPlaceholder storyboardName="Consonant" id="aJS-kO-TUW" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Consonant" storyboardName="Consonant" id="aJS-kO-TUW" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ifz-Ab-Gqg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hN-cf-EDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="48"/>
+            <point key="canvasLocation" x="703" y="78"/>
         </scene>
         <!--Batchim-->
         <scene sceneID="gfD-0x-ME4">
@@ -148,9 +151,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oj-TY-4wN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="88"/>
+            <point key="canvasLocation" x="954" y="54"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sx7-f5-OPR"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
