@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="200" id="fUd-es-TPM"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="배우기">
+                                <buttonConfiguration key="configuration" style="filled" title="Learn">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="200" id="Cdx-1v-6QL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="돌탑">
+                                <buttonConfiguration key="configuration" style="filled" title="Tower">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>

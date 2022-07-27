@@ -22,7 +22,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     //자음 공부시 보이는 모음 배열
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
     //설명 배열
-    var explanationArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["","","","",""],["모두 ㄱ의 소리로 발음됩니다.","모두 ㄴ의 소리로 발음됩니다.","모두 ㄷ의 소리로 발음됩니다.\nㄸ, ㅉ은 받침으로 쓰지 않는다.","모두 ㄹ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.\nㅃ은 받침으로 쓰지 않습니다.","ㅇ은 첫소리에서는 소릿값이 없고,\n받침으로 올때만 소리를 인식할 수 있습니다."]]
+    var explanationArray = [["ㅡ has to be located below the consonant, and ㅣ has to be on the right.", "One · added to the basic vowels", "Two · added to the basic vowels", "In modern Korean the pronunciations of ㅐ and ㅔ do not differ.", "Read two combined vowels fast."],["-","-","-","-","-"],["-","-","ㄸ, ㅉ are not used as Batchim.","-","-","ㅃ is not used as Batchim.","ㅇ은 첫소리에서 소릿값이 없고, 받침으로 올때만 소리를 인식할 수 있다."]]
     //페이지 컨트롤에 표시되는 배열
     var pageArray = [["", "ㅣ", "ㅏ", "ㅑ", "ㅐ", "ㅘ", ""], ["", "ㄱ", "ㄴ", "ㅁ", "ㅅ", "ㅇ", ""], ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅇ"]]
     var defaultLetter: [String] = ["으", "가", "아"]
@@ -79,7 +79,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         if pageNum < syllableArray[indexCount].count {
             pageNum += 1
             if pageNum < syllableArray[indexCount].count {
-                resultLabelInitalValue()
+                setInitalMainLetter()
             }
             if pageNum == syllableArray[indexCount].count { //성공 뷰
                 switch indexCount {
@@ -98,13 +98,12 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 vc.data = indexCount
 //                vc.delegate = self
                 
-                
-                self.navigationController!.pushViewController(vc, animated: true)
+//
+//                self.navigationController!.pushViewController(vc, animated: true)
                 //                performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
                 setButtonLayout()
                 setPageControl()
-                setExplantion()
                 setInitalMainLetter()
             }
         }
@@ -192,6 +191,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         setPageControl()
         selectAudioFile()
+        setExplanation()
         if(indexCount == 1){
             consonantCollection.isHidden = false
             explanationView.isHidden = true

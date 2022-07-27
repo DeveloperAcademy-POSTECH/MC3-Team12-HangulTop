@@ -549,7 +549,7 @@
                                     <constraint firstAttribute="height" constant="49" id="GTS-a8-KZ7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="메뉴로 돌아가기">
+                                <buttonConfiguration key="configuration" style="filled" title="Back to Menu">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

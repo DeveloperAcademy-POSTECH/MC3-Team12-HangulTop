@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="80" id="Cw6-sX-htE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="창제원리">
+                                <buttonConfiguration key="configuration" style="filled" title="Invention Principle">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="80" id="PZo-zG-9WC"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="모음">
+                                <buttonConfiguration key="configuration" style="filled" title="Vowel">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="80" id="YBR-aG-doS"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="자음">
+                                <buttonConfiguration key="configuration" style="filled" title="Consonant">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="80" id="v7k-Tx-ibn"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="받침">
+                                <buttonConfiguration key="configuration" style="filled" title="Batchim">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>

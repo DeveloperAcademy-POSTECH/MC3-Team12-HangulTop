@@ -20,7 +20,7 @@ class TopMenuViewController: UIViewController{
         }else{
             count = UserDefaults.standard.value(forKey: "solCount") as! Int
         }
-        quizCount.text = "지금까지 푼 문제는 \(count * 10)문제 입니다."
+        quizCount.text = "You have solved \(count * 10) problems in total."
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +31,7 @@ class TopMenuViewController: UIViewController{
         }else{
             count = UserDefaults.standard.value(forKey: "solCount") as! Int
         }
-        quizCount.text = "지금까지 푼 문제는 \(count * 10)문제 입니다."
+        quizCount.text = "You have solved \(count * 10) problems in total."
     }
     /*
     // MARK: - Navigation
