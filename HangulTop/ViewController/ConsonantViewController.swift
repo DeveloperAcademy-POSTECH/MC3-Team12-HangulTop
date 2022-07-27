@@ -27,12 +27,24 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     var pageArray = [["", "ㅣ", "ㅏ", "ㅑ", "ㅐ", "ㅘ", ""], ["", "ㄱ", "ㄴ", "ㅁ", "ㅅ", "ㅇ", ""], ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅇ"]]
     var defaultLetter: [String] = ["으", "가", "아"]
     
-    @IBOutlet var pages: [UILabel]!
+
+    @IBOutlet var pages: [UIButton]!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var consonantCollection: UICollectionView!
     @IBOutlet weak var explanationView: UILabel!
     
+    @IBAction func changePage(_ sender: UIButton) {
+        if indexCount == 2 {
+            pageNum = sender.tag
+        } else {
+            pageNum = sender.tag - 1
+        }
+        setButtonLayout()
+        setPageControl()
+        setInitalMainLetter()
+        setExplanation()
+    }
     @IBAction func buttonSelected(_ sender: UIButton) {
         let mainUni = UnicodeScalar(defaultLetter[indexCount])?.value
         let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
@@ -79,7 +91,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         if pageNum < syllableArray[indexCount].count {
             pageNum += 1
             if pageNum < syllableArray[indexCount].count {
-                resultLabelInitalValue()
+                setInitalMainLetter()
             }
             if pageNum == syllableArray[indexCount].count { //성공 뷰
                 switch indexCount {
@@ -94,29 +106,14 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 }
                 guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
                 { return }
-                
                 vc.data = indexCount
-//                vc.delegate = self
-                
-                
                 self.navigationController!.pushViewController(vc, animated: true)
-                //                performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
                 setButtonLayout()
                 setPageControl()
-                setExplantion()
+                setExplanation()
                 setInitalMainLetter()
             }
-        }
-        if pageNum == syllableArray[indexCount].count { //성공 뷰
-            guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
-            { return }
-            vc.data = indexCount
-            self.navigationController!.pushViewController(vc, animated: true)
-        } else {
-            setButtonLayout()
-            setPageControl()
-            setExplanation()
         }
     }
     
@@ -187,7 +184,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         indexCount = appDelegate?.infos.indexCount ?? 0
         mainLetter.text = defaultLetter[indexCount]
         for i in 0..<pages.count {
-            pages[i].text = pageArray[indexCount][i]
+            pages[i].setTitle(pageArray[indexCount][i], for: .normal)
         }
         setButtonLayout()
         setPageControl()
@@ -215,18 +212,19 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         if indexCount == 2 {
             for i in 0..<pages.count {
-                pages[i].textColor = .gray
+                pages[i].setTitleColor(.gray, for: .normal)
             }
-            pages[pageNum].textColor = .black
+            pages[pageNum].setTitleColor(.black, for: .normal)
         } else {
             for i in 0..<pages.count {
-                pages[i].textColor = .gray
+                pages[i].setTitleColor(.gray, for: .normal)
             }
-            pages[pageNum+1].textColor = .black
+            pages[pageNum+1].setTitleColor(.black, for: .normal)
         }
     }
     
     func setButtonLayout() {
+        // FIXME: 버튼이 하나인 경우 추가
         if syllableArray[indexCount][pageNum].count == 2 {
             buttons[0].isHidden = true
             buttons[1].isHidden = false
