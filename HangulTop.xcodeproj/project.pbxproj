@@ -19,8 +19,6 @@
 		4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72B2882AB4700589672 /* Batchim.storyboard */; };
 		4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A72D2882AE3200589672 /* Principle.storyboard */; };
 		4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A731288460D600589672 /* ConsonantViewController.swift */; };
-		4D31A7502886817900589672 /* ButtonSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A74F2886817900589672 /* ButtonSetView.swift */; };
-		4D31A7522886819200589672 /* ButtonSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D31A7512886819200589672 /* ButtonSetView.xib */; };
 		4D31A7542886C9C900589672 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31A7532886C9C900589672 /* CollectionViewCell.swift */; };
 		4D31D55B288D9DAA005E2F53 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D31D55A288D9DAA005E2F53 /* Quiz.storyboard */; };
 		4D31D55D288D9DBC005E2F53 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31D55C288D9DBC005E2F53 /* QuizViewController.swift */; };
@@ -57,8 +55,6 @@
 		4D31A72B2882AB4700589672 /* Batchim.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Batchim.storyboard; sourceTree = "<group>"; };
 		4D31A72D2882AE3200589672 /* Principle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Principle.storyboard; sourceTree = "<group>"; };
 		4D31A731288460D600589672 /* ConsonantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsonantViewController.swift; sourceTree = "<group>"; };
-		4D31A74F2886817900589672 /* ButtonSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetView.swift; sourceTree = "<group>"; };
-		4D31A7512886819200589672 /* ButtonSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonSetView.xib; sourceTree = "<group>"; };
 		4D31A7532886C9C900589672 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4D31D55A288D9DAA005E2F53 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		4D31D55C288D9DBC005E2F53 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 				D5CC950A287E9591005E8BF5 /* SceneDelegate.swift */,
 				4D31A7202882AAC300589672 /* ViewController */,
 				4D31A7222882AAD900589672 /* Screen */,
-				4D31A7512886819200589672 /* ButtonSetView.xib */,
-				4D31A74F2886817900589672 /* ButtonSetView.swift */,
 				4D31A7532886C9C900589672 /* CollectionViewCell.swift */,
 				D58FDEBF288D43EA00DBBE01 /* Sound.mp3 */,
 				D5CC9514287E9593005E8BF5 /* Assets.xcassets */,
@@ -232,7 +226,6 @@
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
 				A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */,
-				4D31A7522886819200589672 /* ButtonSetView.xib in Resources */,
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,
 				4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */,
@@ -252,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
-				4D31A7502886817900589672 /* ButtonSetView.swift in Sources */,
 				D5E9EE45288FC76C0068C47A /* TopMenuViewController.swift in Sources */,
 				D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */,
 				4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */,
