@@ -539,11 +539,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="consonantCollection" destination="aiU-Qw-OyN" id="lr8-KU-6q4"/>
                         <outlet property="explanationView" destination="Yo3-nM-VrJ" id="oCw-RP-JSW"/>
                         <outlet property="mainLetter" destination="MdL-uT-XHm" id="mu3-Fr-Iye"/>
                         <outlet property="playButton" destination="Yxa-bS-iaj" id="v64-BO-glV"/>
                         <outlet property="prevButton" destination="jvd-Sm-T7F" id="tRR-zO-0qr"/>
+                        <outlet property="vowelCollection" destination="aiU-Qw-OyN" id="lr8-KU-6q4"/>
                         <outletCollection property="buttons" destination="4d5-hh-O1o" collectionClass="NSMutableArray" id="OeY-WK-CTw"/>
                         <outletCollection property="buttons" destination="Hbc-BO-3I8" collectionClass="NSMutableArray" id="tsV-VQ-0bd"/>
                         <outletCollection property="buttons" destination="bm1-fr-Drt" collectionClass="NSMutableArray" id="LKN-sS-bpF"/>

@@ -31,7 +31,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet var pages: [UIButton]!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var mainLetter: UILabel!
-    @IBOutlet weak var consonantCollection: UICollectionView!
+    @IBOutlet weak var vowelCollection: UICollectionView!
     @IBOutlet weak var explanationView: UILabel!
     
     @IBAction func changePage(_ sender: UIButton) {
@@ -189,12 +189,12 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         setPageControl()
         selectAudioFile()
-        if(indexCount == 1){
-            consonantCollection.isHidden = false
-            explanationView.isHidden = true
-        }else{
-            consonantCollection.isHidden = true
+        if(indexCount == 0) {
+            vowelCollection.isHidden = true
             explanationView.isHidden = false
+        }else{
+            vowelCollection.isHidden = false
+            explanationView.isHidden = true
         }
         if !isRecording { // 재생 모드일 때(녹음 모드가 아니라면)
             initplay()
