@@ -109,6 +109,16 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 resultLabelInitalValue()
             }
             if pageNum == syllableArray[indexCount].count { //성공 뷰
+                switch indexCount {
+                case 0:
+                    UserDefaults.standard.set(true, forKey: "isVowel")
+                case 1:
+                    UserDefaults.standard.set(true, forKey: "isConsonant")
+                case 2:
+                    UserDefaults.standard.set(true, forKey: "isBatchim")
+                default:
+                    print("")
+                }
                 guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
                 { return }
                 

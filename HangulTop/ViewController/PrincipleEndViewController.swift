@@ -19,6 +19,7 @@ class PrincipleEndViewController: UIViewController {
     
     // 메뉴로 돌아가는 코드
     @IBAction func menuButtonPressed(_ sender: UIButton) {
+        UserDefaults.standard.set(true, forKey: "isPrinciple")
         self.dismiss(animated: false)
         self.navigationController?.popToRootViewController(animated: true)
         

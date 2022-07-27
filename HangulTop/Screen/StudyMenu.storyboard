@@ -108,6 +108,11 @@
                     <navigationItem key="navigationItem" id="OCb-lt-xnW">
                         <barButtonItem key="backBarButtonItem" title="Menu" id="tIG-nm-Ebk"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="batchimButton" destination="fHQ-dK-aUX" id="jnF-WT-HQp"/>
+                        <outlet property="consonantButton" destination="oUU-R5-0ue" id="BI1-eZ-IhF"/>
+                        <outlet property="vowelButton" destination="V3Y-WB-fQo" id="DDo-AN-r8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

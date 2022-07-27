@@ -112,6 +112,9 @@
                                                     <rect key="frame" x="30.5" y="48.5" width="67" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button" titleAlignment="center"/>
+                                                    <connections>
+                                                        <action selector="speakText:" destination="QFM-NA-WJa" eventType="touchUpInside" id="Z9l-Qu-y52"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
