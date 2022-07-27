@@ -37,6 +37,7 @@ class QuizViewController: UIViewController {
     @IBAction func checkbuttonAction(_ sender: Any) {
         if selectedButton != nil {
             if selectedButton?.titleLabel?.text == answers[pageNum] {
+                selectedButton = nil
                 checkbutton.backgroundColor = UIColor(r: 107, g: 203, b: 159)
                 checkbutton.setTitle("Correct!", for: .normal)
                 selectedButton?.backgroundColor = UIColor(r: 107, g: 203, b: 159)
@@ -100,6 +101,15 @@ class QuizViewController: UIViewController {
             button.layer.borderWidth = 0
             button.backgroundColor = .white
         }
+    }
+    @IBAction func temp(_ sender: UIButton) {
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: sender.titleLabel?.text ?? "")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        
+        utterance.rate = 0.6
+        synthesizer.speak(utterance)
+        
     }
     
     override func viewDidLoad() {
@@ -197,7 +207,7 @@ class QuizViewController: UIViewController {
         let utterance = AVSpeechUtterance(string: answers[pageNum])
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
         
-        utterance.rate = 0.4
+        utterance.rate = 0.6
         synthesizer.speak(utterance)
     }
 }
