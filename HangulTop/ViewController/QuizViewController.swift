@@ -102,7 +102,7 @@ class QuizViewController: UIViewController {
             button.backgroundColor = .white
         }
     }
-    @IBAction func temp(_ sender: UIButton) {
+    @IBAction func speakQuizs(_ sender: UIButton) {
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: sender.titleLabel?.text ?? "")
         utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")

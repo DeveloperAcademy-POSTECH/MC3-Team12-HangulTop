@@ -96,7 +96,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AJ1-r9-dn6"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wyh-HC-4qI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYb-VE-aI4">
@@ -115,7 +115,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dms-8K-jGF"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TZw-nM-xTZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-e1-Kjg">
@@ -134,7 +134,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mwr-id-XCV"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pas-uM-wfD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-X9-xSJ">
@@ -153,7 +153,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vBg-lx-d4S"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DCg-Bb-sAa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPD-4U-nDO">
@@ -172,7 +172,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C9R-0A-BeB"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EUF-fQ-D8u"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-Sc-eXC">
@@ -191,7 +191,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Xld-N2-fvU"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wws-jC-DvN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI0-bZ-ICS">
@@ -210,7 +210,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C6z-jy-dQB"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7NK-9o-yW9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnB-7k-GW9">
@@ -229,7 +229,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HOl-lM-iHN"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HDB-83-aPK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dy-Ur-jqw">
@@ -248,7 +248,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TQv-et-hJW"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WyL-dL-aL1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vri-So-7b5">
@@ -267,7 +267,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="temp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xLG-Bh-HiP"/>
+                                            <action selector="speakQuizs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nsy-gZ-63X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUg-n7-ldQ">
