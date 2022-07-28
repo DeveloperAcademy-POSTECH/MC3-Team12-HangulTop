@@ -170,6 +170,9 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CollectionViewCell
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        cell.layer.shadowOpacity = 0.3
         cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
         cell.cellButton.addTarget(self, action: #selector(getVowel(sender:)), for: .touchUpInside)
         return cell
@@ -196,6 +199,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         for i in 0..<pages.count {
             pages[i].setTitle(pageArray[indexCount][i], for: .normal)
         }
+        setButtonShadow()
         setButtonLayout()
         setPageControl()
         selectAudioFile()
@@ -277,7 +281,26 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             button6.setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
             button7.setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
         }
-        
+    }
+    
+    func setButtonShadow() {
+        for i in 0..<button1.count {
+            button1[i].setShadow()
+        }
+        for i in 0..<button2.count {
+            button2[i].setShadow()
+        }
+        for i in 0..<button3.count {
+            button3[i].setShadow()
+        }
+        for i in 0..<button4.count {
+            button4[i].setShadow()
+        }
+        for i in 0..<button5.count {
+            button5[i].setShadow()
+        }
+        button6.setShadow()
+        button7.setShadow()
     }
     
     // 발음 듣기
@@ -373,3 +396,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
 }
 
+extension UIButton {
+    func setShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.layer.shadowOpacity = 0.3
+    }
+}
