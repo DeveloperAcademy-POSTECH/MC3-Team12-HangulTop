@@ -40,6 +40,8 @@
 		D5E9EE41288F196E0068C47A /* StudyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */; };
 		D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */; };
 		D5E9EE45288FC76C0068C47A /* TopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */; };
+		D5E9EE50289270F30068C47A /* HangulView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E9EE4F289270F30068C47A /* HangulView.storyboard */; };
+		D5E9EE52289271050068C47A /* HangulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9EE51289271050068C47A /* HangulViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		D5E9EE40288F196E0068C47A /* StudyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMenuViewController.swift; sourceTree = "<group>"; };
 		D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableStartViewController.swift; sourceTree = "<group>"; };
 		D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuViewController.swift; sourceTree = "<group>"; };
+		D5E9EE4F289270F30068C47A /* HangulView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HangulView.storyboard; sourceTree = "<group>"; };
+		D5E9EE51289271050068C47A /* HangulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangulViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				D5E9EE42288F1AA20068C47A /* SyllableStartViewController.swift */,
 				4D31D55C288D9DBC005E2F53 /* QuizViewController.swift */,
 				D5E9EE44288FC76C0068C47A /* TopMenuViewController.swift */,
+				D5E9EE51289271050068C47A /* HangulViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				4D31A7292882AB3E00589672 /* Consonant.storyboard */,
 				4D31A72B2882AB4700589672 /* Batchim.storyboard */,
 				4D31D55A288D9DAA005E2F53 /* Quiz.storyboard */,
+				D5E9EE4F289270F30068C47A /* HangulView.storyboard */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 				D58FDEC0288D43EA00DBBE01 /* Sound.mp3 in Resources */,
 				4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */,
 				D5CC9515287E9593005E8BF5 /* Assets.xcassets in Resources */,
+				D5E9EE50289270F30068C47A /* HangulView.storyboard in Resources */,
 				D5CC9510287E9591005E8BF5 /* Main.storyboard in Resources */,
 				4D31D55B288D9DAA005E2F53 /* Quiz.storyboard in Resources */,
 			);
@@ -247,6 +254,7 @@
 				4D31A732288460D600589672 /* ConsonantViewController.swift in Sources */,
 				D5E9EE45288FC76C0068C47A /* TopMenuViewController.swift in Sources */,
 				D5E9EE43288F1AA20068C47A /* SyllableStartViewController.swift in Sources */,
+				D5E9EE52289271050068C47A /* HangulViewController.swift in Sources */,
 				4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */,
 				D5CC9513287E9591005E8BF5 /* HangulTop.xcdatamodeld in Sources */,
 				A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */,

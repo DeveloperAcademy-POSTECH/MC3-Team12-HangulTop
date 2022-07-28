@@ -79,7 +79,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         if pageNum < syllableArray[indexCount].count {
             pageNum += 1
             if pageNum < syllableArray[indexCount].count {
-                resultLabelInitalValue()
+                setInitalMainLetter()
             }
             if pageNum == syllableArray[indexCount].count { //성공 뷰
                 switch indexCount {
@@ -104,7 +104,6 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             } else {
                 setButtonLayout()
                 setPageControl()
-                setExplantion()
                 setInitalMainLetter()
             }
         }
