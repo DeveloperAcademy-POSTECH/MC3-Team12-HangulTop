@@ -37,6 +37,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet weak var button6: UIButton!
     @IBOutlet weak var button7: UIButton!
     @IBOutlet var buttonSets: [UIView]!
+    var currentButtonSet = [UIButton]()
     
     
     @IBOutlet var pages: [UIButton]!
@@ -93,6 +94,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             setPageControl()
             setInitalMainLetter()
             setExplanation()
+            vowelCollection.flashScrollIndicators()
         }
     }
     
@@ -123,6 +125,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 setPageControl()
                 setExplanation()
                 setInitalMainLetter()
+                vowelCollection.flashScrollIndicators()
             }
         }
     }
@@ -216,6 +219,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             initRecord()
         }
         playButton.isHidden = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        vowelCollection.flashScrollIndicators()
     }
     
     func setPageControl() {
