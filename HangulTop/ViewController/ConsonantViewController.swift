@@ -178,7 +178,13 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         cell.layer.shadowOpacity = 0.3
         cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
         cell.cellButton.addTarget(self, action: #selector(getVowel(sender:)), for: .touchUpInside)
+        cell.cellButton.addTarget(self, action: #selector(selectCellByButton(sender:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func selectCellByButton(sender: UIButton) {
+        let indexOfCell = vowelArray.firstIndex(of: sender.titleLabel?.text ?? "ㅏ")
+        vowelCollection.selectItem(at: IndexPath(row: indexOfCell!, section: 0), animated: false, scrollPosition: .top)
     }
     
     @objc func getVowel(sender: UIButton){
@@ -219,6 +225,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             initRecord()
         }
         playButton.isHidden = true
+        vowelCollection.selectItem(at: IndexPath(row: 2, section: 0), animated: false, scrollPosition: .top)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
