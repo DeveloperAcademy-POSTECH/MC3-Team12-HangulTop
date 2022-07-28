@@ -35,17 +35,83 @@
                                     <action selector="viewSelect:" destination="Y6W-OH-hqX" eventType="valueChanged" id="AWq-v5-plr"/>
                                 </connections>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cur-5D-Vjt">
+                                <rect key="frame" x="86" y="472" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ruD-aN-1Xd" kind="embed" id="zdZ-aT-Efr"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-G3-wR5">
+                                <rect key="frame" x="88" y="472" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="Pm4-gF-eyq" kind="embed" id="fIi-dz-JRk"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-qH-7XR">
+                                <rect key="frame" x="86" y="472" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="rDu-uI-01C" kind="embed" id="iLk-1w-rw1"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="batchimView" destination="5A1-qH-7XR" id="uYN-4b-S9L"/>
+                        <outlet property="consonantView" destination="cur-5D-Vjt" id="6yD-4T-i9R"/>
                         <outlet property="mainLetter" destination="8Pm-ag-fMg" id="0Xw-11-Wsb"/>
+                        <outlet property="vowelView" destination="YN8-G3-wR5" id="tEB-d6-1rB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="87.723214285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uNT-af-Jfl">
+            <objects>
+                <viewController id="ruD-aN-1Xd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hs2-f2-8YB">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTu-BF-Yt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="563"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QgS-UA-DLQ">
+            <objects>
+                <viewController id="Pm4-gF-eyq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5y-kZ-a1a">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYe-Jf-Nbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="563"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0MO-k3-tjP">
+            <objects>
+                <viewController id="rDu-uI-01C" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kpj-XG-5Bo">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOH-j9-Sy7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="563"/>
         </scene>
     </scenes>
     <resources>
