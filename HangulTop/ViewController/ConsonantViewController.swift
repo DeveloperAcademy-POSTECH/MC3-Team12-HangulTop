@@ -28,8 +28,18 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     var defaultLetter: [String] = ["으", "가", "아"]
     
 
+
+    @IBOutlet var button1: [UIButton]!
+    @IBOutlet var button2: [UIButton]!
+    @IBOutlet var button3: [UIButton]!
+    @IBOutlet var button4: [UIButton]!
+    @IBOutlet var button5: [UIButton]!
+    @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var button7: UIButton!
+    @IBOutlet var buttonSets: [UIView]!
+    
+    
     @IBOutlet var pages: [UIButton]!
-    @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var vowelCollection: UICollectionView!
     @IBOutlet weak var explanationView: UILabel!
@@ -224,72 +234,48 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
     
     func setButtonLayout() {
-        // FIXME: 버튼이 하나인 경우 추가
+        for i in 0..<buttonSets.count {
+            buttonSets[i].isHidden = true
+        }
+        if syllableArray[indexCount][pageNum].count == 1 {
+            buttonSets[0].isHidden = false
+            button1[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+        }
         if syllableArray[indexCount][pageNum].count == 2 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[3].isHidden = true
-            buttons[4].isHidden = true
-            buttons[5].isHidden = true
-            buttons[6].isHidden = true
+            buttonSets[1].isHidden = false
+            button1[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[0].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
         }
         if syllableArray[indexCount][pageNum].count == 3 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = true
-            buttons[2].isHidden = true
-            buttons[3].isHidden = true
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            buttonSets[2].isHidden = false
+            button1[2].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[0].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
         }
         if syllableArray[indexCount][pageNum].count == 4 {
-            buttons[0].isHidden = false
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[3].isHidden = false
-            buttons[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[3].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[4].isHidden = true
-            buttons[5].isHidden = true
-            buttons[6].isHidden = true
+            buttonSets[3].isHidden = false
+            button1[3].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[1].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[0].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
         }
         if syllableArray[indexCount][pageNum].count == 5 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[3].isHidden = true
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            buttonSets[4].isHidden = false
+            button1[4].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[3].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[1].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            button5[0].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
         }
         if syllableArray[indexCount][pageNum].count == 7 {
-            buttons[0].isHidden = false
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[3].isHidden = false
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[3].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
+            buttonSets[5].isHidden = false
+            button1[5].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[4].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[3].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[2].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            button5[1].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            button6.setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
+            button7.setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
         }
         
     }
