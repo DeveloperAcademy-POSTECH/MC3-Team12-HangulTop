@@ -57,7 +57,6 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     
     @IBAction func infoButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "InfoModal", sender: self)
-        print("wtf")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
