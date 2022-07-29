@@ -11,13 +11,13 @@ import AVFoundation
 class PrincipleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellButton: UIButton!
     
-    @IBAction func speakText(_ sender: Any) {
-        let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: (sender as AnyObject).titleLabel?.text ?? "")
-        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
-        
-        utterance.rate = 0.6
-        synthesizer.speak(utterance)
-    }
+//    @IBAction func speakText(_ sender: Any) {
+//        let synthesizer = AVSpeechSynthesizer()
+//        let utterance = AVSpeechUtterance(string: (sender as AnyObject).titleLabel?.text ?? "")
+//        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+//
+//        utterance.rate = 0.6
+//        synthesizer.speak(utterance)
+//    }
     
 }
