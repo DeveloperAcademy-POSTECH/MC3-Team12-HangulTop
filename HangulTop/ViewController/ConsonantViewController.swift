@@ -14,6 +14,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     var audioFile : URL!
     var audioRecorder : AVAudioRecorder!
     var isRecording = false
+    
     //페이지 카운트 변수
     var pageNum = 0
     var indexCount: Int = 0
@@ -25,32 +26,61 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     var explanationArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["","","","",""],["모두 ㄱ의 소리로 발음됩니다.","모두 ㄴ의 소리로 발음됩니다.","모두 ㄷ의 소리로 발음됩니다.\nㄸ, ㅉ은 받침으로 쓰지 않는다.","모두 ㄹ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.\nㅃ은 받침으로 쓰지 않습니다.","ㅇ은 첫소리에서는 소릿값이 없고,\n받침으로 올때만 소리를 인식할 수 있습니다."]]
     //페이지 컨트롤에 표시되는 배열
     var pageArray = [["", "ㅣ", "ㅏ", "ㅑ", "ㅐ", "ㅘ", ""], ["", "ㄱ", "ㄴ", "ㅁ", "ㅅ", "ㅇ", ""], ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅇ"]]
-    var defaultLetter: [String] = ["으", "가", "아"]
+    var defaultLetter: [String] = ["으", "가", "악"]
     
-    @IBOutlet var pages: [UILabel]!
-    @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var button1: [UIButton]!
+    @IBOutlet var button2: [UIButton]!
+    @IBOutlet var button3: [UIButton]!
+    @IBOutlet var button4: [UIButton]!
+    @IBOutlet var button5: [UIButton]!
+    @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var button7: UIButton!
+    @IBOutlet var buttonSets: [UIView]!
+    var currentButtonSet = [UIButton]()
+    
+    @IBOutlet var pages: [UIButton]!
     @IBOutlet weak var mainLetter: UILabel!
-    @IBOutlet weak var consonantCollection: UICollectionView!
+    @IBOutlet weak var vowelCollection: UICollectionView!
     @IBOutlet weak var explanationView: UILabel!
+    
+    func initPage() {
+        cleanButtonSet()
+        currentButtonSet.removeAll()
+        setButtonLayout()
+        setPageControl()
+        setInitalMainLetter()
+        setExplanation()
+        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        vowelCollection.flashScrollIndicators()
+    }
+    
+    @IBAction func changePage(_ sender: UIButton) {
+        if indexCount == 2 {
+            pageNum = sender.tag
+        } else {
+            pageNum = sender.tag - 1
+        }
+        initPage()
+    }
     
     @IBAction func buttonSelected(_ sender: UIButton) {
         let mainUni = UnicodeScalar(defaultLetter[indexCount])?.value
         let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "ㄱ")?.value ?? 0x1100
-        if(buttonUni < 0x1113){ //자음일때
+        if buttonUni < 0x1113 { //자음일때
             let uni = buttonUni - 0x1100
             let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
             let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
             let letter = ((uni * 21) + vowelUni) * 28 + batUni + 0xAC00
             defaultLetter[indexCount] = String(UnicodeScalar(letter)!)
         }
-        else if(buttonUni < 0x11c3){ //받침일때
-            let uni = buttonUni - 0x11a7
+        else if buttonUni < 0x11c3 { //받침일때
+            let uni = buttonUni - 0x11a
             let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
             let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
             let letter = ((conUni * 21) + vowelUni) * 28 + uni + 0xAC00
             defaultLetter[indexCount] = String(UnicodeScalar(letter)!)
         }
-        else{ //모음일때
+        else { //모음일때
             let uni = buttonUni - 0x314f
             let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
             let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
@@ -59,6 +89,8 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         }
         mainLetter.text = defaultLetter[indexCount]
         pronounce(defaultLetter[indexCount])
+        cleanButtonSet()
+        sender.backgroundColor = UIColor(r: 253, g: 168, b: 3)
     }
     
     @IBOutlet weak var prevButton: UIButton!
@@ -67,10 +99,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBAction func prevPage(_ sender: Any) {
         if pageNum > 0 {
             pageNum -= 1
-            setButtonLayout()
-            setPageControl()
-            setInitalMainLetter()
-            setExplanation()
+            initPage()
         }
     }
     
@@ -79,7 +108,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         if pageNum < syllableArray[indexCount].count {
             pageNum += 1
             if pageNum < syllableArray[indexCount].count {
-                resultLabelInitalValue()
+                setInitalMainLetter()
             }
             if pageNum == syllableArray[indexCount].count { //성공 뷰
                 switch indexCount {
@@ -94,29 +123,11 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 }
                 guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
                 { return }
-                
                 vc.data = indexCount
-//                vc.delegate = self
-                
-                
                 self.navigationController!.pushViewController(vc, animated: true)
-                //                performSegue(withIdentifier: "finish_seg", sender: sender)
             } else {
-                setButtonLayout()
-                setPageControl()
-                setExplantion()
-                setInitalMainLetter()
+                initPage()
             }
-        }
-        if pageNum == syllableArray[indexCount].count { //성공 뷰
-            guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
-            { return }
-            vc.data = indexCount
-            self.navigationController!.pushViewController(vc, animated: true)
-        } else {
-            setButtonLayout()
-            setPageControl()
-            setExplanation()
         }
     }
     
@@ -163,9 +174,18 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CollectionViewCell
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        cell.layer.shadowOpacity = 0.3
         cell.cellButton.setTitle(vowelArray[indexPath.row], for: .normal)
         cell.cellButton.addTarget(self, action: #selector(getVowel(sender:)), for: .touchUpInside)
+        cell.cellButton.addTarget(self, action: #selector(selectCellByButton(sender:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func selectCellByButton(sender: UIButton) {
+        let indexOfCell = vowelArray.firstIndex(of: sender.titleLabel?.text ?? "ㅏ")
+        vowelCollection.selectItem(at: IndexPath(row: indexOfCell!, section: 0), animated: false, scrollPosition: .top)
     }
     
     @objc func getVowel(sender: UIButton){
@@ -187,17 +207,20 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         indexCount = appDelegate?.infos.indexCount ?? 0
         mainLetter.text = defaultLetter[indexCount]
         for i in 0..<pages.count {
-            pages[i].text = pageArray[indexCount][i]
+            pages[i].setTitle(pageArray[indexCount][i], for: .normal)
         }
         setButtonLayout()
         setPageControl()
+        vowelCollection.selectItem(at: IndexPath(row: vowelArray.firstIndex(of: "ㅏ")!, section: 0), animated: false, scrollPosition: .top)
+        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        
         selectAudioFile()
-        if(indexCount == 1){
-            consonantCollection.isHidden = false
-            explanationView.isHidden = true
-        }else{
-            consonantCollection.isHidden = true
+        if indexCount == 0 {
+            vowelCollection.isHidden = true
             explanationView.isHidden = false
+        } else {
+            vowelCollection.isHidden = false
+            explanationView.isHidden = true
         }
         if !isRecording { // 재생 모드일 때(녹음 모드가 아니라면)
             initplay()
@@ -207,6 +230,11 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         playButton.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        vowelCollection.flashScrollIndicators()
+    }
+    
     func setPageControl() {
         if pageNum == 0 {
             prevButton.isHidden = true
@@ -214,86 +242,93 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             prevButton.isHidden = false
         }
         if indexCount == 2 {
-            for i in 0..<pages.count {
-                pages[i].textColor = .gray
+            for page in pages{
+                page.setTitleColor(.gray, for: .normal)
             }
-            pages[pageNum].textColor = .black
+            pages[pageNum].setTitleColor(.black, for: .normal)
         } else {
-            for i in 0..<pages.count {
-                pages[i].textColor = .gray
+            for page in pages {
+                page.setTitleColor(.gray, for: .normal)
             }
-            pages[pageNum+1].textColor = .black
+            pages[pageNum + 1].setTitleColor(.black, for: .normal)
         }
     }
     
     func setButtonLayout() {
+        for buttonSet in buttonSets {
+            buttonSet.isHidden = true
+        }
+        if syllableArray[indexCount][pageNum].count == 1 {
+            buttonSets[0].isHidden = false
+            button1[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            currentButtonSet.append(button1[0])
+        }
         if syllableArray[indexCount][pageNum].count == 2 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[3].isHidden = true
-            buttons[4].isHidden = true
-            buttons[5].isHidden = true
-            buttons[6].isHidden = true
+            buttonSets[1].isHidden = false
+            button1[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[0].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            currentButtonSet.append(button1[1])
+            currentButtonSet.append(button2[0])
         }
         if syllableArray[indexCount][pageNum].count == 3 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = true
-            buttons[2].isHidden = true
-            buttons[3].isHidden = true
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            buttonSets[2].isHidden = false
+            button1[2].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[0].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            currentButtonSet.append(button1[2])
+            currentButtonSet.append(button2[1])
+            currentButtonSet.append(button3[0])
         }
         if syllableArray[indexCount][pageNum].count == 4 {
-            buttons[0].isHidden = false
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[3].isHidden = false
-            buttons[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[3].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[4].isHidden = true
-            buttons[5].isHidden = true
-            buttons[6].isHidden = true
+            buttonSets[3].isHidden = false
+            button1[3].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[1].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[0].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            currentButtonSet.append(button1[3])
+            currentButtonSet.append(button2[2])
+            currentButtonSet.append(button3[1])
+            currentButtonSet.append(button4[0])
         }
         if syllableArray[indexCount][pageNum].count == 5 {
-            buttons[0].isHidden = true
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[3].isHidden = true
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            buttonSets[4].isHidden = false
+            button1[4].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[3].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[1].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            button5[0].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            currentButtonSet.append(button1[4])
+            currentButtonSet.append(button2[3])
+            currentButtonSet.append(button3[2])
+            currentButtonSet.append(button4[1])
+            currentButtonSet.append(button5[0])
         }
         if syllableArray[indexCount][pageNum].count == 7 {
-            buttons[0].isHidden = false
-            buttons[1].isHidden = false
-            buttons[2].isHidden = false
-            buttons[3].isHidden = false
-            buttons[4].isHidden = false
-            buttons[5].isHidden = false
-            buttons[6].isHidden = false
-            buttons[0].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
-            buttons[1].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
-            buttons[2].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
-            buttons[3].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
-            buttons[4].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
-            buttons[5].setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
-            buttons[6].setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
+            buttonSets[5].isHidden = false
+            button1[5].setTitle(syllableArray[indexCount][pageNum][0], for: .normal)
+            button2[4].setTitle(syllableArray[indexCount][pageNum][1], for: .normal)
+            button3[3].setTitle(syllableArray[indexCount][pageNum][2], for: .normal)
+            button4[2].setTitle(syllableArray[indexCount][pageNum][3], for: .normal)
+            button5[1].setTitle(syllableArray[indexCount][pageNum][4], for: .normal)
+            button6.setTitle(syllableArray[indexCount][pageNum][5], for: .normal)
+            button7.setTitle(syllableArray[indexCount][pageNum][6], for: .normal)
+            currentButtonSet.append(button1[5])
+            currentButtonSet.append(button2[4])
+            currentButtonSet.append(button3[3])
+            currentButtonSet.append(button4[2])
+            currentButtonSet.append(button5[1])
+            currentButtonSet.append(button6)
+            currentButtonSet.append(button7)
         }
-        
+        for button in currentButtonSet {
+            button.setShadow()
+        }
+    }
+    
+    func cleanButtonSet() {
+        for button in currentButtonSet {
+            button.backgroundColor = .white
+        }
     }
     
     // 발음 듣기
@@ -389,3 +424,10 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     }
 }
 
+extension UIButton {
+    func setShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.layer.shadowOpacity = 0.3
+    }
+}
