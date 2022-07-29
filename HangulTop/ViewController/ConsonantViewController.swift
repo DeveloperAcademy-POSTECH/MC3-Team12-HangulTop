@@ -74,7 +74,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
             defaultLetter[indexCount] = String(UnicodeScalar(letter)!)
         }
         else if buttonUni < 0x11c3 { //받침일때
-            let uni = buttonUni - 0x11a
+            let uni = buttonUni - 0x11a7
             let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
             let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
             let letter = ((conUni * 21) + vowelUni) * 28 + uni + 0xAC00
