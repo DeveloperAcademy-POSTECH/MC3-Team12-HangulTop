@@ -51,6 +51,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setPageControl()
         setInitalMainLetter()
         setExplanation()
+        setInfo()
         currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
         vowelCollection.flashScrollIndicators()
     }
@@ -65,6 +66,16 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 destinationVC.pageCount = pageNum
             }
         }
+    
+    func setInfo() {
+        if(indexCount == 1){
+            infoButton.isHidden = false
+        }else{
+            infoButton.isHidden = true
+        }
+        
+    }
+    
     
     @IBAction func changePage(_ sender: UIButton) {
         if indexCount == 2 {
@@ -225,7 +236,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setPageControl()
         vowelCollection.selectItem(at: IndexPath(row: vowelArray.firstIndex(of: "ㅏ")!, section: 0), animated: false, scrollPosition: .top)
         currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
-        
+        setInfo()
         selectAudioFile()
         if indexCount == 0 {
             vowelCollection.isHidden = true
