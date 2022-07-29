@@ -14,41 +14,11 @@ class StudyMenuViewController: UIViewController {
     @IBOutlet weak var batchimButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(UserDefaults.standard.value(forKey: "isPrinciple") == nil){
-            vowelButton.isHidden = true
-        }else{
-            vowelButton.isHidden = false
-        }
-        if(UserDefaults.standard.value(forKey: "isVowel") == nil){
-            consonantButton.isHidden = true
-        }else{
-            consonantButton.isHidden = false
-        }
-        if(UserDefaults.standard.value(forKey: "isConsonant") == nil){
-            batchimButton.isHidden = true
-        }else{
-            batchimButton.isHidden = false
-        }
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        if(UserDefaults.standard.value(forKey: "isPrinciple") == nil){
-            vowelButton.isHidden = true
-        }else{
-            vowelButton.isHidden = false
-        }
-        if(UserDefaults.standard.value(forKey: "isVowel") == nil){
-            consonantButton.isHidden = true
-        }else{
-            consonantButton.isHidden = false
-        }
-        if(UserDefaults.standard.value(forKey: "isConsonant") == nil){
-            batchimButton.isHidden = true
-        }else{
-            batchimButton.isHidden = false
-        }
     }
     @IBAction func toVowel(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
