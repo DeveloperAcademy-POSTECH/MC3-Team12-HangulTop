@@ -26,6 +26,9 @@
 		4D89B9D128891E9B00BD37F7 /* BatchimEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */; };
 		6761C8AA288550F4001A0D2C /* BatchimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6761C8A9288550F4001A0D2C /* BatchimModel.swift */; };
 		67E52E6D2882BA4300BC1205 /* BatchimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */; };
+		A06C5ABD289301F2008CE8BF /* EBS훈민정음L.otf in Resources */ = {isa = PBXBuildFile; fileRef = A06C5ABA289301F2008CE8BF /* EBS훈민정음L.otf */; };
+		A06C5ABE289301F2008CE8BF /* EBS훈민정음SB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A06C5ABB289301F2008CE8BF /* EBS훈민정음SB.otf */; };
+		A06C5ABF289301F2008CE8BF /* EBS훈민정음R.otf in Resources */ = {isa = PBXBuildFile; fileRef = A06C5ABC289301F2008CE8BF /* EBS훈민정음R.otf */; };
 		A082B9C42882B9FA006F29CC /* VowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082B9C32882B9FA006F29CC /* VowelViewController.swift */; };
 		A0AFCE8F28873A7400C51FEA /* LastVowelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */; };
 		A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */; };
@@ -62,6 +65,9 @@
 		4D89B9D028891E9B00BD37F7 /* BatchimEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimEndViewController.swift; sourceTree = "<group>"; };
 		6761C8A9288550F4001A0D2C /* BatchimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimModel.swift; sourceTree = "<group>"; };
 		67E52E6C2882BA4300BC1205 /* BatchimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchimViewController.swift; sourceTree = "<group>"; };
+		A06C5ABA289301F2008CE8BF /* EBS훈민정음L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBS훈민정음L.otf"; sourceTree = "<group>"; };
+		A06C5ABB289301F2008CE8BF /* EBS훈민정음SB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBS훈민정음SB.otf"; sourceTree = "<group>"; };
+		A06C5ABC289301F2008CE8BF /* EBS훈민정음R.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBS훈민정음R.otf"; sourceTree = "<group>"; };
 		A082B9C32882B9FA006F29CC /* VowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE8E28873A7300C51FEA /* LastVowelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVowelViewController.swift; sourceTree = "<group>"; };
 		A0AFCE9028873AA300C51FEA /* LastVowel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LastVowel.storyboard; sourceTree = "<group>"; };
@@ -131,6 +137,16 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		A06C5AB928930198008CE8BF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A06C5ABA289301F2008CE8BF /* EBS훈민정음L.otf */,
+				A06C5ABC289301F2008CE8BF /* EBS훈민정음R.otf */,
+				A06C5ABB289301F2008CE8BF /* EBS훈민정음SB.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		D5CC94FC287E9591005E8BF5 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 				4D31A7202882AAC300589672 /* ViewController */,
 				4D31A7222882AAD900589672 /* Screen */,
 				4D31A7532886C9C900589672 /* CollectionViewCell.swift */,
+				A06C5AB928930198008CE8BF /* Font */,
 				D58FDEBF288D43EA00DBBE01 /* Sound.mp3 */,
 				D5CC9514287E9593005E8BF5 /* Assets.xcassets */,
 				D5CC9516287E9593005E8BF5 /* LaunchScreen.storyboard */,
@@ -222,13 +239,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06C5ABE289301F2008CE8BF /* EBS훈민정음SB.otf in Resources */,
 				4D31A7282882AB3500589672 /* Vowel.storyboard in Resources */,
+				A06C5ABF289301F2008CE8BF /* EBS훈민정음R.otf in Resources */,
 				4D31A72C2882AB4700589672 /* Batchim.storyboard in Resources */,
 				4D31A7262882AB2700589672 /* TopMenu.storyboard in Resources */,
 				A0AFCE9128873AA300C51FEA /* LastVowel.storyboard in Resources */,
 				4D31A72A2882AB3E00589672 /* Consonant.storyboard in Resources */,
 				D5CC9518287E9593005E8BF5 /* LaunchScreen.storyboard in Resources */,
 				4D31A7242882AB1E00589672 /* StudyMenu.storyboard in Resources */,
+				A06C5ABD289301F2008CE8BF /* EBS훈민정음L.otf in Resources */,
 				D58FDEC0288D43EA00DBBE01 /* Sound.mp3 in Resources */,
 				4D31A72E2882AE3200589672 /* Principle.storyboard in Resources */,
 				D5CC9515287E9593005E8BF5 /* Assets.xcassets in Resources */,
