@@ -87,6 +87,24 @@
                                     <segue destination="aJS-kO-TUW" kind="show" id="vEV-oe-jAU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtG-Tx-ie9">
+                                <rect key="frame" x="32" y="601" width="350" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Foj-CZ-7V8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="한글">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="toBatchim:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ayg-5N-jBX"/>
+                                    <segue destination="UUh-US-ayC" kind="show" id="Oun-ZJ-532"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,6 +118,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oUU-R5-0ue" secondAttribute="trailing" constant="32" id="ZNF-cG-ziD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="V3Y-WB-fQo" secondAttribute="trailing" constant="32" id="c0G-q3-mx3"/>
                             <constraint firstItem="fHQ-dK-aUX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="i7R-SC-mFk"/>
+                            <constraint firstItem="JtG-Tx-ie9" firstAttribute="top" secondItem="fHQ-dK-aUX" secondAttribute="bottom" constant="52" id="sMc-ds-RSq"/>
                             <constraint firstItem="oUU-R5-0ue" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="vkU-ek-XxV"/>
                             <constraint firstItem="V3Y-WB-fQo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="x8n-4m-dWR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHQ-dK-aUX" secondAttribute="trailing" constant="32" id="zyl-Dz-XCb"/>
@@ -157,6 +176,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oj-TY-4wN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="54"/>
+        </scene>
+        <!--HangulView-->
+        <scene sceneID="ee9-NZ-CZd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HangulView" referencedIdentifier="HangulView" id="UUh-US-ayC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KwE-0A-McK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJK-JS-3aw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="205"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
