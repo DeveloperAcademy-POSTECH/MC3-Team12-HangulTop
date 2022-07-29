@@ -26,7 +26,7 @@
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <fontDescription key="titleFontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -43,7 +43,7 @@
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                    <fontDescription key="titleFontDescription" name="EBSHunminjeongeumSB" family="EBS Hunminjeongeum SB" pointSize="30"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
