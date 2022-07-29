@@ -54,9 +54,18 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
         vowelCollection.flashScrollIndicators()
     }
+    
     @IBAction func infoButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "InfoModal", sender: self)
+        self.performSegue(withIdentifier: "InfoModal", sender: self)
+        print("wtf")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "InfoModal" {
+                let destinationVC = segue.destination as! InformationModalViewController
+                destinationVC.pageCount = pageNum
+            }
+        }
     
     @IBAction func changePage(_ sender: UIButton) {
         if indexCount == 2 {

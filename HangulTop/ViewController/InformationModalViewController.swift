@@ -19,8 +19,13 @@ class InformationModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let sheetController = self.presentationController as? UISheetPresentationController {
+                sheetController.detents = [.medium(), .large()]
+            }
+        
         titleLabel.text = informationModal.titleArray[pageCount]
         infoLabel.text = informationModal.infoArray[pageCount]
         // ImageView
     }
+    
 }

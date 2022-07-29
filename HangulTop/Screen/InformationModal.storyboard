@@ -16,20 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeL-3O-Qte">
-                                <rect key="frame" x="186" y="462" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeL-3O-Qte">
+                                <rect key="frame" x="42" y="303.5" width="330" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1yh-Eq-obD"/>
+                                    <constraint firstAttribute="width" constant="330" id="Fih-Si-sdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aul-gc-gfh">
-                                <rect key="frame" x="87" y="260" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aul-gc-gfh">
+                                <rect key="frame" x="107" y="84" width="200" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Zlc-Zz-tqG"/>
+                                    <constraint firstAttribute="height" constant="200" id="uMD-VX-l2n"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-WJ-gw6">
-                                <rect key="frame" x="186" y="529" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-WJ-gw6">
+                                <rect key="frame" x="42" y="343.5" width="330" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="Q5b-UV-wA9"/>
+                                    <constraint firstAttribute="height" constant="80" id="SkH-Ak-07J"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +46,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NeL-3O-Qte" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PZr-zi-KfQ"/>
+                            <constraint firstItem="cVg-WJ-gw6" firstAttribute="top" secondItem="NeL-3O-Qte" secondAttribute="bottom" id="aRt-Ie-slY"/>
+                            <constraint firstItem="NeL-3O-Qte" firstAttribute="centerX" secondItem="aul-gc-gfh" secondAttribute="centerX" id="bS0-sh-9nP"/>
+                            <constraint firstItem="NeL-3O-Qte" firstAttribute="leading" secondItem="cVg-WJ-gw6" secondAttribute="leading" id="j4h-m6-LST"/>
+                            <constraint firstItem="NeL-3O-Qte" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="303.5" id="lUG-L4-mQ1" userLabel="Title Label.top = top + 250"/>
+                            <constraint firstItem="NeL-3O-Qte" firstAttribute="top" secondItem="aul-gc-gfh" secondAttribute="bottom" constant="20" id="wAi-Sj-L1a"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="infoLabel" destination="cVg-WJ-gw6" id="3Pc-j6-X4g"/>
@@ -46,10 +63,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="87"/>
+            <point key="canvasLocation" x="37.681159420289859" y="86.383928571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
