@@ -8,32 +8,48 @@
 import UIKit
 import AVFoundation
 
-class HangulViewController: UIViewController {
+class HangulViewController: UIViewController{
 
+    @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var mainLetter: UILabel!
-    @IBOutlet weak var consonantView: UIView!
-    @IBOutlet weak var vowelView: UIView!
-    @IBOutlet weak var batchimView: UIView!
-    var hangul: String = "가"
+    var check: Int = 0
+    var setLet = [[14, 20, 21, 22, 23, 24, 25, 26, 27],[14, 22, 23, 24, 25, 26, 27],[14]]
+    var hangul: String = "앙"
+    let letters = ["\u{1100}","\u{110f}","\u{1101}"]
+    let syllableArray = [["\u{1100}","\u{110f}","\u{1101}", "\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}", "\u{1106}", "\u{1107}","\u{1111}","\u{1108}", "\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}", "\u{110b}","\u{1112}"], ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"], ["\u{11a8}", "\u{11bf}", "\u{11a9}", "\u{11aa}", "\u{11b0}", "\u{11ab}", "\u{11ac}", "\u{11ad}", "\u{11ae}", "\u{11ba}", "\u{11bb}", "\u{11bd}", "\u{11be}", "\u{11c0}", "\u{11c2}", "\u{11af}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b6}", "\u{11b7}", "\u{11b1}", "\u{11b8}", "\u{11c1}", "\u{11b9}", "\u{11b5}", "\u{11bc}"]]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mainLetter.text = hangul
+        setButton()
+        importButton()
         // Do any additional setup after loading the view.
     }
     
+//    func setButton() {
+//        for i in 0..<syllableArray[0].count {
+//            buttons[i].setTitle(syllableArray[0][i], for: .normal)
+//        }
+//    }
+//    func setBatchim() {
+//        for i in 0..<syllableArray[2].count {
+//            batchims[i].setTitle(syllableArray[0][i], for: .normal)
+//        }
+//    }
+    
     @IBAction func viewSelect(_ sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == 0) {
-            vowelView.isHidden = false
-            consonantView.isHidden = true
-            batchimView.isHidden = true
+            check = 0
+            setButton()
+            importButton()
         }else if(sender.selectedSegmentIndex == 1) {
-            vowelView.isHidden = true
-            consonantView.isHidden = false
-            batchimView.isHidden = true
+            check = 1
+            setButton()
+            importButton()
         }else if(sender.selectedSegmentIndex == 2) {
-            vowelView.isHidden = true
-            consonantView.isHidden = true
-            batchimView.isHidden = false
+            check = 2
+            setButton()
+            importButton()
         }
     }
     
@@ -70,6 +86,7 @@ class HangulViewController: UIViewController {
         print("\(hangul)")
         pronounce(hangul)
     }
+    
     func pronounce(_ letter: String) {
         let synthesizer = AVSpeechSynthesizer()
         let utterance = AVSpeechUtterance(string: letter)
@@ -84,14 +101,23 @@ class HangulViewController: UIViewController {
         synthesizer.speak(utterance)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setButton() {
+        for i in 0..<buttons.count {
+            buttons[i].isHidden = false
+        }
+        for j in 0..<setLet[check].count{
+            buttons[setLet[check][j]].isHidden = true
+        }
     }
-    */
+    
+    func importButton(){
+        var j = 0
+        for i in 0..<buttons.count {
+            if(buttons[i].isHidden == false){
+                buttons[i].setTitle(syllableArray[check][j], for: .normal)
+                j += 1
+            }
+        }
+    }
 
 }
