@@ -846,6 +846,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-J0-RL8">
+                                <rect key="frame" x="341" y="44" width="45" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="0Ct-VD-ALp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vt5-e2-K4Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -891,6 +900,7 @@
                         <outlet property="button6" destination="pLO-0N-Yte" id="xev-HG-qV2"/>
                         <outlet property="button7" destination="QvP-AX-agB" id="Dl1-9h-Y9V"/>
                         <outlet property="explanationView" destination="Yo3-nM-VrJ" id="oCw-RP-JSW"/>
+                        <outlet property="infoButton" destination="Cus-J0-RL8" id="Yo6-Pz-zzy"/>
                         <outlet property="mainLetter" destination="MdL-uT-XHm" id="mu3-Fr-Iye"/>
                         <outlet property="playButton" destination="Yxa-bS-iaj" id="v64-BO-glV"/>
                         <outlet property="prevButton" destination="jvd-Sm-T7F" id="tRR-zO-0qr"/>
@@ -1005,6 +1015,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="smiley.fill" catalog="system" width="128" height="121"/>

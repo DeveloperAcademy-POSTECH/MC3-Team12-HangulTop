@@ -42,6 +42,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBOutlet weak var mainLetter: UILabel!
     @IBOutlet weak var vowelCollection: UICollectionView!
     @IBOutlet weak var explanationView: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
     
     func initPage() {
         cleanButtonSet()
@@ -129,6 +130,8 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 initPage()
             }
         }
+    }
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
     }
     
     //페이지가 바뀔 때 마다 설명 변경
