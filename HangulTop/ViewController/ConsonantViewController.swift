@@ -54,6 +54,9 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
         vowelCollection.flashScrollIndicators()
     }
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "InfoModal", sender: self)
+    }
     
     @IBAction func changePage(_ sender: UIButton) {
         if indexCount == 2 {
@@ -130,8 +133,6 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
                 initPage()
             }
         }
-    }
-    @IBAction func infoButtonPressed(_ sender: UIButton) {
     }
     
     //페이지가 바뀔 때 마다 설명 변경

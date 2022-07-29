@@ -8,11 +8,19 @@
 import UIKit
 
 class InformationModalViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var principleImage: UIImageView!
+    
+    var informationModal = InformationModalModel()
+    var pageCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        titleLabel.text = informationModal.titleArray[pageCount]
+        infoLabel.text = informationModal.infoArray[pageCount]
+        // ImageView
     }
-
 }

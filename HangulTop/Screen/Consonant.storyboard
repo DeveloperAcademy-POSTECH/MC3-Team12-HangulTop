@@ -852,7 +852,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
                                 <connections>
-                                    <action selector="infoButtonPressed:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="0Ct-VD-ALp"/>
+                                    <action selector="infoButtonPressed:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="GYr-pk-mG9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -900,7 +900,7 @@
                         <outlet property="button6" destination="pLO-0N-Yte" id="xev-HG-qV2"/>
                         <outlet property="button7" destination="QvP-AX-agB" id="Dl1-9h-Y9V"/>
                         <outlet property="explanationView" destination="Yo3-nM-VrJ" id="oCw-RP-JSW"/>
-                        <outlet property="infoButton" destination="Cus-J0-RL8" id="Yo6-Pz-zzy"/>
+                        <outlet property="infoButton" destination="Cus-J0-RL8" id="haR-dK-WBZ"/>
                         <outlet property="mainLetter" destination="MdL-uT-XHm" id="mu3-Fr-Iye"/>
                         <outlet property="playButton" destination="Yxa-bS-iaj" id="v64-BO-glV"/>
                         <outlet property="prevButton" destination="jvd-Sm-T7F" id="tRR-zO-0qr"/>
@@ -939,11 +939,20 @@
                         <outletCollection property="buttonSets" destination="ZO6-Sr-Qkv" collectionClass="NSMutableArray" id="gRM-QJ-4TK"/>
                         <outletCollection property="buttonSets" destination="kzg-1a-8mn" collectionClass="NSMutableArray" id="Sym-Kj-JcO"/>
                         <segue destination="O5O-Nr-ODP" kind="show" identifier="finish_seg" id="wAM-hq-K8l"/>
+                        <segue destination="DGe-ho-tv5" kind="presentation" identifier="InfoModal" id="fBD-zj-tvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwC-dp-35Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="77.678571428571431"/>
+        </scene>
+        <!--InformationModal-->
+        <scene sceneID="ixB-qI-TS1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InformationModal" id="DGe-ho-tv5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCT-UT-DEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="-310"/>
         </scene>
         <!--Consonant End View Controller-->
         <scene sceneID="8ji-U0-Jb3">
