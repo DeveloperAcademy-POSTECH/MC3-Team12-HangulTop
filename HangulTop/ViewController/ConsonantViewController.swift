@@ -130,27 +130,24 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     @IBAction func nextPage(_ sender: Any) {
         if pageNum < syllableArray[indexCount].count {
             pageNum += 1
-            if pageNum < syllableArray[indexCount].count {
-                setInitalMainLetter()
+        }
+        if pageNum == syllableArray[indexCount].count { //성공 뷰
+            switch indexCount {
+            case 0:
+                UserDefaults.standard.set(true, forKey: "isVowel")
+            case 1:
+                UserDefaults.standard.set(true, forKey: "isConsonant")
+            case 2:
+                UserDefaults.standard.set(true, forKey: "isBatchim")
+            default:
+                print("")
             }
-            if pageNum == syllableArray[indexCount].count { //성공 뷰
-                switch indexCount {
-                case 0:
-                    UserDefaults.standard.set(true, forKey: "isVowel")
-                case 1:
-                    UserDefaults.standard.set(true, forKey: "isConsonant")
-                case 2:
-                    UserDefaults.standard.set(true, forKey: "isBatchim")
-                default:
-                    print("")
-                }
-                guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
-                { return }
-                vc.data = indexCount
-                self.navigationController!.pushViewController(vc, animated: true)
-            } else {
-                initPage()
-            }
+            guard let vc =  storyboard?.instantiateViewController(identifier: "ConsonantEndViewController") as? ConsonantEndViewController else
+            { return }
+            vc.data = indexCount
+            self.navigationController!.pushViewController(vc, animated: true)
+        } else {
+            initPage()
         }
     }
     
