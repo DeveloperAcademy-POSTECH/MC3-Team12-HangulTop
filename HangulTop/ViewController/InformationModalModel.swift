@@ -20,4 +20,6 @@ struct InformationModalModel {
     let lettersArray: [[String]] = [
         ["ㄱ", "ㅋ", "ㄲ"], ["ㄴ", "ㄷ", "ㅌ", "ㄹ", "ㄸ"], ["ㅁ", "ㅂ", "ㅍ", "ㅃ"], ["ㅅ", "ㅈ", "ㅊ", "ㅉ", "ㅆ"], ["ㅇ", "ㅎ"]
     ]
+    
+    let imageArray: [String] = ["ㄱ", "ㄴ", "ㅁ", "ㅅ", "ㅇ"]
 }

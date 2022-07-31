@@ -25,7 +25,7 @@ class InformationModalViewController: UIViewController {
         
         titleLabel.text = informationModal.titleArray[pageCount]
         infoLabel.text = informationModal.infoArray[pageCount]
-        // ImageView
+        principleImage.image = UIImage(named: informationModal.imageArray[pageCount])
     }
     
 }
