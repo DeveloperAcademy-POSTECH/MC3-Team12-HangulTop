@@ -149,8 +149,86 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdh-pY-fPL" userLabel="View1">
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-7S-9ZO">
+                                        <rect key="frame" x="120" y="45" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="4fO-11-0iQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="WQs-bG-ANU"/>
+                                    <constraint firstAttribute="width" constant="300" id="te0-ue-qa0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cab-QC-60h" userLabel="View2">
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-86-NxA">
+                                        <rect key="frame" x="67.999999999999972" y="45" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="djW-yL-uIy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-f3-rp0">
+                                        <rect key="frame" x="173.99999999999997" y="45" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="Xpk-8u-oDT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="nLg-UX-aw8"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="CKJ-AT-uAe"/>
+                                    <constraint firstAttribute="width" constant="300" id="CNa-ys-Ec6"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wq7-wT-BEo" userLabel="View3">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unt-Mh-5bC">
                                         <rect key="frame" x="120" y="45" width="60" height="60"/>
@@ -217,86 +295,8 @@
                                     <constraint firstAttribute="width" constant="300" id="axD-q4-Bo1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cab-QC-60h" userLabel="View2">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8k-86-NxA">
-                                        <rect key="frame" x="62" y="45" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="djW-yL-uIy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-f3-rp0">
-                                        <rect key="frame" x="179" y="45" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="Xpk-8u-oDT"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="nLg-UX-aw8"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="CKJ-AT-uAe"/>
-                                    <constraint firstAttribute="width" constant="300" id="CNa-ys-Ec6"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdh-pY-fPL" userLabel="View1">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMb-7S-9ZO">
-                                        <rect key="frame" x="120" y="45" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="buttonSelected:" destination="09Y-7J-Xd8" eventType="touchUpInside" id="4fO-11-0iQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="WQs-bG-ANU"/>
-                                    <constraint firstAttribute="width" constant="300" id="te0-ue-qa0"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLV-gh-AtU" userLabel="View4">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lct-pA-Ao9">
                                         <rect key="frame" x="82.999999999999972" y="45" width="60" height="60"/>
@@ -337,7 +337,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-fX-nGJ">
-                                        <rect key="frame" x="11.999999999999972" y="45" width="60" height="60"/>
+                                        <rect key="frame" x="10.999999999999972" y="45" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -356,7 +356,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Cxl-Re-fh3">
-                                        <rect key="frame" x="227.99999999999997" y="45" width="60" height="60"/>
+                                        <rect key="frame" x="228.99999999999997" y="45" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -383,10 +383,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZO6-Sr-Qkv" userLabel="View5">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dq-fr-YG9">
-                                        <rect key="frame" x="46.999999999999972" y="79.000000000000057" width="60" height="60"/>
+                                        <rect key="frame" x="45.999999999999972" y="79.000000000000057" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -424,7 +424,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="G01-er-259">
-                                        <rect key="frame" x="192.99999999999997" y="79.000000000000057" width="60" height="60"/>
+                                        <rect key="frame" x="193.99999999999997" y="79.000000000000057" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -443,7 +443,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhA-eX-BcR">
-                                        <rect key="frame" x="80.999999999999972" y="11" width="60" height="60"/>
+                                        <rect key="frame" x="82.999999999999972" y="11" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -462,7 +462,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLa-7A-7iL">
-                                        <rect key="frame" x="158.99999999999997" y="11" width="60" height="60"/>
+                                        <rect key="frame" x="156.99999999999997" y="11" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -489,10 +489,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzg-1a-8mn" userLabel="View7">
-                                <rect key="frame" x="37.666666666666664" y="342.66666666666663" width="300" height="180"/>
+                                <rect key="frame" x="37.666666666666657" y="342.66666666666669" width="300" height="180.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-21-Szv">
-                                        <rect key="frame" x="11.999999999999972" y="79.000000000000057" width="60" height="60"/>
+                                        <rect key="frame" x="10.999999999999972" y="79.000000000000057" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -549,7 +549,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QvP-AX-agB">
-                                        <rect key="frame" x="227.99999999999997" y="79.000000000000057" width="60" height="60"/>
+                                        <rect key="frame" x="228.99999999999997" y="79.000000000000057" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -568,7 +568,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zD-Yz-Pfz">
-                                        <rect key="frame" x="48.999999999999972" y="11" width="60" height="60"/>
+                                        <rect key="frame" x="47.999999999999972" y="11" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -606,7 +606,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-cg-NvC">
-                                        <rect key="frame" x="190.99999999999997" y="11" width="60" height="60"/>
+                                        <rect key="frame" x="191.99999999999997" y="11" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="EBSHunminjeongeumL" family="EBS Hunminjeongeum L" pointSize="30"/>
@@ -914,8 +914,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button6" destination="pLO-0N-Yte" id="xev-HG-qV2"/>
-                        <outlet property="button7" destination="QvP-AX-agB" id="Dl1-9h-Y9V"/>
                         <outlet property="explanationView" destination="Yo3-nM-VrJ" id="oCw-RP-JSW"/>
                         <outlet property="infoButton" destination="Cus-J0-RL8" id="haR-dK-WBZ"/>
                         <outlet property="mainLetter" destination="MdL-uT-XHm" id="mu3-Fr-Iye"/>
@@ -929,32 +927,34 @@
                         <outletCollection property="pages" destination="pRA-6O-qyA" collectionClass="NSMutableArray" id="n3R-0b-Ese"/>
                         <outletCollection property="pages" destination="OfJ-8R-Y9i" collectionClass="NSMutableArray" id="Hn6-y5-CqS"/>
                         <outletCollection property="pages" destination="qrJ-4H-d05" collectionClass="NSMutableArray" id="EFL-S2-HsW"/>
-                        <outletCollection property="button1" destination="NMb-7S-9ZO" collectionClass="NSMutableArray" id="CIy-u4-FXy"/>
-                        <outletCollection property="button1" destination="l8k-86-NxA" collectionClass="NSMutableArray" id="ki3-HJ-Tfy"/>
-                        <outletCollection property="button1" destination="vCX-Gv-SNl" collectionClass="NSMutableArray" id="1q7-1g-z4u"/>
-                        <outletCollection property="button1" destination="Pvf-fX-nGJ" collectionClass="NSMutableArray" id="Ed9-Gu-T4e"/>
-                        <outletCollection property="button1" destination="uhA-eX-BcR" collectionClass="NSMutableArray" id="Nbg-zy-Ewd"/>
-                        <outletCollection property="button1" destination="1zD-Yz-Pfz" collectionClass="NSMutableArray" id="aO3-eU-NoI"/>
-                        <outletCollection property="button2" destination="aa5-f3-rp0" collectionClass="NSMutableArray" id="8H0-Z4-NY6"/>
-                        <outletCollection property="button2" destination="unt-Mh-5bC" collectionClass="NSMutableArray" id="X1t-uX-7qq"/>
-                        <outletCollection property="button2" destination="lct-pA-Ao9" collectionClass="NSMutableArray" id="VAl-K2-IUg"/>
-                        <outletCollection property="button2" destination="nLa-7A-7iL" collectionClass="NSMutableArray" id="lfX-Ve-YXb"/>
-                        <outletCollection property="button2" destination="fVP-sb-F6A" collectionClass="NSMutableArray" id="eqB-vN-SfU"/>
-                        <outletCollection property="button3" destination="1ij-QV-fNs" collectionClass="NSMutableArray" id="U2c-sH-i4C"/>
-                        <outletCollection property="button3" destination="gg7-LB-ImE" collectionClass="NSMutableArray" id="UYk-jb-NUz"/>
-                        <outletCollection property="button3" destination="6Dq-fr-YG9" collectionClass="NSMutableArray" id="FVK-gs-Ish"/>
-                        <outletCollection property="button3" destination="Zf8-cg-NvC" collectionClass="NSMutableArray" id="vzX-Qo-VJh"/>
-                        <outletCollection property="button4" destination="Cxl-Re-fh3" collectionClass="NSMutableArray" id="QTE-kg-R6D"/>
-                        <outletCollection property="button4" destination="Q0d-gg-om2" collectionClass="NSMutableArray" id="ICV-s4-d6b"/>
-                        <outletCollection property="button4" destination="AGv-21-Szv" collectionClass="NSMutableArray" id="e2a-cg-Ibw"/>
-                        <outletCollection property="button5" destination="G01-er-259" collectionClass="NSMutableArray" id="rmm-b6-ev0"/>
-                        <outletCollection property="button5" destination="dMt-Tg-n2b" collectionClass="NSMutableArray" id="Kc4-Oa-0yd"/>
                         <outletCollection property="buttonSets" destination="Zdh-pY-fPL" collectionClass="NSMutableArray" id="1Ym-aq-JiU"/>
                         <outletCollection property="buttonSets" destination="cab-QC-60h" collectionClass="NSMutableArray" id="fSU-Wf-dti"/>
                         <outletCollection property="buttonSets" destination="wq7-wT-BEo" collectionClass="NSMutableArray" id="d11-Bq-ZFU"/>
                         <outletCollection property="buttonSets" destination="QLV-gh-AtU" collectionClass="NSMutableArray" id="spR-Kf-JRj"/>
                         <outletCollection property="buttonSets" destination="ZO6-Sr-Qkv" collectionClass="NSMutableArray" id="gRM-QJ-4TK"/>
                         <outletCollection property="buttonSets" destination="kzg-1a-8mn" collectionClass="NSMutableArray" id="Sym-Kj-JcO"/>
+                        <outletCollection property="button1" destination="NMb-7S-9ZO" collectionClass="NSMutableArray" id="ZzK-uo-aAX"/>
+                        <outletCollection property="button2" destination="l8k-86-NxA" collectionClass="NSMutableArray" id="ONe-n2-Bpv"/>
+                        <outletCollection property="button2" destination="aa5-f3-rp0" collectionClass="NSMutableArray" id="4b8-05-DNg"/>
+                        <outletCollection property="button3" destination="vCX-Gv-SNl" collectionClass="NSMutableArray" id="JIz-Ze-DeQ"/>
+                        <outletCollection property="button3" destination="unt-Mh-5bC" collectionClass="NSMutableArray" id="lmB-dX-MJK"/>
+                        <outletCollection property="button3" destination="1ij-QV-fNs" collectionClass="NSMutableArray" id="ZfN-j4-cob"/>
+                        <outletCollection property="button4" destination="Pvf-fX-nGJ" collectionClass="NSMutableArray" id="sd9-Eq-DdN"/>
+                        <outletCollection property="button4" destination="lct-pA-Ao9" collectionClass="NSMutableArray" id="cZX-Ev-Bzt"/>
+                        <outletCollection property="button4" destination="gg7-LB-ImE" collectionClass="NSMutableArray" id="Fdc-za-hUo"/>
+                        <outletCollection property="button4" destination="Cxl-Re-fh3" collectionClass="NSMutableArray" id="cGY-1e-py3"/>
+                        <outletCollection property="button5" destination="uhA-eX-BcR" collectionClass="NSMutableArray" id="5R8-KA-hUq"/>
+                        <outletCollection property="button5" destination="nLa-7A-7iL" collectionClass="NSMutableArray" id="vuX-Yw-Iyq"/>
+                        <outletCollection property="button5" destination="6Dq-fr-YG9" collectionClass="NSMutableArray" id="0QT-ZL-hdD"/>
+                        <outletCollection property="button5" destination="Q0d-gg-om2" collectionClass="NSMutableArray" id="jqi-B6-Udz"/>
+                        <outletCollection property="button5" destination="G01-er-259" collectionClass="NSMutableArray" id="8D8-ox-hkA"/>
+                        <outletCollection property="button7" destination="1zD-Yz-Pfz" collectionClass="NSMutableArray" id="OAt-7Y-vkc"/>
+                        <outletCollection property="button7" destination="fVP-sb-F6A" collectionClass="NSMutableArray" id="Ld4-5z-tyf"/>
+                        <outletCollection property="button7" destination="Zf8-cg-NvC" collectionClass="NSMutableArray" id="Mwx-eV-ZWf"/>
+                        <outletCollection property="button7" destination="AGv-21-Szv" collectionClass="NSMutableArray" id="OIF-dP-vDp"/>
+                        <outletCollection property="button7" destination="dMt-Tg-n2b" collectionClass="NSMutableArray" id="5aV-J4-etn"/>
+                        <outletCollection property="button7" destination="pLO-0N-Yte" collectionClass="NSMutableArray" id="ift-K8-C8r"/>
+                        <outletCollection property="button7" destination="QvP-AX-agB" collectionClass="NSMutableArray" id="Egp-TA-mKE"/>
                         <segue destination="O5O-Nr-ODP" kind="show" identifier="finish_seg" id="wAM-hq-K8l"/>
                         <segue destination="DGe-ho-tv5" kind="presentation" identifier="InfoModal" id="fBD-zj-tvU"/>
                     </connections>
