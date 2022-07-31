@@ -23,7 +23,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
     //자음 공부시 보이는 모음 배열
     let vowelArray = ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"]
     //설명 배열
-    var explanationArray = [["ㅡ 는 항상 자음의 아래,ㅣ는 항상 자음의 오른편에 위치해야 한다.", "기본 모음에 · 이 하나 추가된 형태이다.", "기본 모음에 · 이 두개 추가된 형태이다.", "현대 국어에서 ㅐ 와 ㅔ 의 소리는 크게 구분되지 않는다.", "결합된 두 모음을 빠르게 읽으면 된다."],["","","","",""],["모두 ㄱ의 소리로 발음됩니다.","모두 ㄴ의 소리로 발음됩니다.","모두 ㄷ의 소리로 발음됩니다.\nㄸ, ㅉ은 받침으로 쓰지 않는다.","모두 ㄹ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.","모두 ㅁ의 소리로 발음됩니다.\nㅃ은 받침으로 쓰지 않습니다.","ㅇ은 첫소리에서는 소릿값이 없고,\n받침으로 올때만 소리를 인식할 수 있습니다."]]
+    var explanationArray = [["ㅡ always goes below the consonant,\nwhereas ㅣ goes to the right.", "One · is added to the basic vowel.", "Two · were added to the basic vowel.", "· and ㅣwere added to the basic vowel.", "Two vowels are combined into one!\nRead them quickly in order."],["","","","",""],["","","","","","",""]]
     //페이지 컨트롤에 표시되는 배열
     var pageArray = [["", "ㅣ", "ㅏ", "ㅑ", "ㅐ", "ㅘ", ""], ["", "ㄱ", "ㄴ", "ㅁ", "ㅅ", "ㅇ", ""], ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅇ"]]
     var defaultLetter: [String] = ["으", "가", "악"]
@@ -52,7 +52,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setInitalMainLetter()
         setExplanation()
         setInfo()
-        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        currentButtonSet[0].backgroundColor = UIColor(r: 110, g: 182, b: 255)
         vowelCollection.flashScrollIndicators()
     }
     
@@ -113,7 +113,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         mainLetter.text = defaultLetter[indexCount]
         pronounce(defaultLetter[indexCount])
         cleanButtonSet()
-        sender.backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        sender.backgroundColor = UIColor(r: 110, g: 182, b: 255)
     }
     
     @IBOutlet weak var prevButton: UIButton!
@@ -235,7 +235,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         setPageControl()
         vowelCollection.selectItem(at: IndexPath(row: vowelArray.firstIndex(of: "ㅏ")!, section: 0), animated: false, scrollPosition: .top)
-        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        currentButtonSet[0].backgroundColor = UIColor(r: 110, g: 182, b: 255)
         setInfo()
         selectAudioFile()
         if indexCount == 0 {

@@ -8,9 +8,9 @@
 import UIKit
 
 class SyllableStartViewController: UIViewController{
-    let captionArray = ["모음은 총 21개로, 기본 모음 10개와 기본 모음을 합친 형태인 복합 모음 11개로 구성되어 있습니다.", "자음은 총 19개로, 기본자음 14개와 복합자음\n(ㄲ,ㄸ,ㅃ,ㅆ,ㅉ) 5개로 구성되어 있습니다.", "받침은 자음 모음 결합 밑에 오는 또 다른 자음을 뜻 합니다. 받침 글자로는 홑받침 16개와 겹받침 11개가 사용되는데, 실제 발음에서는 ‘ㄱ,ㄴ,ㄷ,ㄹ,ㅁ,ㅂ,ㅇ'의 7개 자음의 소리로만 발음합니다."]
+    let captionArray = ["Vowels were modeled after:\n•(sky), ㅡ(earth),ㅣ(human), also called “cheonjiin”, representing the basis of the universe.\n\n• is not solely used these days, as it does not have a sound on its own.", "Consonants were modeled after the shape of the human pronunciation organ.\n\nFive basic consonants ‘ㄱ, ㄷ, ㅂ, ㅅ, ㅈ' were created, and by adding strokes to these letters, consonants with stronger sounds were created.", "Batchim is an additional consonant that comes after a consonant vowel combination.\n\nMost consonants can be batchim, but they are always pronounced as one of the 7 consonants, 'ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅇ’"]
     let imageArray = ["vowel", "consonant", "batchim"]
-    let extraCaptionArray = ["모음은 단독으로 쓰이지 않기 때문에, 여기선 첫번째로 올 때 음가가 없는 자음’ㅇ'을 모음 앞의 공백을 표시하는 기호로 쓸 것입니다.", "복합모음은 기본 자음 ㄱ, ㄷ, ㅂ, ㅅ, ㅈ를 두번씩 쓴 형태입니다.", "이 7개의 자음이 받침으로 가장 많이 쓰이고, 겹받침은 드물게 쓰이니 안심하세요!"]
+    let extraCaptionArray = ["Vowels are not used alone. 'ㅇ' here indicates a phonetic blank in front of each vowel.", "A double consonant is a form of writing the basic consonants ‘ㄱ, ㄷ, ㅂ, ㅅ, ㅈ’ twice.", "There are double batchims that are not used as initial consonant, but they are rarely used, so don't worry!"]
     var indexCount: Int?
     @IBOutlet weak var caption: UILabel!
     @IBOutlet weak var extraCaption: UILabel!
