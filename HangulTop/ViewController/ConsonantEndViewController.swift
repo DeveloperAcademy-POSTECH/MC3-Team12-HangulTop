@@ -13,7 +13,7 @@ struct Info {
 
 class ConsonantEndViewController: UIViewController {
     var data: Int? = 0
-    let messageArray = ["모음 학습을 마쳤습니다.", "자음 학습을 마쳤습니다.", "받침 학습을 마쳤습니다."]
+    let messageArray = ["You have learned\nthe vowels of Hangul!", "You have learned\nthe consonants of Hangul!", "You have learned\nthe batchim of Hangul!"]
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var goToStudy: UIButton!
@@ -46,11 +46,11 @@ class ConsonantEndViewController: UIViewController {
         super.viewDidLoad()
         message.text = messageArray[data ?? 0]
         if(data == 0){
-            goToStudy.setTitle("자음 공부하러 가기", for: .normal)
+            goToStudy.setTitle("Learn Consonant", for: .normal)
         }else if(data == 1){
-            goToStudy.setTitle("받침 공부하러 가기", for: .normal)
+            goToStudy.setTitle("Learn Batchim", for: .normal)
         }else{
-            goToStudy.isHidden = true
+            goToStudy.setTitle("Go to Quiz", for: .normal)
         }
     }
 }
