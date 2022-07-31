@@ -52,7 +52,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setInitalMainLetter()
         setExplanation()
         setInfo()
-        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        currentButtonSet[0].backgroundColor = UIColor(r: 110, g: 182, b: 255)
         vowelCollection.flashScrollIndicators()
     }
     
@@ -113,7 +113,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         mainLetter.text = defaultLetter[indexCount]
         pronounce(defaultLetter[indexCount])
         cleanButtonSet()
-        sender.backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        sender.backgroundColor = UIColor(r: 110, g: 182, b: 255)
     }
     
     @IBOutlet weak var prevButton: UIButton!
@@ -235,7 +235,7 @@ class ConsonantViewController: UIViewController, UICollectionViewDataSource,UICo
         setButtonLayout()
         setPageControl()
         vowelCollection.selectItem(at: IndexPath(row: vowelArray.firstIndex(of: "ㅏ")!, section: 0), animated: false, scrollPosition: .top)
-        currentButtonSet[0].backgroundColor = UIColor(r: 253, g: 168, b: 3)
+        currentButtonSet[0].backgroundColor = UIColor(r: 110, g: 182, b: 255)
         setInfo()
         selectAudioFile()
         if indexCount == 0 {

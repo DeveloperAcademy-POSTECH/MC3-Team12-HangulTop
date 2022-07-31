@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            self.cellButton.backgroundColor = self.isSelected ? UIColor(r: 253, g: 168, b: 3) : .white
+            self.cellButton.backgroundColor = self.isSelected ? UIColor(r: 110, g: 182, b: 255) : .white
         }
     }
 }
