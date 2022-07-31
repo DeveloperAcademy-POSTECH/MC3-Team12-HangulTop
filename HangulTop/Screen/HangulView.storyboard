@@ -201,10 +201,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgj-Mz-Mdu">
                                         <rect key="frame" x="180" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="ㅎ">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="selectButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ony-e4-O0h"/>
@@ -431,9 +431,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="jqz-8B-yYt" secondAttribute="trailing" constant="20" id="br5-SU-O2o"/>
+                                    <constraint firstItem="VuA-qL-e7k" firstAttribute="leading" secondItem="p57-m2-DvJ" secondAttribute="leading" constant="20" id="Bb2-c3-njm"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqz-8B-yYt" secondAttribute="trailing" constant="20" id="IKz-FU-Fbs"/>
                                     <constraint firstAttribute="height" constant="53" id="vcm-87-5gu"/>
-                                    <constraint firstItem="VuA-qL-e7k" firstAttribute="leading" secondItem="p57-m2-DvJ" secondAttribute="leading" constant="20" id="wVH-fE-G8Y"/>
                                 </constraints>
                             </stackView>
                         </subviews>

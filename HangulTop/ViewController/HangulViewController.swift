@@ -18,7 +18,8 @@ class HangulViewController: UIViewController{
     var setLet = [[14, 20, 21, 22, 23, 24, 25, 26, 27],[14, 22, 23, 24, 25, 26, 27],[1]]
     var hangul: String = "앙"
     let letters = ["\u{1100}","\u{110f}","\u{1101}"]
-    let syllableArray = [["\u{1100}","\u{1102}","\u{1103}","\u{1105}","\u{1106}","\u{1107}", "\u{1109}","\u{110b}", "\u{110c}", "\u{110e}","\u{110f}","\u{1110}", "\u{1111}","\u{1112}","\u{1101}","\u{1104}","\u{1108}", "\u{110a}","\u{110d}"], ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅒ", "ㅔ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"], ["\u{11a7}", "\u{11a8}", "\u{11ab}", "\u{11ae}", "\u{11af}", "\u{11b7}", "\u{11b8}", "\u{11ba}", "\u{11bc}", "\u{11bd}", "\u{11be}", "\u{11bf}", "\u{11c0}", "\u{11c1}", "\u{11c2}", "\u{11a9}", "\u{11bb}", "\u{11aa}", "\u{11ac}", "\u{11ad}", "\u{11b0}", "\u{11b1}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b5}", "\u{11b6}",  "\u{11b9}"]]
+    let syllable = [0x1100, 0x1102,0x1103,0x1105, 0x1106, 0x1107, 0x1109, 0x110b, 0x110c, 0x110e,0x110f, 0x1110,  0x1111, 0x1112, 0x1101, 0x1104, 0x1108,  0x110a, 0x110d]
+    let syllableArray =  [["\u{1100}","\u{1102}","\u{1103}","\u{1105}","\u{1106}","\u{1107}", "\u{1109}","\u{110b}", "\u{110c}", "\u{110e}","\u{110f}","\u{1110}", "\u{1111}","\u{1112}","\u{1101}","\u{1104}","\u{1108}", "\u{110a}","\u{110d}"], ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅒ", "ㅔ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"], ["\u{11a7}", "\u{11a8}", "\u{11ab}", "\u{11ae}", "\u{11af}", "\u{11b7}", "\u{11b8}", "\u{11ba}", "\u{11bc}", "\u{11bd}", "\u{11be}", "\u{11bf}", "\u{11c0}", "\u{11c1}", "\u{11c2}", "\u{11a9}", "\u{11bb}", "\u{11aa}", "\u{11ac}", "\u{11ad}", "\u{11b0}", "\u{11b1}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b5}", "\u{11b6}",  "\u{11b9}"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,33 +74,107 @@ class HangulViewController: UIViewController{
     
     @IBAction func selectButton(_ sender: UIButton){
         let mainUni = UnicodeScalar(hangul)?.value
-        let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "\u{1100}")?.value ?? 0x1100
-        if(buttonUni < 0x1113){ //자음일때
-            let uni = buttonUni - 0x1100
-            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
-            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
-            let letter = ((uni * 21) + vowelUni) * 28 + batUni + 0xAC00
-            hangul = String(UnicodeScalar(letter)!)
+        if(check == 0){
+            var letter: String = "ㄱ"
+            switch sender.titleLabel!.text {
+            case "ㄱ":
+                letter = "\u{1100}"
+            case "ㄴ":
+                letter = "\u{1102}"
+            case "ㄷ":
+                letter = "\u{1103}"
+            case "ㄹ":
+                letter = "\u{1105}"
+            case "ㅁ":
+                letter = "\u{1106}"
+            case "ㅂ" :
+                letter = "\u{1107}"
+            case "ㅅ":
+                letter = "\u{1109}"
+            case "ㅇ":
+                letter = "\u{110b}"
+            case "ㅈ":
+                letter = "\u{110c}"
+            case "ㅊ":
+                letter = "\u{110e}"
+            case "ㅋ":
+                letter = "\u{110f}"
+            case "ㅌ":
+                letter = "\u{1110}"
+            case "ㅍ":
+                letter = "\u{1111}"
+            case "ㅎ":
+                letter = "\u{1112}"
+            case "ㄲ":
+                letter = "\u{1101}"
+            case "ㄸ" :
+                letter = "\u{1104}"
+            case "ㅃ":
+                letter = "\u{1108}"
+            case "ㅆ":
+                letter = "\u{110a}"
+            case "ㅉ":
+                letter = "\u{110d}"
+            default:
+                break
+            }
+            let buttonUni = UnicodeScalar(letter)?.value ?? 0x1100
+            if(buttonUni < 0x1113){ //자음일때
+                let uni = buttonUni - 0x1100
+                let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+                let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+                let letter = ((uni * 21) + vowelUni) * 28 + batUni + 0xAC00
+                hangul = String(UnicodeScalar(letter)!)
+            }
+            else if(buttonUni < 0x11c3){ //받침일때
+                let uni = buttonUni - 0x11a7
+                let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+                let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+                let letter = ((conUni * 21) + vowelUni) * 28 + uni + 0xAC00
+                hangul = String(UnicodeScalar(letter)!)
+            }
+            else{ //모음일때
+                let uni = buttonUni - 0x314f
+                print("\(uni)")
+                let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+                print("\(conUni)")
+                let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+                print("\(batUni)")
+                let letter = ((conUni * 21) + uni) * 28 + batUni + 0xAC00
+                print("\(letter)")
+                hangul = String(UnicodeScalar(letter)!)
+                print("\(hangul)")
+            }
+        }else{
+            let buttonUni = UnicodeScalar(sender.titleLabel!.text ?? "\u{1100}")?.value ?? 0x1100
+            if(buttonUni < 0x1113){ //자음일때
+                let uni = buttonUni - 0x1100
+                let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+                let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+                let letter = ((uni * 21) + vowelUni) * 28 + batUni + 0xAC00
+                hangul = String(UnicodeScalar(letter)!)
+            }
+            else if(buttonUni < 0x11c3){ //받침일때
+                let uni = buttonUni - 0x11a7
+                let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+                let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
+                let letter = ((conUni * 21) + vowelUni) * 28 + uni + 0xAC00
+                hangul = String(UnicodeScalar(letter)!)
+            }
+            else{ //모음일때
+                let uni = buttonUni - 0x314f
+                print("\(uni)")
+                let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
+                print("\(conUni)")
+                let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
+                print("\(batUni)")
+                let letter = ((conUni * 21) + uni) * 28 + batUni + 0xAC00
+                print("\(letter)")
+                hangul = String(UnicodeScalar(letter)!)
+                print("\(hangul)")
+            }
         }
-        else if(buttonUni < 0x11c3){ //받침일때
-            let uni = buttonUni - 0x11a7
-            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
-            let vowelUni = ((mainUni ?? 0xac01) - 0xac00) / 28 % 21
-            let letter = ((conUni * 21) + vowelUni) * 28 + uni + 0xAC00
-            hangul = String(UnicodeScalar(letter)!)
-        }
-        else{ //모음일때
-            let uni = buttonUni - 0x314f
-            print("\(uni)")
-            let conUni = ((mainUni ?? 0xac01) - 0xac00) / 28 / 21
-            print("\(conUni)")
-            let batUni = ((mainUni ?? 0xac01) - 0xac00) % 28
-            print("\(batUni)")
-            let letter = ((conUni * 21) + uni) * 28 + batUni + 0xAC00
-            print("\(letter)")
-            hangul = String(UnicodeScalar(letter)!)
-            print("\(hangul)")
-        }
+        
         mainLetter?.text = hangul
         print("\(hangul)")
         pronounce(hangul)
@@ -142,6 +217,65 @@ class HangulViewController: UIViewController{
                     buttons[i].setTitleColor(UIColor.white, for: .normal)
                     buttons[i].layer.cornerRadius = 15
                     buttons[i].titleLabel?.font = UIFont(name: "EBS훈민정음R", size: 30) ?? .systemFont(ofSize: 30, weight: .regular)
+                    buttons[i].backgroundColor = .white
+                    j += 1
+                }else if(check == 0){ //자음 세그먼트가 클릭되어 있을때
+                    var letter: String = "ㄱ"
+                    switch syllableArray[check][j] { //유니코드 값에 따라 글자를 배정한다.
+                    case "\u{1100}":
+                        letter = "ㄱ"
+                    case "\u{1102}":
+                        letter = "ㄴ"
+                    case "\u{1103}":
+                        letter = "ㄷ"
+                    case "\u{1105}":
+                        letter = "ㄹ"
+                    case "\u{1106}":
+                        letter = "ㅁ"
+                    case "\u{1107}":
+                        letter = "ㅂ"
+                    case "\u{1109}":
+                        letter = "ㅅ"
+                    case "\u{110b}":
+                        letter = "ㅇ"
+                    case "\u{110c}":
+                        letter = "ㅈ"
+                    case "\u{110e}":
+                        letter = "ㅊ"
+                    case "\u{110f}":
+                        letter = "ㅋ"
+                    case "\u{1110}":
+                        letter = "ㅌ"
+                    case "\u{1111}":
+                        letter = "ㅍ"
+                    case "\u{1112}":
+                        letter = "ㅎ"
+                    case "\u{1101}":
+                        letter = "ㄲ"
+                    case "\u{1104}":
+                        letter = "ㄸ"
+                    case "\u{1108}":
+                        letter = "ㅃ"
+                    case "\u{110a}":
+                        letter = "ㅆ"
+                    case "\u{110d}":
+                        letter = "ㅉ"
+                    default:
+                        break
+                    }
+                    buttons[i].setTitle(letter, for: .normal)
+                    //                    buttons[i].titleLabel?.shadowColor = UIColor.black.cgColor
+                    buttons[i].titleLabel?.shadowOffset = CGSize(width: 0, height: 4)
+                    //                   btn.layer.shadowColor = UIColor.black.cgColor // 색깔
+                    buttons[i].layer.masksToBounds = false  // 내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
+                    buttons[i].layer.shadowOffset = CGSize(width: 0, height: 4) // 위치조정
+                    buttons[i].layer.shadowRadius = 1 // 반경
+                    buttons[i].layer.shadowOpacity = 0.3 // alpha값 buttons[i].titleLabel?.shadowOpacity = 0.5
+                    buttons[i].layer.borderWidth = 1
+                    buttons[i].layer.borderColor = UIColor.black.cgColor
+                    buttons[i].setTitleColor(UIColor.black, for: .normal)
+                    buttons[i].layer.cornerRadius = 15
+                    buttons[i].titleLabel?.font = UIFont(name: "EBSHunminjeongeumL", size: 30) ?? .systemFont(ofSize: 30, weight: .regular)
                     buttons[i].backgroundColor = .white
                     j += 1
                 }else{
