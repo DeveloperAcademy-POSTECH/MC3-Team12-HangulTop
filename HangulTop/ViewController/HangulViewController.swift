@@ -16,7 +16,7 @@ class HangulViewController: UIViewController{
     var setLet = [[14, 20, 21, 22, 23, 24, 25, 26, 27],[14, 22, 23, 24, 25, 26, 27],[1]]
     var hangul: String = "앙"
     let letters = ["\u{1100}","\u{110f}","\u{1101}"]
-    let syllableArray = [["\u{1100}","\u{110f}","\u{1101}", "\u{1102}","\u{1103}","\u{1110}","\u{1105}","\u{1104}", "\u{1106}", "\u{1107}","\u{1111}","\u{1108}", "\u{1109}","\u{110c}","\u{110e}","\u{110d}","\u{110a}", "\u{110b}","\u{1112}"], ["ㅡ", "ㅣ", "ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅐ", "ㅔ", "ㅒ", "ㅖ", "ㅘ", "ㅚ", "ㅙ", "ㅝ", "ㅟ", "ㅞ", "ㅢ"], ["\u{11a7}", "\u{11a8}", "\u{11bf}", "\u{11a9}", "\u{11aa}", "\u{11b0}", "\u{11ab}", "\u{11ac}", "\u{11ad}", "\u{11ae}", "\u{11ba}", "\u{11bb}", "\u{11bd}", "\u{11be}", "\u{11c0}", "\u{11c2}", "\u{11af}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b6}", "\u{11b7}", "\u{11b1}", "\u{11b8}", "\u{11c1}", "\u{11b9}", "\u{11b5}", "\u{11bc}"]]
+    let syllableArray = [["\u{1100}","\u{1102}","\u{1103}","\u{1105}","\u{1106}","\u{1107}", "\u{1109}","\u{110b}", "\u{110c}", "\u{110e}","\u{110f}","\u{1110}", "\u{1111}","\u{1112}","\u{1101}","\u{1104}","\u{1108}", "\u{110a}","\u{110d}"], ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅒ", "ㅔ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"], ["\u{11a7}", "\u{11a8}", "\u{11ab}", "\u{11ae}", "\u{11af}", "\u{11b7}", "\u{11b8}", "\u{11ba}", "\u{11bc}", "\u{11bd}", "\u{11be}", "\u{11bf}", "\u{11c0}", "\u{11c1}", "\u{11c2}", "\u{11a9}", "\u{11bb}", "\u{11aa}", "\u{11ac}", "\u{11ad}", "\u{11b0}", "\u{11b1}", "\u{11b2}", "\u{11b3}", "\u{11b4}", "\u{11b5}", "\u{11b6}",  "\u{11b9}"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,24 +119,28 @@ class HangulViewController: UIViewController{
             if(buttons[i].isHidden == false){
                 if(UnicodeScalar(syllableArray[check][j])?.value == 0x11a7){
                     buttons[i].setTitle(syllableArray[check][j], for: .normal)
-                    buttons[i].layer.shadowColor = UIColor.black.cgColor
-                    buttons[i].layer.shadowOffset = CGSize(width: 0, height: 4)
-                    buttons[i].layer.shadowOpacity = 0.5
                     buttons[i].layer.borderWidth = 1
                     buttons[i].layer.borderColor = UIColor.black.cgColor
                     buttons[i].setTitleColor(UIColor.white, for: .normal)
-                    buttons[i].layer.cornerRadius = 10
+                    buttons[i].layer.cornerRadius = 15
                     buttons[i].titleLabel?.font = UIFont(name: "EBS훈민정음R", size: 30) ?? .systemFont(ofSize: 30, weight: .regular)
+                    buttons[i].backgroundColor = .white
                     j += 1
                 }else{
                     buttons[i].setTitle(syllableArray[check][j], for: .normal)
-                    buttons[i].layer.shadowColor = UIColor.black.cgColor
-                    buttons[i].layer.shadowOffset = CGSize(width: 0, height: 4)
-                    buttons[i].layer.shadowOpacity = 0.5
+//                    buttons[i].titleLabel?.shadowColor = UIColor.black.cgColor
+                    buttons[i].titleLabel?.shadowOffset = CGSize(width: 0, height: 4)
+//                   btn.layer.shadowColor = UIColor.black.cgColor // 색깔
+                    buttons[i].layer.masksToBounds = false  // 내부에 속한 요소들이 UIView 밖을 벗어날 때, 잘라낼 것인지. 그림자는 밖에 그려지는 것이므로 false 로 설정
+                    buttons[i].layer.shadowOffset = CGSize(width: 0, height: 4) // 위치조정
+                    buttons[i].layer.shadowRadius = 1 // 반경
+                    buttons[i].layer.shadowOpacity = 0.3 // alpha값 buttons[i].titleLabel?.shadowOpacity = 0.5
                     buttons[i].layer.borderWidth = 1
                     buttons[i].layer.borderColor = UIColor.black.cgColor
                     buttons[i].setTitleColor(UIColor.black, for: .normal)
-                    buttons[i].layer.cornerRadius = 10
+                    buttons[i].layer.cornerRadius = 15
+                    buttons[i].titleLabel?.font = UIFont(name: "EBSHunminjeongeumL", size: 30) ?? .systemFont(ofSize: 30, weight: .regular)
+                    buttons[i].backgroundColor = .white
                     j += 1
                 }
             }
