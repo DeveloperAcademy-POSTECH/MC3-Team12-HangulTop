@@ -35,6 +35,9 @@ class StudyMenuViewController: UIViewController {
         appDelegate?.infos.indexCount = 2
     }
     
+    
+    
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let viewController = segue.destination as? SyllableStartViewController {
 //            viewController.indexCount = self.indexCount
